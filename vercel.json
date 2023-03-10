@@ -1,0 +1,12 @@
+{
+    "functions": {
+        "api/**/*.php": {
+          "runtime": "vercel-php@0.5.2"
+        }
+      },
+    "routes": [
+    
+        { "src": "/prepareTemplate", "methods": ["POST"], "dest": "/api/prepareTemplate.php" }
+       
+    ]
+}
