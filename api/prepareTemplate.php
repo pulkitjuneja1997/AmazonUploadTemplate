@@ -9,8 +9,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     public function ced_amazon_prepare_upload_template( $request_body ){
 
-		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( sanitize_text_field( $request_body['fileUrl'] ) ) : '';
-		$fileName  = isset( $request_body['fileName'] ) ? trim( sanitize_text_field( $request_body['fileName'] ) ) : '';
+		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
+		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
 
         $display_saved_values = 'no';
         $select_html = '';
