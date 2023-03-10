@@ -26,6 +26,269 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     }
 
+    /*
+	*
+	* Function to prepare profile fields section
+	*/
+	public function prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id ) {
+
+		if ( ! empty( $fieldsArray ) ) {
+			$profileSectionHtml = '';
+			$optionalFields     = array();
+			$display_heading    = 0;
+			$html               = '';
+
+			$ced_amazon_general_options = get_option( 'ced_amazon_general_options', array() );
+
+			foreach ( $fieldsArray as $fieldsKey2 => $fieldsValue ) {
+
+				// echo 'sub_category_id' . $sub_category_id;
+				// print_r($fieldsValue); print_r($fieldsKey2);
+
+				if ( 'Mandantory' == $fieldsKey || 'Required' ==  $fieldsKey ) {
+
+					$required = isset( $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ) && 'required' == $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ? ' [' . ucfirst( $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ) . ']' : '';
+					$req      = isset( $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ) && 'required' == $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ? 'required' : '';
+
+				} else {
+					$required = isset( $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ) && 'required' == $fieldsValue['productTypeSpecific'][ $sub_category_id ]['condition'] ? ' [Suggested]' : '';
+					$req      = '';
+
+				}
+
+				// print_r($required); print_r($req); die('oppppp');
+
+				$globalValue = 'no';
+
+				if ( ' [Required]' == $required || ' [Suggested]' == $required ) {
+
+					if ( isset( $ced_amazon_general_options[ $fieldsKey2 ] ) && is_array( $ced_amazon_general_options[ $fieldsKey2 ] ) && ( '' !== $ced_amazon_general_options[ $fieldsKey2 ]['default'] || '' !== $ced_amazon_general_options[ $fieldsKey2 ]['metakey'] ) ) {
+						// $required = '';
+						$req            = '';
+						$globalValue    = 'yes';
+						$defaultGlobal  = $ced_amazon_general_options[ $fieldsKey2 ]['default'];
+						$meta_keyGlobal = $ced_amazon_general_options[ $fieldsKey2 ]['metakey'];
+
+					} else {
+						$defaultGlobal  = '';
+						$meta_keyGlobal = '';
+					}
+
+					$display_heading     = 1;
+					$prodileRowHTml      = $this->prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $defaultGlobal, $meta_keyGlobal, '' );
+					$profileSectionHtml .= $prodileRowHTml;
+
+				} else {
+					$optionalFields[ $fieldsKey ][ $fieldsKey2 ][] = $fieldsValue;
+				}
+
+			}
+
+			return array(
+				'html'            => $profileSectionHtml,
+				'display_heading' => $display_heading,
+				'optionsFields'   => $optionalFields,
+			);
+
+		}
+
+	}
+
+
+	/*
+	*
+	* Function to prepare profile rows
+	*/
+
+	public function prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $globalValueDefault, $globalValueMetakey, $cross="no" ) {
+
+		global $wpdb;
+		$results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
+		$query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
+		$addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
+					
+		$rowHtml  = '';
+		$rowHtml .= '<tr class="categoryAttributes" id="ced_amazon_categories" data-attr="' . $req . '">';
+
+		if ( 'yes' == $display_saved_values ) {
+			$req = '';
+		}
+
+		$row_label = $fieldsValue['label'] ;
+
+		$index =  strpos( $fieldsKey2,"_custom_field");
+		if( $index  > -1 ){
+			$slug  =  substr( $fieldsKey2, 0, $index );
+		} else{
+			$slug = $fieldsKey2;
+		}
+
+		$rowHtml .= '<td>
+		<label for="" class="">' . $row_label . '<span class="ced_amazon_wal_required">' . $required . '</span></label>
+		<p class="cat_attr_para"> (' . $slug . ') </p></td>';
+
+		if ( ! empty( $current_amazon_profile ) ) {
+			$saved_value = json_decode( $current_amazon_profile['category_attributes_data'], true );
+			$saved_value = $saved_value[ $fieldsKey2 ];
+		} else {
+			$saved_value = array();
+		}
+
+		
+		$default_value = isset( $saved_value['default'] ) ? $saved_value['default'] : '';
+		$template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : '';
+
+		// test
+		if ( empty( $default_value ) && 'yes' == $globalValue && empty( $template_id ) ) {
+			$default_value = $globalValueDefault;
+		}
+
+		$rowHtml .= '<td>';
+		if( 'yes' == $cross){
+            $rowHtml .= '<input type="hidden" name="ced_amazon_profile_data[' . $slug . '_custom_field][label]" value="' . $row_label . '" >';
+			
+		} else{
+			$rowHtml .= '<input type="hidden" name="ced_amazon_profile_data[ref_attribute_list][' . $fieldsKey2 . ']" />';
+
+		}
+		
+		if ( ( isset( $valid_values[ $fieldsKey2 ] ) && isset( $valid_values[ $fieldsKey2 ][ $sub_category_id ] ) )  || ( isset( $valid_values[ $row_label ] ) && isset( $valid_values[ $row_label ][ $sub_category_id ] ) ) ) {
+			// $rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]" ' . $req . '><option value="">--Select--</option>';
+			$rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]"><option value="">--Select--</option>';
+
+			$optionLabels = !empty( $valid_values[ $fieldsKey2 ][ $sub_category_id ] ) ? $valid_values[ $fieldsKey2 ][ $sub_category_id ] : $valid_values[ $row_label ][ $sub_category_id ];
+			
+			foreach ( $optionLabels as $acpt_key => $acpt_value ) {
+				$selected = '';
+				if ( $acpt_key == $default_value ) {
+					$selected = 'selected';
+				}
+				$rowHtml .= '<option value="' . $acpt_key . '"' . $selected . '>' . $acpt_value . '</option>';
+			}
+
+			$rowHtml .= '</select>';
+		} elseif ( isset( $valid_values[ $fieldsKey2 ]['all_cat'] ) && ! empty( $valid_values[ $fieldsKey2 ]['all_cat'] ) && is_array( $valid_values[ $fieldsKey2 ]['all_cat'] ) ) {
+
+			// $rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]" ' . $req . '><option value="">--Select--</option>';
+			$rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]"><option value="">--Select--</option>';
+
+			foreach ( $valid_values[ $fieldsKey2 ]['all_cat'] as $acpt_key => $acpt_value ) {
+				$selected = '';
+				if ( $acpt_key == $default_value ) {
+					$selected = 'selected';
+				}
+				$rowHtml .= '<option value="' . $acpt_key . '"' . $selected . '>' . $acpt_value . '</option>';
+			}
+			$rowHtml .= '</select>';
+
+		} else {
+			// $rowHtml .= '<input class="custom_category_attributes_input" value="' . $default_value . '" id="' . $fieldsKey2 . '" type="text" name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]" ' . $req . ' />';
+			$rowHtml .= '<input class="custom_category_attributes_input" value="' . $default_value . '" id="' . $fieldsKey2 . '" type="text" name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]" />';
+		}
+
+		$rowHtml .= '<span class="app ">
+			<i class="fa fa-info-circle" data-tooltip-content="' . $fieldsValue['accepted_value'] . '"></i>
+			</span> </td>';
+
+		$rowHtml        .= '<td>';
+		$selected_value2 = isset( $saved_value['metakey'] ) ? $saved_value['metakey'] : '';
+
+		$template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : '';
+		// test
+		if ( empty( $selected_value2 ) && 'yes' == $globalValue && empty( $template_id ) ) {
+			$selected_value2 = $globalValueMetakey;
+		}
+
+		//$selectDropdownHTML = '<select class="select2 custom_category_attributes_select"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][metakey]"  ' . $req . ' >';
+		$selectDropdownHTML = '<select class="select2 custom_category_attributes_select"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][metakey]">';
+
+		foreach ( $results as $key2 => $meta_key ) {
+			$post_meta_keys[] = $meta_key['meta_key'];
+		}
+
+		$custom_prd_attrb = array();
+		$attrOptions      = array();
+
+		if ( ! empty( $query ) ) {
+			foreach ( $query as $key3 => $db_attribute_pair ) {
+				foreach ( maybe_unserialize( $db_attribute_pair['meta_value'] ) as $key4 => $attribute_pair ) {
+					if ( 1 != $attribute_pair['is_taxonomy'] ) {
+						$custom_prd_attrb[] = $attribute_pair['name'];
+					}
+				}
+			}
+		}
+
+		if ( $addedMetaKeys && 0 < count( $addedMetaKeys ) ) {
+			foreach ( $addedMetaKeys as $metaKey ) {
+				$attrOptions[ $metaKey ] = $metaKey;
+			}
+		}
+
+		$attributes = wc_get_attribute_taxonomies();
+
+		if ( ! empty( $attributes ) ) {
+			foreach ( $attributes as $attributesObject ) {
+				$attrOptions[ 'umb_pattr_' . $attributesObject->attribute_name ] = $attributesObject->attribute_label;
+			}
+		}
+
+		/* select dropdown setup */
+		ob_start();
+		$fieldID             = '{{*fieldID}}';
+		$selectId            = $fieldID . '_attibuteMeta';
+		$selectDropdownHTML .= '<option value=""> -- select -- </option>';
+
+		if ( is_array( $attrOptions ) ) {
+			$selectDropdownHTML .= '<optgroup label="Global Attributes">';
+			foreach ( $attrOptions as $attrKey => $attrName ) {
+				$selected = '';
+				if ( $selected_value2 == $attrKey ) {
+					$selected = 'selected';
+				}
+				$selectDropdownHTML .= '<option ' . $selected . ' value="' . $attrKey . '">' . $attrName . '</option>';
+			}
+		}
+
+		if ( ! empty( $custom_prd_attrb ) ) {
+			$custom_prd_attrb    = array_unique( $custom_prd_attrb );
+			$selectDropdownHTML .= '<optgroup label="Custom Attributes">';
+
+			foreach ( $custom_prd_attrb as $key5 => $custom_attrb ) {
+				$selected = '';
+				if ( 'ced_cstm_attrb_' . esc_attr( $custom_attrb ) == $selected_value2 ) {
+					$selected = 'selected';
+				}
+				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . esc_attr( $custom_attrb ) . '">' . esc_html( $custom_attrb ) . '</option>';
+
+			}
+		}
+
+		if ( ! empty( $post_meta_keys ) ) {
+			$post_meta_keys      = array_unique( $post_meta_keys );
+			$selectDropdownHTML .= '<optgroup label="Custom Fields">';
+			foreach ( $post_meta_keys as $key7 => $p_meta_key ) {
+				$selected = '';
+				if ( $selected_value2 == $p_meta_key ) {
+					$selected = 'selected';
+				}
+				$selectDropdownHTML .= '<option ' . $selected . ' value="' . $p_meta_key . '">' . $p_meta_key . '</option>';
+			}
+		}
+
+		$selectDropdownHTML .= '</select>';
+		if( 'yes' == $cross){
+			$selectDropdownHTML .= '<i class="fa fa-times ced_amazon_remove_custom_row" ></i>';
+		}
+		$rowHtml            .= $selectDropdownHTML;
+		$rowHtml            .= '</td>';
+		$rowHtml            .= '</tr>';
+
+		return $rowHtml;
+
+	}
+
+
     public function ced_amazon_prepare_upload_template( $request_body ){
 
 		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
