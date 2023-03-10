@@ -22,9 +22,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	*/
 	public function __construct() {
 
-		$this->plugin_name = $plugin_name;
-		$this->version     = $version;
-
 		$this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 
     }
