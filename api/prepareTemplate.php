@@ -7,6 +7,14 @@ use PhpOffice\PhpSpreadsheet\Exception;
 
 class Amazon_Integration_For_Woocommerce_Admin {
 
+    /**
+	 * The reader of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @var      string    $reader    The current version of this plugin.
+	 */
+	private $reader;
+
     public function ced_amazon_prepare_upload_template( $request_body ){
 
 		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
