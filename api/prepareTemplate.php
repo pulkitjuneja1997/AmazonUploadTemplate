@@ -109,7 +109,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		global $wpdb;
 		$results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
 		$query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
-		// $addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
+		
+        // $addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
         $addedMetaKeys  = $this->addedMetaKeys;
 					
 		$rowHtml  = '';
@@ -489,7 +490,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         if ( ! empty( $amazonCategoryList ) ) {
 
-            global $wpdb;
             $optionalFields = array();
             $html           = '';
 
@@ -598,10 +598,11 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 print_r($_POST);
 $request_body = $_POST;
-$this->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
-$this->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
-$this->$attributes                = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
+
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
+$instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
+$instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
+$instance->$attributes                = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
 ?>
