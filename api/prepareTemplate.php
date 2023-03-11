@@ -17,6 +17,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
     public $ced_amazon_general_options;
     public $addedMetaKeys;
     public $attributes;
+    public $query;
 
     /**
 	* Initialize the class and set its properties.
@@ -106,10 +107,11 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 	public function prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $globalValueDefault, $globalValueMetakey, $cross="no" ) {
 
-		global $wpdb;
-		$results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
-		$query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
+		// global $wpdb;
+		// $results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
+		// $query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
 		
+        $query     = $this->query;
         // $addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
         $addedMetaKeys  = $this->addedMetaKeys;
 					
@@ -602,7 +604,9 @@ $request_body = $_POST;
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
 $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
-$instance->attributes                = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
+$instance->attributes                 = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
+$instance->query                      = isset( $request_body['query'] ) ? $request_body['query'] : array();
+
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
 ?>
