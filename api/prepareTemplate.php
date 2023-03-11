@@ -14,6 +14,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	* @var      string    $reader    The current version of this plugin.
 	*/
 	private $reader;
+    public $ced_amazon_general_options;
+    public $addedMetaKeys;
+    public $attributes;
 
     /**
 	* Initialize the class and set its properties.
@@ -38,7 +41,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$display_heading    = 0;
 			$html               = '';
 
-			$ced_amazon_general_options = get_option( 'ced_amazon_general_options', array() );
+			// $ced_amazon_general_options = get_option( 'ced_amazon_general_options', array() );
+            $ced_amazon_general_options = $this->ced_amazon_general_options;
 
 			foreach ( $fieldsArray as $fieldsKey2 => $fieldsValue ) {
 
@@ -105,7 +109,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		global $wpdb;
 		$results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
 		$query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
-		$addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
+		// $addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
+        $addedMetaKeys  = $this->addedMetaKeys;
 					
 		$rowHtml  = '';
 		$rowHtml .= '<tr class="categoryAttributes" id="ced_amazon_categories" data-attr="' . $req . '">';
@@ -225,7 +230,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			}
 		}
 
-		$attributes = wc_get_attribute_taxonomies();
+		//$attributes = wc_get_attribute_taxonomies();
+        $attributes   = $this->$attributes;
 
 		if ( ! empty( $attributes ) ) {
 			foreach ( $attributes as $attributesObject ) {
@@ -256,10 +262,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 			foreach ( $custom_prd_attrb as $key5 => $custom_attrb ) {
 				$selected = '';
-				if ( 'ced_cstm_attrb_' . esc_attr( $custom_attrb ) == $selected_value2 ) {
+				if ( 'ced_cstm_attrb_' .  $custom_attrb  == $selected_value2 ) {
 					$selected = 'selected';
 				}
-				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . esc_attr( $custom_attrb ) . '">' . esc_html( $custom_attrb ) . '</option>';
+				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . $custom_attrb . '">' . esc_html( $custom_attrb ) . '</option>';
 
 			}
 		}
@@ -582,8 +588,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
             }
         }
 
-        echo esc_attr( wp_send_json_success( $select_html ) );
-        wp_die();
+        echo json_encode( $select_html ) ;
+        die();
 
     }
 
@@ -592,7 +598,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 print_r($_POST);
 $request_body = $_POST;
-
+$this->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
+$this->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
+$this->$attributes                = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
