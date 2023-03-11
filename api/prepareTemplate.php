@@ -602,7 +602,7 @@ $request_body = $_POST;
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
 $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
-$instance->$attributes                = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
+$instance->attributes                = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
 ?>
