@@ -18,6 +18,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
     public $addedMetaKeys;
     public $attributes;
     public $query;
+    public $results;
 
     /**
 	* Initialize the class and set its properties.
@@ -111,7 +112,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		// $results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
 		// $query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
 		
+        $results   = $this->results;
         $query     = $this->query;
+      
         // $addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
         $addedMetaKeys  = $this->addedMetaKeys;
 					
@@ -210,9 +213,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		//$selectDropdownHTML = '<select class="select2 custom_category_attributes_select"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][metakey]"  ' . $req . ' >';
 		$selectDropdownHTML = '<select class="select2 custom_category_attributes_select"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][metakey]">';
 
-		foreach ( $results as $key2 => $meta_key ) {
-			$post_meta_keys[] = $meta_key['meta_key'];
-		}
+
+        if ( ! empty( $results ) ) {
+            foreach ( $results as $key2 => $meta_key ) {
+                $post_meta_keys[] = $meta_key['meta_key'];
+            }
+        }    
 
 		$custom_prd_attrb = array();
 		$attrOptions      = array();
@@ -227,7 +233,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			}
 		}
 
-		if ( $addedMetaKeys && 0 < count( $addedMetaKeys ) ) {
+		if ( !empty($addedMetaKeys) && 0 < count( $addedMetaKeys ) ) {
 			foreach ( $addedMetaKeys as $metaKey ) {
 				$attrOptions[ $metaKey ] = $metaKey;
 			}
@@ -606,6 +612,7 @@ $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general
 $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
 $instance->attributes                 = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance->query                      = isset( $request_body['query'] ) ? $request_body['query'] : array();
+$instance->results                    = isset( $request_body['results'] ) ? $request_body['results'] : array();
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
