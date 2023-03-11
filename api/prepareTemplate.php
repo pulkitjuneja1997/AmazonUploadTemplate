@@ -312,7 +312,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $display_saved_values = 'no';
         $select_html = '';
         
-        $select_html .= '<tr>
+        $select_html .= '<tr class="categoryAttributes">
                             <td></td>
                             <td>
                                 <input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" required="">
