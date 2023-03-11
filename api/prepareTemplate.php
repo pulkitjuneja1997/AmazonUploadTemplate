@@ -596,7 +596,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
             }
         }
 
-        echo json_encode( $select_html ) ;
+        echo $select_html;
         die();
 
     }
