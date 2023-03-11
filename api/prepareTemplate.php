@@ -603,8 +603,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 }
 
+// print_r($_POST);
 
-print_r($_POST);
 $request_body = $_POST;
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
