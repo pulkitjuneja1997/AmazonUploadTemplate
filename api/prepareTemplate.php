@@ -240,7 +240,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		}
 
 		//$attributes = wc_get_attribute_taxonomies();
-        $attributes   = $this->$attributes;
+        $attributes   = $this->attributes;
 
 		if ( ! empty( $attributes ) ) {
 			foreach ( $attributes as $attributesObject ) {
