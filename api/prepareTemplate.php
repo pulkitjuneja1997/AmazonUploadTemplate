@@ -385,7 +385,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         // ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
-        $sub_category_id = $subCategory;
+        //$sub_category_id = 'subCategory';
+        $sub_category_id = $subCategory; 
+
+        print_r($subCategory); 
+        print_r($sub_category_id);  die('oppp');
+
         $products_template_fields_key = array_search( 'Data Definitions', $listname_of_all_tabs_files  );
         $products_template_fields = $listname_of_all_tabs_files[$products_template_fields_key];
 
