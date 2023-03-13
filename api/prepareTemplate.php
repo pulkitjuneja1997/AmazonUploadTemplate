@@ -163,7 +163,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		}
 		
-		if ( ( isset( $valid_values[ $fieldsKey2 ] ) && isset( $valid_values[ $fieldsKey2 ][ $sub_category_id ] ) )  || ( isset( $valid_values[ $row_label ] ) && isset( $valid_values[ $row_label ][ $sub_category_id ] ) ) ) {
+        if ( ( isset( $valid_values[ $fieldsKey2 ] ) && isset( $valid_values[ $fieldsKey2 ][ $sub_category_id ] ) )  || ( isset( $valid_values[ $row_label ] ) && isset( $valid_values[ $row_label ][ $sub_category_id ] ) ) ) {
 			// $rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]" ' . $req . '><option value="">--Select--</option>';
 			$rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]"><option value="">--Select--</option>';
 
@@ -178,12 +178,14 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			}
 
 			$rowHtml .= '</select>';
-		} elseif ( isset( $valid_values[ $fieldsKey2 ]['all_cat'] ) && ! empty( $valid_values[ $fieldsKey2 ]['all_cat'] ) && is_array( $valid_values[ $fieldsKey2 ]['all_cat'] ) ) {
+		} elseif ( ( isset( $valid_values[ $fieldsKey2 ] ) && isset( $valid_values[ $fieldsKey2 ]['all_cat'] ) ) || ( isset( $valid_values[ $row_label ] ) && isset( $valid_values[ $row_label ]['all_cat'] )  ) ) {
 
 			// $rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]" ' . $req . '><option value="">--Select--</option>';
 			$rowHtml .= '<select class="custom_category_attributes_select2" id="' . $fieldsKey2 . '"  name="ced_amazon_profile_data[' . $fieldsKey2 . '][default]"><option value="">--Select--</option>';
 
-			foreach ( $valid_values[ $fieldsKey2 ]['all_cat'] as $acpt_key => $acpt_value ) {
+			$optionLabels = !empty( $valid_values[ $fieldsKey2 ]['all_cat'] ) ? $valid_values[ $fieldsKey2 ]['all_cat'] : $valid_values[ $row_label ]['all_cat'];
+			
+			foreach ( $optionLabels as $acpt_key => $acpt_value ) {
 				$selected = '';
 				if ( $acpt_key == $default_value ) {
 					$selected = 'selected';
