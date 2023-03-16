@@ -310,10 +310,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
+        $template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
+        $display_saved_values  = isset( $request_body['display_saved_values'] ) ? trim( $request_body['display_saved_values']  ) : 'no';
+       
+        $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? trim( $request_body['current_amazon_profile']  ) : '';
 
-        $display_saved_values = 'no';
         $select_html = '';
-        
         $select_html .= '<tr class="categoryAttributes">
                             <td></td>
                             <td>
@@ -589,9 +591,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
                                     $html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
 
                                 } else {
-
-                                    // $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
-                                    // $optionalFieldsHtml .= $prodileRowHTml;
 
                                     $prodileRowHTml      = $this->prepareProfileRows( $current_amazon_profile, 'yes', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
 									$optionalFieldsHtml .= $prodileRowHTml;
