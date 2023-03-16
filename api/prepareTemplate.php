@@ -618,7 +618,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 }
 
-// var_dump($_POST);
+print_r($_POST);
 
 $request_body = $_POST;
 
