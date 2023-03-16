@@ -590,8 +590,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
                                 } else {
 
-                                    $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
-                                    $optionalFieldsHtml .= $prodileRowHTml;
+                                    // $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
+                                    // $optionalFieldsHtml .= $prodileRowHTml;
+
+                                    $prodileRowHTml      = $this->prepareProfileRows( $current_amazon_profile, 'yes', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
+									$optionalFieldsHtml .= $prodileRowHTml;
+
                                 }
                             }
                             $html .= '</optgroup>';
