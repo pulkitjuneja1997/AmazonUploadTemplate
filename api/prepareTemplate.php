@@ -313,7 +313,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
         $display_saved_values  = isset( $request_body['display_saved_values'] ) ? trim( $request_body['display_saved_values']  ) : 'no';
        
-        $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? trim( $request_body['current_amazon_profile']  ) : '';
+        $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? $request_body['current_amazon_profile'] : '';
 
         $select_html = '';
         $select_html .= '<tr class="categoryAttributes">
