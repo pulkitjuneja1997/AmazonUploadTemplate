@@ -517,7 +517,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
             foreach ( $amazonCategoryList as $fieldsKey => $fieldsArray ) {
 
-                $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, array(), 'no', $valid_values, $sub_category_id );
+                $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, array(), $display_saved_values, $valid_values, $sub_category_id );
 
                 if ( $select_html2['display_heading'] ) {
                     $select_html .= '<tr class="categoryAttributes" ><td colspan="3"></td></tr>
