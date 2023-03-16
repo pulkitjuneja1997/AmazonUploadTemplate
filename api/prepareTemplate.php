@@ -316,11 +316,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? $request_body['current_amazon_profile'] : '';
 
         $select_html = '';
+        
         $select_html .= '<tr class="categoryAttributes">
                             <td></td>
                             <td>
                                 <input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" required="">
-                                <input id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" required="">
+                                <input class="ced_amazon_profile_url" id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" required="">
                             </td>
                         </tr>';
         $fileContents   = file_get_contents($fileUrl);
