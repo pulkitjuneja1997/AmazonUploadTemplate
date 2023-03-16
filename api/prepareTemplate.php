@@ -147,7 +147,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		
 		$default_value = isset( $saved_value['default'] ) ? $saved_value['default'] : '';
-		$template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : '';
+		$template_id = $this->template_id;
 
 		// test
 		if ( empty( $default_value ) && 'yes' == $globalValue && empty( $template_id ) ) {
@@ -206,7 +206,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$rowHtml        .= '<td>';
 		$selected_value2 = isset( $saved_value['metakey'] ) ? $saved_value['metakey'] : '';
 
-		$template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : '';
+		$template_id = $this->template_id;
 		// test
 		if ( empty( $selected_value2 ) && 'yes' == $globalValue && empty( $template_id ) ) {
 			$selected_value2 = $globalValueMetakey;
@@ -310,9 +310,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
-        $template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
+        $this->template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
+
         $display_saved_values  = isset( $request_body['display_saved_values'] ) ? trim( $request_body['display_saved_values']  ) : 'no';
-       
         $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? $request_body['current_amazon_profile'] : '';
 
         $select_html = '';
