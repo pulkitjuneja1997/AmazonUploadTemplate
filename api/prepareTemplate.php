@@ -19,6 +19,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
     public $attributes;
     public $query;
     public $results;
+    public $domain;
+    public $seller_id;
 
     /**
 	* Initialize the class and set its properties.
@@ -43,13 +45,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$display_heading    = 0;
 			$html               = '';
 
-			// $ced_amazon_general_options = get_option( 'ced_amazon_general_options', array() );
             $ced_amazon_general_options = $this->ced_amazon_general_options;
 
 			foreach ( $fieldsArray as $fieldsKey2 => $fieldsValue ) {
-
-				// echo 'sub_category_id' . $sub_category_id;
-				// print_r($fieldsValue); print_r($fieldsKey2);
 
 				if ( 'Mandantory' == $fieldsKey || 'Required' ==  $fieldsKey ) {
 
@@ -108,14 +106,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 	public function prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $globalValueDefault, $globalValueMetakey, $cross="no" ) {
 
-		// global $wpdb;
-		// $results        = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
-		// $query          = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
-		
         $results   = $this->results;
         $query     = $this->query;
       
-        // $addedMetaKeys  = get_option( 'CedUmbProfileSelectedMetaKeys', false );
         $addedMetaKeys  = $this->addedMetaKeys;
 					
 		$rowHtml  = '';
@@ -317,13 +310,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         $select_html = '';
         
-        $select_html .= '<tr class="categoryAttributes">
-                            <td></td>
-                            <td>
-                                <input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" required="">
-                                <input class="ced_amazon_profile_url" id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" required="">
-                            </td>
-                        </tr>';
         $fileContents   = file_get_contents($fileUrl);
         $localFileName = tempnam(sys_get_temp_dir(), "tempxls");
         
@@ -387,19 +373,25 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         // ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
 
-        // ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
+        $select_html .= '<tr class="categoryAttributes">
+                            <td></td>
+                            <td>
+                                <input value="' . $subCategory . '"  type="hidden" name="ced_amazon_profile_data[secondary_category]" >
+                                <input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" required="">
+                                <input class="ced_amazon_profile_url" id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" required="">
+                            </td>
+                        </tr>';
 
-        //$sub_category_id = 'subCategory';
+
+        // ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
+        
         $sub_category_id = $subCategory; 
 
-        // print_r($subCategory); 
-        // print_r($sub_category_id);  die('oppp');
+        $products_fields_key = array_search( 'Data Definitions', $listname_of_all_tabs_files  );
+        $products_fields = $listname_of_all_tabs_files[$products_fields_key];
 
-        $products_template_fields_key = array_search( 'Data Definitions', $listname_of_all_tabs_files  );
-        $products_template_fields = $listname_of_all_tabs_files[$products_template_fields_key];
-
-        $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($products_template_fields)->getHighestColumn());
-        $highestRow = $spreadsheet->getSheetByName($products_template_fields)->getHighestRow();
+        $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($products_fields)->getHighestColumn());
+        $highestRow = $spreadsheet->getSheetByName($products_fields)->getHighestRow();
 
         $sectionHeading = ''; 
         $sectionHeadingCol = ''; $slugHeadingCol = ''; $labelHeadingCol = ''; $defAndUseHeadingCol = ''; $acceptedHeadingCol = ''; $examHeadingCol = ''; $reqHeadingCol = '';
@@ -411,7 +403,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
                 $headingArray = array( 'Group Name', 'Field Name', 'Local Label Name', 'Definition and Use', 'Accepted Values', 'Example', 'Required?' );
                 for ($col = 1; $col <= $highestColumnIndex; ++$col) { 
 
-                    $currentHeading = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $col, 2 )->getValue();
+                    $currentHeading = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $col, 2 )->getValue();
                     if( !empty( $currentHeading ) && in_array( $currentHeading, $headingArray ) ){
 
                         if( 'Group Name' == $currentHeading ){
@@ -435,7 +427,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
                 }
 
             } else{
-                $value = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow(1, $row)->getValue();
+                $value = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow(1, $row)->getValue();
                 
                 if ( !empty($value) ){
                     if ( !empty($value) && strpos( $value, ' - ') !== false) {
@@ -455,14 +447,14 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
                     if ($col == 2 && $row != 2) {
 
-                        $fieldName = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $slugHeadingCol, $row )->getValue();
-                        $label = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $labelHeadingCol, $row )->getValue();
+                        $fieldName = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $slugHeadingCol, $row )->getValue();
+                        $label = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $labelHeadingCol, $row )->getValue();
                         
-                        $definitions_and_uses = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $defAndUseHeadingCol, $row )->getValue();
-                        $accepted_values = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $acceptedHeadingCol, $row )->getValue();
-                        $examples = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $examHeadingCol, $row )->getValue();
+                        $definitions_and_uses = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $defAndUseHeadingCol, $row )->getValue();
+                        $accepted_values = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $acceptedHeadingCol, $row )->getValue();
+                        $examples = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $examHeadingCol, $row )->getValue();
                         
-                        $required = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow( $reqHeadingCol, $row )->getValue();
+                        $required = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $reqHeadingCol, $row )->getValue();
                         
                         if ( !empty($fieldName) && strpos($fieldName, '1 - ') !== false) {
                             $reapt = explode('1 - ', $fieldName);
@@ -480,7 +472,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
                         } else {
                             if ($fieldName != '') {
-                                //echo 'sectionHeading' . $sectionHeading;
+                                
                                 // if( $sectionHeading == 'Required' ){ }
                                 $final_all_complete_indexes[$sectionHeading][$fieldName] = array(
                                     'label'      => $label,
@@ -505,9 +497,73 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         }
 
+        // ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
+
         // ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
-      
+        if( empty( $this->template_id ) ){
+
+            $products_template_fields_key = array_search( 'Template', $listname_of_all_tabs_files  );
+            $products_template_fields = $listname_of_all_tabs_files[$products_template_fields_key];
+    
+            $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($products_template_fields)->getHighestColumn());
+            $highestRow = $spreadsheet->getSheetByName($products_template_fields)->getHighestRow();
+    
+            $sectionHeading = ''; 
+            $products_template_fields_array = array();
+    
+            for ( $row = 1; $row <= 3; ++$row ) {
+    
+                $products_template_fields_array[$row] = array();
+                for ( $col = 1; $col <= $highestColumnIndex; ++$col ) {
+    
+                    $value = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow($col, $row)->getValue();
+                    $products_template_fields_array[$row][$col] = $value;
+    
+                }
+            }
+
+            $products_template_fields_json = json_encode( $products_template_fields_array );
+
+            $body = array(
+                'contents'  => $products_template_fields_json,
+                'seller_id' => $this->seller_id,
+                'sub_category_id' => $sub_category_id
+            );
+            $endpoint = $this->domain . '/wp-json/api-test/v1/createProductsJsonFile';
+            $headers  = array(
+                'Content-Type' => 'application/json',
+            );
+
+            $connection = curl_init();
+            
+            curl_setopt( $connection, CURLOPT_URL, $endpoint );
+            curl_setopt( $connection, CURLOPT_SSL_VERIFYPEER, 0 );
+            curl_setopt( $connection, CURLOPT_SSL_VERIFYHOST, 0 );
+            curl_setopt( $connection, CURLOPT_HTTPHEADER, $headers );
+            curl_setopt( $connection, CURLOPT_POST, 1 );
+            curl_setopt( $connection, CURLOPT_POSTFIELDS, $body );
+
+            curl_setopt( $connection, CURLOPT_RETURNTRANSFER, 1 );
+
+            $data_response = curl_exec( $connection );
+            curl_close( $connection );
+
+            $data_response = json_decode( $data_response, true );
+            if( ! $data_response['status'] ){
+                echo $data_response['data'];
+                die();
+            }
+
+            if( curl_exec($ch) === false ){
+                echo 'Curl error: ' . curl_error($ch);
+                die();
+            }
+
+        }
+
+		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
+
         $amazonCategoryList = $final_all_complete_indexes;
         $valid_values       = $valid_values_array;
 
@@ -627,6 +683,9 @@ $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) 
 $instance->attributes                 = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance->query                      = isset( $request_body['query'] ) ? $request_body['query'] : array();
 $instance->results                    = isset( $request_body['results'] ) ? $request_body['results'] : array();
+$instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
+$instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
+
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
