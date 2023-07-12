@@ -826,7 +826,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 $request_body = $_POST;
 
-if( 0 == $request_body['rowNum'] ){
+if( 0 == $request_body['rowNum'] && isset( $_SESSION ) ){
 
     session_destroy();
     session_start();
