@@ -834,7 +834,7 @@ if( 0 == $request_body['rowNum'] && isset( $_SESSION ) ){
 } else{
     session_start();
 }
-
+ 
 var_dump($request_body);
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
