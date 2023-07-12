@@ -273,10 +273,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 			foreach ( $custom_prd_attrb as $key5 => $custom_attrb ) {
 				$selected = '';
-				if ( 'ced_cstm_attrb_' . esc_attr( $custom_attrb ) == $selected_value2 ) {
+				if ( 'ced_cstm_attrb_' . $custom_attrb  == $selected_value2 ) {
 					$selected = 'selected';
 				}
-				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . esc_attr( $custom_attrb ) . '">' . esc_html( $custom_attrb ) . '</option>';
+				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . $custom_attrb . '">' . esc_html( $custom_attrb ) . '</option>';
 
 			}
 		}
@@ -321,7 +321,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		
 		// wp_raise_memory_limit('admin');
 		
-        session_start();
         $curl = curl_init();
 
 		// $current_amazon_profile = array();
@@ -379,7 +378,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 
         if( 1 == $request_body['rowNum'] ){
-            echo esc_attr( wp_send_json_success( 'sessionPrepared' ) );
+            echo wp_send_json_success( 'sessionPrepared' );
 		    wp_die();
         }
 
@@ -450,7 +449,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 
         if( 1 == $request_body['rowNum'] ){
-            echo esc_attr( wp_send_json_success( 'sessionPrepared' ) );
+            echo wp_send_json_success( 'sessionPrepared' );
 		    wp_die();
         }
 
@@ -644,7 +643,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
                 $userCountry = $shop_data['ced_mp_name'];
             } else {
-                echo esc_attr( wp_send_json_error( ' Unable to get Shop Data. ' ) );
+                echo wp_send_json_error( ' Unable to get Shop Data. ' );
                 wp_die();
             }
 
@@ -673,7 +672,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
         if( 1 == $request_body['rowNum'] ){
-            echo esc_attr( wp_send_json_success( 'sessionPrepared' ) );
+            echo wp_send_json_success( 'sessionPrepared' );
 		    wp_die();
         }
 
@@ -788,7 +787,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			}
 		}
 
-		echo esc_attr( wp_send_json_success( $select_html ) );
+		echo wp_send_json_success( $select_html );
 		wp_die();
 
 	}
@@ -796,6 +795,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 }
 
+session_start();
 $request_body = $_POST;
 
 var_dump($request_body);
