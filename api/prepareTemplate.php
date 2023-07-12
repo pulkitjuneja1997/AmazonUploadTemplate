@@ -320,6 +320,36 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $listname_of_all_tabs_files = $this->reader->listWorksheetNames($localFileName);
         $spreadsheet = $this->reader->load($localFileName);
 
+        // ----------------------------------------------------- testtttttttt ----------------------------------------------------------
+
+		if( 0 == $rowNum ){
+
+			$this->b = 'pulkit';
+
+			$valid_values_key = array_search( 'Valid Values', $listname_of_all_tabs_files );
+			$valid_values     = $listname_of_all_tabs_files[$valid_values_key];
+
+			$highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($valid_values)->getHighestColumn());
+			$highestRow         = $spreadsheet->getSheetByName($valid_values)->getHighestRow();
+
+			$data_definitions_key = array_search( 'Data Definitions', $listname_of_all_tabs_files );
+			$data_definitions     = $listname_of_all_tabs_files[$data_definitions_key];
+
+			$fieldsNames = array();
+			for($row = 3; $row <= $highestRow; ++$row) {
+				$rowName = $spreadsheet->getSheetByName($data_definitions)->getCellByColumnAndRow(1, $row)->getValue();
+				if( !empty($rowName) )
+				$fieldNames[$row] = $rowName;
+				
+			}
+
+			echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames ) );
+			die;
+		}
+
+		// ----------------------------------------------------- testtttttttt ----------------------------------------------------------
+
+
 
         // ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
 
