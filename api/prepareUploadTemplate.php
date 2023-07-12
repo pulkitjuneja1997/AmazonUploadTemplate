@@ -662,6 +662,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
+        if( 1 == $request_body['rowNum'] ){
+            echo esc_attr( wp_send_json_success( 'sessionPrepared' ) );
+		    wp_die();
+        }
 
 		$amazonCategoryList = $final_all_complete_indexes;
 		$valid_values       = $valid_values_array;
