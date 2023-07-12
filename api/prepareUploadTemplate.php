@@ -445,6 +445,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $sub_category_id = $subCategory;    
 
 
+        if( 1 == $request_body['rowNum'] ){
+            echo esc_attr( wp_send_json_success( 'sessionPrepared' ) );
+		    wp_die();
+        }
+
+
 		// ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
 
 		$select_html .= '<tr>
