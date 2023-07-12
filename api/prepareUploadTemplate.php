@@ -377,11 +377,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		// ----------------------------------------------------- testtttttttt ----------------------------------------------------------
 
 
-        if( 1 == $request_body['rowNum'] ){
-            echo json_encode( array( 'success' => true, 'data' => 'sessionPrepared' )  );
-		    wp_die();
-        }
-
 		// ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
 
 		$valid_values_key = array_search( 'Valid Values', $listname_of_all_tabs_files );
@@ -450,7 +445,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         if( 1 == $request_body['rowNum'] ){
             echo json_encode( array( 'success' => true, 'data' => 'sessionprepared' )  );
-		    wp_die();
+		    die;
         }
 
 
@@ -644,7 +639,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
                 $userCountry = $shop_data['ced_mp_name'];
             } else {
                 echo wp_send_json_error( ' Unable to get Shop Data. ' );
-                wp_die();
+                die;
             }
 
             $upload_dir = wp_upload_dir();
@@ -673,7 +668,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         if( 1 == $request_body['rowNum'] ){
             echo json_encode( array( 'success' => true, 'data' => 'sessionPrepared') );
-		    wp_die();
+		    die;
         }
 
 		$amazonCategoryList = $final_all_complete_indexes;
@@ -788,7 +783,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		}
 
 		echo json_encode( array( 'success' => true, 'data' => $select_html )  );
-		wp_die();
+		die;
 
 	}
 
