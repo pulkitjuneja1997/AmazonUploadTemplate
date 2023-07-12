@@ -390,49 +390,58 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$valid_values_array = array();
 		$subCategory        = '';
 
-		for ($row = 1; $row <= $highestRow; ++$row) {
-			for ($col = 1; $col <= $highestColumnIndex; ++$col) {
-				if ( 2 ==  $col ) {
-					$label = $spreadsheet->getSheetByName($valid_values)->getCellByColumnAndRow(2, $row)->getValue();
+        if( empty( $_SESSION['valid_values_array'] ) ){ 
 
-					if ( !empty($label) ) {
-						if ( !empty($label) && strpos( $label, ' - ') !== false) {
+            for ($row = 1; $row <= $highestRow; ++$row) {
+                for ($col = 1; $col <= $highestColumnIndex; ++$col) {
+                    if ( 2 ==  $col ) {
+                        $label = $spreadsheet->getSheetByName($valid_values)->getCellByColumnAndRow(2, $row)->getValue();
 
-							$labelArray  = explode(' - ', $label);
-							$label       = $labelArray[0];
-							$subCategory = $labelArray[1];
-							$subCategory = ltrim( $subCategory, '[ ' );
-							$subCategory = rtrim( $subCategory, ' ]' );
+                        if ( !empty($label) ) {
+                            if ( !empty($label) && strpos( $label, ' - ') !== false) {
+
+                                $labelArray  = explode(' - ', $label);
+                                $label       = $labelArray[0];
+                                $subCategory = $labelArray[1];
+                                $subCategory = ltrim( $subCategory, '[ ' );
+                                $subCategory = rtrim( $subCategory, ' ]' );
 
 
-							if ( empty( $subCategory ) ) {
-							   $subCategory = 'all_cat'; 
-							}
+                                if ( empty( $subCategory ) ) {
+                                $subCategory = 'all_cat'; 
+                                }
 
-						} elseif( !empty($label) ){
-                            $subCategory = 'all_cat'; 
-						} else { continue; }
+                            } elseif( !empty($label) ){
+                                $subCategory = 'all_cat'; 
+                            } else { continue; }
 
-						if ( !isset( $valid_values_array[$label] ) ) {
-							$valid_values_array[$label] = array();
-						}
+                            if ( !isset( $valid_values_array[$label] ) ) {
+                                $valid_values_array[$label] = array();
+                            }
 
-						$valid_values_array[$label][$subCategory] = array();
+                            $valid_values_array[$label][$subCategory] = array();
 
-					}
+                        }
 
-				} elseif ( 2 < $col ) {
+                    } elseif ( 2 < $col ) {
 
-					$option = $spreadsheet->getSheetByName($valid_values)->getCellByColumnAndRow($col, $row)->getValue();
-					if ( !empty( $option ) ) {
-						$valid_values_array[$label][$subCategory][$option] = $option;
-					}
+                        $option = $spreadsheet->getSheetByName($valid_values)->getCellByColumnAndRow($col, $row)->getValue();
+                        if ( !empty( $option ) ) {
+                            $valid_values_array[$label][$subCategory][$option] = $option;
+                        }
 
-				}
+                    }
 
-			}
+                }
 
-		}
+            }
+          
+        } else{
+            $valid_values_array = $_SESSION['valid_values_array'] ;
+            $subCategory        = $_SESSION['sub_category_id'];
+        }
+    
+        $sub_category_id = $subCategory;    
 
 
 		// ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
@@ -440,7 +449,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$select_html .= '<tr>
 							<td></td>
 							<td>
-							    <input value="' . $subCategory . '"  type="hidden" name="ced_amazon_profile_data[secondary_category]" >
+							    <input value="' . $sub_category_id . '"  type="hidden" name="ced_amazon_profile_data[secondary_category]" >
 							    <input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" >
 								<input class="ced_amazon_profile_url" id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" >
 							</td>
@@ -466,151 +475,164 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$reqHeadingCol              = '';
 		$final_all_complete_indexes = array();
 
-		for ( $row = 2; $row <= $highestRow; ++$row ) {
+        if( empty( $_SESSION['amazonCategoryList'] ) ){ 
 
-			if ( 2 == $row ) {
-				$headingArray = array( 'Group Name', 'Group name', 'Field Name', 'Field name', 'Local Label Name', 'Local label name', 'Definition and Use', 'Definition and use', 'Accepted Values', 'Example', 'Required?' );
-				for ($col = 1; $col <= $highestColumnIndex; ++$col) { 
+            for ( $row = 2; $row <= $highestRow; ++$row ) {
 
-					$currentHeading = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $col, 2 )->getValue();
-					
-					if ( !empty( $currentHeading ) && in_array( $currentHeading, $headingArray ) ) {
+                if ( 2 == $row ) {
+                    $headingArray = array( 'Group Name', 'Group name', 'Field Name', 'Field name', 'Local Label Name', 'Local label name', 'Definition and Use', 'Definition and use', 'Accepted Values', 'Example', 'Required?' );
+                    for ($col = 1; $col <= $highestColumnIndex; ++$col) { 
 
-						if ( 'Group Name' == $currentHeading || 'Group name' == $currentHeading ) {
-							$sectionHeadingCol = $col;
-						} elseif ( 'Field Name' == $currentHeading || 'Field name' == $currentHeading ) {
-							$slugHeadingCol = $col;
-						} elseif ( 'Local Label Name' == $currentHeading || 'Local label name' == $currentHeading ) {
-							$labelHeadingCol = $col;
-						} elseif ( 'Definition and Use' == $currentHeading || 'Definition and use' == $currentHeading ) {
-							$defAndUseHeadingCol = $col;
-						} elseif ( 'Accepted Values' == $currentHeading ) {
-							$acceptedHeadingCol = $col;
-						} elseif ( 'Example' == $currentHeading ) {
-							$examHeadingCol = $col;
-						} elseif ( 'Required?' == $currentHeading ) {
-							$reqHeadingCol = $col;
-						}
+                        $currentHeading = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $col, 2 )->getValue();
+                        
+                        if ( !empty( $currentHeading ) && in_array( $currentHeading, $headingArray ) ) {
 
-					}
+                            if ( 'Group Name' == $currentHeading || 'Group name' == $currentHeading ) {
+                                $sectionHeadingCol = $col;
+                            } elseif ( 'Field Name' == $currentHeading || 'Field name' == $currentHeading ) {
+                                $slugHeadingCol = $col;
+                            } elseif ( 'Local Label Name' == $currentHeading || 'Local label name' == $currentHeading ) {
+                                $labelHeadingCol = $col;
+                            } elseif ( 'Definition and Use' == $currentHeading || 'Definition and use' == $currentHeading ) {
+                                $defAndUseHeadingCol = $col;
+                            } elseif ( 'Accepted Values' == $currentHeading ) {
+                                $acceptedHeadingCol = $col;
+                            } elseif ( 'Example' == $currentHeading ) {
+                                $examHeadingCol = $col;
+                            } elseif ( 'Required?' == $currentHeading ) {
+                                $reqHeadingCol = $col;
+                            }
 
-				}
+                        }
 
-			} else {
-				$value = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow(1, $row)->getValue();
+                    }
 
-				if ( !empty($value) ) {
-					if ( !empty($value) && strpos( $value, ' - ') !== false) {
+                } else {
+                    $value = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow(1, $row)->getValue();
 
-						$headingArray   = explode(' - ', $value);
-						$sectionHeading = $headingArray[0];
+                    if ( !empty($value) ) {
+                        if ( !empty($value) && strpos( $value, ' - ') !== false) {
 
-					} else {
-						$sectionHeading = $value;
-					}
+                            $headingArray   = explode(' - ', $value);
+                            $sectionHeading = $headingArray[0];
 
-					$final_all_complete_indexes[$sectionHeading] = array();
+                        } else {
+                            $sectionHeading = $value;
+                        }
 
-				}
+                        $final_all_complete_indexes[$sectionHeading] = array();
 
-				for ($col = 1; $col <= $highestColumnIndex; ++$col) {
+                    }
 
-					if ( 2 == $col && 2 != $row ) {
+                    for ($col = 1; $col <= $highestColumnIndex; ++$col) {
 
-						$fieldName = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $slugHeadingCol, $row )->getValue();
-						$label     = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $labelHeadingCol, $row )->getValue();
+                        if ( 2 == $col && 2 != $row ) {
 
-						$definitions_and_uses = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $defAndUseHeadingCol, $row )->getValue();
-						$accepted_values      = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $acceptedHeadingCol, $row )->getValue();
-						$examples             = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $examHeadingCol, $row )->getValue();
+                            $fieldName = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $slugHeadingCol, $row )->getValue();
+                            $label     = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $labelHeadingCol, $row )->getValue();
 
-						$required = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $reqHeadingCol, $row )->getValue();
+                            $definitions_and_uses = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $defAndUseHeadingCol, $row )->getValue();
+                            $accepted_values      = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $acceptedHeadingCol, $row )->getValue();
+                            $examples             = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $examHeadingCol, $row )->getValue();
 
-						if ( !empty($fieldName) && strpos($fieldName, '1 - ') !== false) {
+                            $required = $spreadsheet->getSheetByName($products_fields)->getCellByColumnAndRow( $reqHeadingCol, $row )->getValue();
 
-							$fieldNameArray = explode('1 - ', $fieldName);
-							$index          = $fieldNameArray[1];
+                            if ( !empty($fieldName) && strpos($fieldName, '1 - ') !== false) {
 
-							$splitArray        = str_split( $index , strlen($index) - 1  );
-							$lastIndex         = $splitArray[1]; 
-							$originalFieldName = $splitArray[0];
-							//$range = explode($reapt[0], $fieldNameArray);
+                                $fieldNameArray = explode('1 - ', $fieldName);
+                                $index          = $fieldNameArray[1];
 
-							for ( $i = 1; $i <= $lastIndex; $i++ ) {
+                                $splitArray        = str_split( $index , strlen($index) - 1  );
+                                $lastIndex         = $splitArray[1]; 
+                                $originalFieldName = $splitArray[0];
+                                //$range = explode($reapt[0], $fieldNameArray);
 
-								$final_all_complete_indexes[$sectionHeading][$originalFieldName . $i ] =
-									array(
-									'label'      => $label,
-									'definition' => $definitions_and_uses,
-									'accepted_value' => $accepted_values,
-									'example' => $examples,
-									'productTypeSpecific' => array( $sub_category_id => array( 'condition' => lcfirst( $required ) ) )
-								);
+                                for ( $i = 1; $i <= $lastIndex; $i++ ) {
 
-
-							}
-
-						} else {
-							if ( '' != $fieldName ) {
-								
-								// if( $sectionHeading == 'Required' ){ }
-								$final_all_complete_indexes[$sectionHeading][$fieldName] = array(
-									'label'      => $label,
-									'definition' => $definitions_and_uses,
-									'accepted_value' => $accepted_values,
-									'example' => $examples,
-									'productTypeSpecific' => array( $sub_category_id => array( 'condition' => lcfirst( $required ) ) )
-								);
-
-							}
+                                    $final_all_complete_indexes[$sectionHeading][$originalFieldName . $i ] =
+                                        array(
+                                        'label'      => $label,
+                                        'definition' => $definitions_and_uses,
+                                        'accepted_value' => $accepted_values,
+                                        'example' => $examples,
+                                        'productTypeSpecific' => array( $sub_category_id => array( 'condition' => lcfirst( $required ) ) )
+                                    );
 
 
-						}
+                                }
+
+                            } else {
+                                if ( '' != $fieldName ) {
+                                    
+                                    // if( $sectionHeading == 'Required' ){ }
+                                    $final_all_complete_indexes[$sectionHeading][$fieldName] = array(
+                                        'label'      => $label,
+                                        'definition' => $definitions_and_uses,
+                                        'accepted_value' => $accepted_values,
+                                        'example' => $examples,
+                                        'productTypeSpecific' => array( $sub_category_id => array( 'condition' => lcfirst( $required ) ) )
+                                    );
+
+                                }
 
 
-					}
-
-				}
-
-			}
+                            }
 
 
-		}
+                        }
+
+                    }
+
+                }
+
+
+            }
+
+            $amazonCategoryList = $final_all_complete_indexes;
+			$_SESSION['amazonCategoryList'] = $amazonCategoryList;
+
+		} else{
+			$amazonCategoryList = $_SESSION['amazonCategoryList'];
+		}    
 
 		// ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
 
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
+        if( empty( $_SESSION['products_template_fields_json'] ) ){ 
 
-		$products_template_fields_key = array_search( 'Template', $listname_of_all_tabs_files  );
-		$products_template_fields     = $listname_of_all_tabs_files[$products_template_fields_key];
+            $products_template_fields_key = array_search( 'Template', $listname_of_all_tabs_files  );
+            $products_template_fields     = $listname_of_all_tabs_files[$products_template_fields_key];
 
-		$highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($products_template_fields)->getHighestColumn());
-		$highestRow         = $spreadsheet->getSheetByName($products_template_fields)->getHighestRow();
+            $highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($products_template_fields)->getHighestColumn());
+            $highestRow         = $spreadsheet->getSheetByName($products_template_fields)->getHighestRow();
 
-		$sectionHeading                 = ''; 
-		$products_template_fields_array = array();
+            $sectionHeading                 = ''; 
+            $products_template_fields_array = array();
 
-		for ( $row = 1; $row <= 3; ++$row ) {
+            for ( $row = 1; $row <= 3; ++$row ) {
 
-			$products_template_fields_array[$row] = array();
-			for ( $col = 1; $col <= $highestColumnIndex; ++$col ) {
+                $products_template_fields_array[$row] = array();
+                for ( $col = 1; $col <= $highestColumnIndex; ++$col ) {
 
-				$value                                      = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow($col, $row)->getValue();
-				$products_template_fields_array[$row][$col] = $value;
+                    $value                                      = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow($col, $row)->getValue();
+                    $products_template_fields_array[$row][$col] = $value;
 
-			}
+                }
+            }
+
+            $products_template_fields_json = json_encode( $products_template_fields_array );
+            $_SESSION['products_template_fields_json'] = $products_template_fields_json;
+
+		} else{
+			$products_template_fields_json = $_SESSION['products_template_fields_json'];
 		}
-
-		$products_template_fields_json = json_encode( $products_template_fields_array );
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
 		$saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
 		$location_for_seller  = $seller_id;
-
-
 
 		if ( isset( $saved_amazon_details[ $location_for_seller ] ) && ! empty( $saved_amazon_details[ $location_for_seller ] ) && is_array( $saved_amazon_details[ $location_for_seller ] ) ) {
 			$shop_data = $saved_amazon_details[ $location_for_seller ];
