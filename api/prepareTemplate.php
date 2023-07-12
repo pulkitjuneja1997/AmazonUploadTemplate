@@ -301,6 +301,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     public function ced_amazon_prepare_upload_template( $request_body ){
 
+        print_r($request_body);
+
 		$fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
         $this->template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
