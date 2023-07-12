@@ -830,7 +830,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 session_start();
 $request_body = $_POST;
 
-var_dump($request_body);
+// var_dump($request_body);
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
