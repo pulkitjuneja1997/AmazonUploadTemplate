@@ -313,6 +313,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     public function ced_amazon_prepare_upload_template( $request_body ) {
 
+		ini_set("memory_limit", "-1");
+
         $fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
         $this->template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
@@ -347,8 +349,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		
 		if( 0 == $request_body['rowNum'] ){
 
-			// session_destroy();
-			// session_start();
+			session_destroy();
+			session_start();
 			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
 			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
 
@@ -824,17 +826,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 }
 
+session_start();
 $request_body = $_POST;
 
-if( 0 == $request_body['rowNum'] && isset( $_SESSION ) ){
-
-    session_destroy();
-    session_start();
-
-} else{
-    session_start();
-}
- 
 var_dump($request_body);
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
