@@ -6,7 +6,8 @@
       },
     "routes": [
     
-        { "src": "/prepareTemplate", "methods": ["POST"], "dest": "/api/prepareTemplate.php" }
+      { "src": "/prepareTemplate", "methods": ["POST"], "dest": "/api/prepareTemplate.php" },
+      { "src": "/prepareUploadTemplate", "methods": ["POST"], "dest": "/api/prepareUploadTemplate.php" }
        
     ]
 }
