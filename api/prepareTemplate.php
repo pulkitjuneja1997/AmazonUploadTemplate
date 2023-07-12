@@ -707,6 +707,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 $request_body = $_POST;
 
+var_dump($request_body);
+
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general_options'] ) ? $request_body['ced_amazon_general_options'] : array();
 $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
@@ -716,6 +718,7 @@ $instance->results                    = isset( $request_body['results'] ) ? $req
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
 
+die;
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
 
