@@ -51,9 +51,13 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 			$seller_id = ! empty( $_POST['seller_id'] ) ? sanitize_text_field( $_POST['seller_id'] ) : '';
 
-			$ced_amazon_general_options_arr = get_option( 'ced_amazon_general_options', array() );
-			$ced_amazon_general_options     = $ced_amazon_general_options_arr[$seller_id];
+			// $ced_amazon_general_options_arr = get_option( 'ced_amazon_general_options', array() );
 
+			// $ced_amazon_general_options_arr = $this->ced_amazon_general_options;
+			// $ced_amazon_general_options     = $ced_amazon_general_options_arr[$seller_id];
+
+			$ced_amazon_general_options = $this->ced_amazon_general_options;
+			
 			foreach ( $fieldsArray as $fieldsKey2 => $fieldsValue ) {
 
 				if ( 'Mandantory' == $fieldsKey ) {
@@ -84,7 +88,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 					}
 
 					$display_heading     = 1;
-					$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $defaultGlobal, $meta_keyGlobal, '' );
+					$prodileRowHTml      = $this->prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $defaultGlobal, $meta_keyGlobal, '' );
 					$profileSectionHtml .= $prodileRowHTml;
 
 				} else {
@@ -111,9 +115,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 	public function prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $globalValueDefault, $globalValueMetakey, $cross="no" ) {
 		
-        $results   = $this->results;
-        $query     = $this->query;
-      
+        $results        = $this->results;
+        $query          = $this->query;
         $addedMetaKeys  = $this->addedMetaKeys;
 		
 		$rowHtml  = '';
@@ -242,7 +245,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			}
 		}
 
-		$attributes = wc_get_attribute_taxonomies();
+		$attributes = $this->attributes;
 
 		if ( ! empty( $attributes ) ) {
 			foreach ( $attributes as $attributesObject ) {
@@ -314,8 +317,11 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
         $this->template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
 
-        $display_saved_values  = isset( $request_body['display_saved_values'] ) ? trim( $request_body['display_saved_values']  ) : 'no';
+        $display_saved_values    = isset( $request_body['display_saved_values'] ) ? trim( $request_body['display_saved_values']  ) : 'no';
         $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? $request_body['current_amazon_profile'] : '';
+		$last                    = isset( $request_body['last'] ) ? $request_body['last'] : "false";
+		$rowName                 = isset( $request_body['rowName'] ) ? $request_body['rowName'] : "";
+
 
 		$this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 		
@@ -339,10 +345,19 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			),
 		);  
 		
-		$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
-		$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
+		if( 0 == $request_body['rowNum'] ){
 
-		file_put_contents($localFileName, $fileContents );
+			session_destroy();
+			session_start();
+			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
+			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
+
+		    file_put_contents($localFileName, $fileContents );
+			$_SESSION['localFileName'] = $localFileName;
+
+		} else{
+			$localFileName = $_SESSION['localFileName'];
+		}
 
 		$this->reader->setLoadAllSheets();
 		$this->reader->setReadDataOnly(true);
@@ -353,6 +368,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		if( 0 == $request_body['rowNum'] ){
 
+			
 			$valid_values_key = array_search( 'Valid Values', $listname_of_all_tabs_files );
 			$valid_values     = $listname_of_all_tabs_files[$valid_values_key];
 
@@ -434,6 +450,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
                 }
 
             }
+
+			$_SESSION['valid_values_array'] = $valid_values_array;
+			$_SESSION['sub_category_id']    = $subCategory;
           
         } else{
             $valid_values_array = $_SESSION['valid_values_array'] ;
@@ -443,8 +462,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $sub_category_id = $subCategory;    
 
 
-        if( 1 == $request_body['rowNum'] ){
-            echo json_encode( array( 'success' => true, 'data' => 'sessionprepared' )  );
+        if( 48 == $request_body['rowNum'] ){
+            print_r($_SESSION);
 		    die;
         }
 
@@ -630,35 +649,35 @@ class Amazon_Integration_For_Woocommerce_Admin {
             $products_template_fields_json = json_encode( $products_template_fields_array );
             $_SESSION['products_template_fields_json'] = $products_template_fields_json;
 
-            $saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
-            $location_for_seller  = $seller_id;
+            // $saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
+            // $location_for_seller  = $seller_id;
 
-            if ( isset( $saved_amazon_details[ $location_for_seller ] ) && ! empty( $saved_amazon_details[ $location_for_seller ] ) && is_array( $saved_amazon_details[ $location_for_seller ] ) ) {
-                $shop_data = $saved_amazon_details[ $location_for_seller ];
+            // if ( isset( $saved_amazon_details[ $location_for_seller ] ) && ! empty( $saved_amazon_details[ $location_for_seller ] ) && is_array( $saved_amazon_details[ $location_for_seller ] ) ) {
+            //     $shop_data = $saved_amazon_details[ $location_for_seller ];
 
-                $userCountry = $shop_data['ced_mp_name'];
-            } else {
-                echo wp_send_json_error( ' Unable to get Shop Data. ' );
-                die;
-            }
+            //     $userCountry = $shop_data['ced_mp_name'];
+            // } else {
+            //     echo wp_send_json_error( ' Unable to get Shop Data. ' );
+            //     die;
+            // }
 
-            $upload_dir = wp_upload_dir();
+            // $upload_dir = wp_upload_dir();
 
-            $dirname  = $upload_dir['basedir'] . '/ced-amazon/amazon-templates/' . $userCountry . '/' . $sub_category_id;
-            $fileName = $dirname . '/products_template_fields.json';
+            // $dirname  = $upload_dir['basedir'] . '/ced-amazon/amazon-templates/' . $userCountry . '/' . $sub_category_id;
+            // $fileName = $dirname . '/products_template_fields.json';
 
-            if ( ! is_dir( $dirname ) ) {
-                wp_mkdir_p( $dirname );
-            }
+            // if ( ! is_dir( $dirname ) ) {
+            //     wp_mkdir_p( $dirname );
+            // }
 
-            wp_mkdir_p( $dirname );
+            // wp_mkdir_p( $dirname );
 
-            if ( ! file_exists( $fileName ) ) {
-                $jsonFile = fopen( $fileName, 'w' );
-                fwrite( $jsonFile, $products_template_fields_json );
-                fclose( $jsonFile );
-                chmod( $fileName, 0777 );
-            }
+            // if ( ! file_exists( $fileName ) ) {
+            //     $jsonFile = fopen( $fileName, 'w' );
+            //     fwrite( $jsonFile, $products_template_fields_json );
+            //     fclose( $jsonFile );
+            //     chmod( $fileName, 0777 );
+            // }
 
 		} else{
 			$products_template_fields_json = $_SESSION['products_template_fields_json'];
@@ -666,14 +685,13 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
-        if( 1 == $request_body['rowNum'] ){
-            echo json_encode( array( 'success' => true, 'data' => 'sessionPrepared') );
-		    die;
-        }
+        // if( 1 == $request_body['rowNum'] ){
+        //     echo json_encode( array( 'success' => true, 'data' => 'sessionPrepared') );
+		//     die;
+        // }
 
-		$amazonCategoryList = $final_all_complete_indexes;
+		// $amazonCategoryList = $final_all_complete_indexes;
 		$valid_values       = $valid_values_array;
-
 
 		if ( ! empty( $amazonCategoryList ) ) {
 
@@ -681,106 +699,122 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$optionalFields = array();
 			$html           = '';
 
-			$results       = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
-			$query         = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
-			$addedMetaKeys = get_option( 'CedUmbProfileSelectedMetaKeys', false );
+			// foreach ( $amazonCategoryList as $fieldsKey => $fieldsArray ) {
+			$rowNameArray = explode(' - ', $rowName );	
+			$modRowName   = $rowNameArray[0];
+			if( !empty($amazonCategoryList[$modRowName]) ){	
 
-			foreach ( $amazonCategoryList as $fieldsKey => $fieldsArray ) {
-
-				$select_html2 = $this->prepareProfileFieldsSection( $results, $query, $addedMetaKeys, $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
+				$select_html2 = $this->prepareProfileFieldsSection( $modRowName, $amazonCategoryList[$modRowName], $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $this->template_id );
+				// $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
 
 				if ( $select_html2['display_heading'] ) {
 					$select_html .= '<tr class="categoryAttributes" ><td colspan="3"></td></tr>
 					<tr class="categoryAttributes "><th colspan="3" class="profileSectionHeading">
 					<label style="font-size: 1.25rem;color: #6574cd;" >';
 
-					$select_html .= $fieldsKey;
+					// $select_html .= $fieldsKey;
+					$select_html .= $modRowName;
 					$select_html .= ' Fields </label></th></tr><tr class="categoryAttributes" ><td colspan="3"></td></tr>';
 
 				}
 
 				$select_html     .= $select_html2['html'];
-				$optionalFields[] = $select_html2['optionsFields'];
+				// $optionalFields[] = $select_html2['optionsFields'];
+
+				$a = isset($_SESSION['optionalFields']) ? $_SESSION['optionalFields'] : [];
+				$_SESSION['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
 
 			}
 
-			if ( 'no' == $display_saved_values ) {
+			if( ( 'string' == gettype($last) && "true" == $last ) ){
 
-				if ( ! empty( $optionalFields ) ) {
+				if ( 'no' == $display_saved_values ) {
 
-					$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
-					<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+					if ( ! empty( $optionalFields ) ) {
 
-					$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+						$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
 
-					foreach ( $optionalFields as $optionalField ) {
-						foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
-							$html .= '<optgroup label="' . $fieldsKey1 . '">';
-							foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
 
-								$html .= '<option value="';
-								$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
-								$html .= '" >';
-								$html .= $fieldsValue[0]['label'];
-								$html .= ' (';
-								$html .= $fieldsKey2;
-								$html .= ') </option>';
+						foreach ( $optionalFields as $optionalField ) {
+							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+								$html .= '<optgroup label="' . $fieldsKey1 . '">';
+								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
 
-							}
+									$html .= '<option value="';
+									$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
+									$html .= '" >';
+									$html .= $fieldsValue[0]['label'];
+									$html .= ' (';
+									$html .= $fieldsKey2;
+									$html .= ') </option>';
 
-							$html .= '</optgroup>';
-						}
-					}
-
-					$html .= '</select></td>';
-					$html .= '<td><button class="ced_amazon_add_rows_button" id="';
-					$html .= $fieldsKey;
-					$html .= '">Add Row</button></td></tr>';
-				}
-
-				$select_html .= $html;
-
-			} else {
-
-				if ( ! empty( $optionalFields ) ) {
-					$optional_fields = array_values( $optionalFields );
-
-					$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
-					<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
-
-					$optionalFieldsHtml = '';
-					$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
-
-					$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-					foreach ( $optionalFields as $optionalField ) {
-						foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
-							$html .= '<optgroup label="' . $fieldsKey1 . '">';
-							foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
-
-								if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
-									$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
-
-								} else {
-
-									$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
-									$optionalFieldsHtml .= $prodileRowHTml;
-									// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
-									// $optionalFieldsHtml .= $prodileRowHTml;
 								}
+
+								$html .= '</optgroup>';
 							}
-							$html .= '</optgroup>';
 						}
+
+						$html .= '</select></td>';
+						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
+						$html .= $fieldsKey;
+						$html .= '">Add Row</button></td></tr>';
 					}
 
-					$html .= '</select></td>';
-					$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
-
-					$select_html .= $optionalFieldsHtml;
 					$select_html .= $html;
 
+				} else {
+
+					if ( ! empty( $optionalFields ) ) {
+						$optional_fields = array_values( $optionalFields );
+
+						$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+						$optionalFieldsHtml = '';
+						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
+
+						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+						foreach ( $optionalFields as $optionalField ) {
+							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+								$html .= '<optgroup label="' . $fieldsKey1 . '">';
+								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+									if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
+										$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
+
+									} else {
+
+										$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
+										$optionalFieldsHtml .= $prodileRowHTml;
+										// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
+										// $optionalFieldsHtml .= $prodileRowHTml;
+									}
+								}
+								$html .= '</optgroup>';
+							}
+						}
+
+						$html .= '</select></td>';
+						$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
+
+						$select_html .= $optionalFieldsHtml;
+						$select_html .= $html;
+
+					}
 				}
-			}
+
+			}	
+
+			
 		}
+
+		if( 'string' == gettype($last) && "true" == $last ){
+			session_destroy();
+		} elseif( 'boolean' == gettype($last)  && $last ){
+			session_destroy();
+		} 
 
 		echo json_encode( array( 'success' => true, 'data' => $select_html )  );
 		die;
