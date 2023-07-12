@@ -321,6 +321,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		
 		// wp_raise_memory_limit('admin');
 		
+        session_start();
         $curl = curl_init();
 
 		// $current_amazon_profile = array();
@@ -625,41 +626,42 @@ class Amazon_Integration_For_Woocommerce_Admin {
             $products_template_fields_json = json_encode( $products_template_fields_array );
             $_SESSION['products_template_fields_json'] = $products_template_fields_json;
 
+            $saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
+            $location_for_seller  = $seller_id;
+
+            if ( isset( $saved_amazon_details[ $location_for_seller ] ) && ! empty( $saved_amazon_details[ $location_for_seller ] ) && is_array( $saved_amazon_details[ $location_for_seller ] ) ) {
+                $shop_data = $saved_amazon_details[ $location_for_seller ];
+
+                $userCountry = $shop_data['ced_mp_name'];
+            } else {
+                echo esc_attr( wp_send_json_error( ' Unable to get Shop Data. ' ) );
+                wp_die();
+            }
+
+            $upload_dir = wp_upload_dir();
+
+            $dirname  = $upload_dir['basedir'] . '/ced-amazon/amazon-templates/' . $userCountry . '/' . $sub_category_id;
+            $fileName = $dirname . '/products_template_fields.json';
+
+            if ( ! is_dir( $dirname ) ) {
+                wp_mkdir_p( $dirname );
+            }
+
+            wp_mkdir_p( $dirname );
+
+            if ( ! file_exists( $fileName ) ) {
+                $jsonFile = fopen( $fileName, 'w' );
+                fwrite( $jsonFile, $products_template_fields_json );
+                fclose( $jsonFile );
+                chmod( $fileName, 0777 );
+            }
+
 		} else{
 			$products_template_fields_json = $_SESSION['products_template_fields_json'];
 		}
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
-		$saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
-		$location_for_seller  = $seller_id;
-
-		if ( isset( $saved_amazon_details[ $location_for_seller ] ) && ! empty( $saved_amazon_details[ $location_for_seller ] ) && is_array( $saved_amazon_details[ $location_for_seller ] ) ) {
-			$shop_data = $saved_amazon_details[ $location_for_seller ];
-
-			$userCountry = $shop_data['ced_mp_name'];
-		} else {
-			echo esc_attr( wp_send_json_error( ' Unable to get Shop Data. ' ) );
-			wp_die();
-		}
-
-		$upload_dir = wp_upload_dir();
-
-		$dirname  = $upload_dir['basedir'] . '/ced-amazon/amazon-templates/' . $userCountry . '/' . $sub_category_id;
-		$fileName = $dirname . '/products_template_fields.json';
-
-		if ( ! is_dir( $dirname ) ) {
-			wp_mkdir_p( $dirname );
-		}
-
-		wp_mkdir_p( $dirname );
-
-		if ( ! file_exists( $fileName ) ) {
-			$jsonFile = fopen( $fileName, 'w' );
-			fwrite( $jsonFile, $products_template_fields_json );
-			fclose( $jsonFile );
-			chmod( $fileName, 0777 );
-		}
 
 		$amazonCategoryList = $final_all_complete_indexes;
 		$valid_values       = $valid_values_array;
