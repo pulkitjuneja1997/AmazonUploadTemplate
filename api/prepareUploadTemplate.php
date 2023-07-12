@@ -378,7 +378,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 
         if( 1 == $request_body['rowNum'] ){
-            echo wp_send_json_success( 'sessionPrepared' );
+            echo json_encode( array( 'success' => true, 'data' => 'sessionPrepared' )  );
 		    wp_die();
         }
 
@@ -449,7 +449,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 
         if( 1 == $request_body['rowNum'] ){
-            echo wp_send_json_success( 'sessionPrepared' );
+            echo json_encode( array( 'success' => true, 'data' => 'sessionprepared' )  );
 		    wp_die();
         }
 
@@ -672,7 +672,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
         if( 1 == $request_body['rowNum'] ){
-            echo wp_send_json_success( 'sessionPrepared' );
+            echo json_encode( array( 'success' => true, 'data' => 'sessionPrepared') );
 		    wp_die();
         }
 
@@ -787,7 +787,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			}
 		}
 
-		echo wp_send_json_success( $select_html );
+		echo json_encode( array( 'success' => true, 'data' => $select_html )  );
 		wp_die();
 
 	}
