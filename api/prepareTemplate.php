@@ -322,9 +322,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         // ----------------------------------------------------- testtttttttt ----------------------------------------------------------
 
-		if( 0 == $rowNum ){
-
-			$this->b = 'pulkit';
+		if( 0 == $request_body['rowNum'] ){
 
 			$valid_values_key = array_search( 'Valid Values', $listname_of_all_tabs_files );
 			$valid_values     = $listname_of_all_tabs_files[$valid_values_key];
