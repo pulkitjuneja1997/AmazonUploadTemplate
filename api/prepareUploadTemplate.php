@@ -29,6 +29,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	*/
 	public function __construct() {
 
+        error_reporting(~0);
+		ini_set('display_errors', 1);
+
 		$this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 
     }
@@ -38,7 +41,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	*
 	* Function to prepare profile fields section
 	*/
-	public function prepareProfileFieldsSection( $results, $query, $addedMetaKeys, $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $seller_id ) {
+	public function prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $seller_id ) {
 
 		if ( ! empty( $fieldsArray ) ) {
 			$profileSectionHtml = '';
@@ -106,10 +109,13 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	* Function to prepare profile rows
 	*/
 
-	public function prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $globalValueDefault, $globalValueMetakey, $cross="no" ) {
+	public function prepareProfileRows( $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $req, $required, $fieldsKey2, $fieldsValue, $globalValue, $globalValueDefault, $globalValueMetakey, $cross="no" ) {
 		
+        $results   = $this->results;
+        $query     = $this->query;
+      
+        $addedMetaKeys  = $this->addedMetaKeys;
 		
-					
 		$rowHtml  = '';
 		$rowHtml .= '<tr class="categoryAttributes" id="ced_amazon_categories" data-attr="' . $req . '">';
 
@@ -302,28 +308,27 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 
 
-    public function ced_amazon_prepare_upload_template( $fileUrl = '', $fileName = '', $display_saved_values = 'no', $template_id = '', $seller_id = ''  ) {
+    public function ced_amazon_prepare_upload_template( $request_body ) {
+
+        $fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
+		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
+        $this->template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
+
+        $display_saved_values  = isset( $request_body['display_saved_values'] ) ? trim( $request_body['display_saved_values']  ) : 'no';
+        $current_amazon_profile  = isset( $request_body['current_amazon_profile'] ) ? $request_body['current_amazon_profile'] : '';
 
 		$this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 		
-		// error_reporting(~1);
-		// ini_set('display_errors', 1);
+		// wp_raise_memory_limit('admin');
+		
+        $curl = curl_init();
 
-		// ini_set('memory_limit', '1024MB');
-		wp_raise_memory_limit('admin');
-		$curl = curl_init();
-
-		global $wpdb;
-		$results       = $wpdb->get_results( "SELECT DISTINCT meta_key FROM {$wpdb->prefix}postmeta", 'ARRAY_A' );
-		$query         = $wpdb->get_results( $wpdb->prepare( "SELECT `meta_value` FROM  {$wpdb->prefix}postmeta WHERE `meta_key` LIKE %s", '_product_attributes' ), 'ARRAY_A' );
-		$addedMetaKeys = get_option( 'CedUmbProfileSelectedMetaKeys', false );
-
-		$current_amazon_profile = array();
-		if ( ! empty( $template_id ) ) {
-			global $wpdb;
-			$result                 = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ced_amazon_profiles WHERE `id` = %s ", $template_id ), 'ARRAY_A' );
-			$current_amazon_profile = isset( $result[0] ) ? $result[0] : array();
-		}
+		// $current_amazon_profile = array();
+		// if ( ! empty( $template_id ) ) {
+		// 	global $wpdb;
+		// 	$result                 = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ced_amazon_profiles WHERE `id` = %s ", $template_id ), 'ARRAY_A' );
+		// 	$current_amazon_profile = isset( $result[0] ) ? $result[0] : array();
+		// }
 
 
 		$select_html = '';
@@ -335,8 +340,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		);  
 		
 		$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
-
-		// $fileContents  = file_get_contents($fileUrl);
 		$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
 
 		file_put_contents($localFileName, $fileContents );
