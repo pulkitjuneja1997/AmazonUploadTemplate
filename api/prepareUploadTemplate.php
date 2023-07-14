@@ -830,6 +830,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 session_start();
 $request_body = $_POST;
 
+if( 3 == $request_body['rowNum'] ){
+ print_r($_SESSION); die('ol');
+}
+
 // var_dump($request_body);
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
