@@ -313,9 +313,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     public function ced_amazon_prepare_upload_template( $request_body ) {
 
-		$session = isset( $request_body['session'] ) ? $request_body['session'] : array(); 
-
 		ini_set("memory_limit", "-1");
+
         $fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
         $this->template_id  = isset( $request_body['template_id'] ) ? trim( $request_body['template_id']  ) : '';
@@ -325,11 +324,21 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$last                    = isset( $request_body['last'] ) ? $request_body['last'] : "false";
 		$rowName                 = isset( $request_body['rowName'] ) ? $request_body['rowName'] : "";
 
+
 		$this->reader = new \PhpOffice\PhpSpreadsheet\Reader\Xlsx();
 		
 		// wp_raise_memory_limit('admin');
 		
         $curl = curl_init();
+
+		// $current_amazon_profile = array();
+		// if ( ! empty( $template_id ) ) {
+		// 	global $wpdb;
+		// 	$result                 = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}ced_amazon_profiles WHERE `id` = %s ", $template_id ), 'ARRAY_A' );
+		// 	$current_amazon_profile = isset( $result[0] ) ? $result[0] : array();
+		// }
+
+
 		$select_html = '';
 		$arrContextOptions=array(
 			"ssl"=>array(
@@ -347,10 +356,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
 
 		    file_put_contents($localFileName, $fileContents );
-			$session['localFileName'] = $localFileName;
+			$_SESSION['localFileName'] = $localFileName;
 
 		} else{
-			$localFileName = $session['localFileName'];
+			$localFileName = $_SESSION['localFileName'];
 		}
 
 		$this->reader->setLoadAllSheets();
@@ -399,7 +408,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$valid_values_array = array();
 		$subCategory        = '';
 
-        if( empty( $session['valid_values_array'] ) ){ 
+        if( empty( $_SESSION['valid_values_array'] ) ){ 
 
             for ($row = 1; $row <= $highestRow; ++$row) {
                 for ($col = 1; $col <= $highestColumnIndex; ++$col) {
@@ -445,19 +454,19 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
             }
 
-			$session['valid_values_array'] = $valid_values_array;
-			$session['sub_category_id']    = $subCategory;
+			$_SESSION['valid_values_array'] = $valid_values_array;
+			$_SESSION['sub_category_id']    = $subCategory;
           
         } else{
-            $valid_values_array = $session['valid_values_array'] ;
-            $subCategory        = $session['sub_category_id'];
+            $valid_values_array = $_SESSION['valid_values_array'] ;
+            $subCategory        = $_SESSION['sub_category_id'];
         }
     
         $sub_category_id = $subCategory;    
 
 
         if( 48 == $request_body['rowNum'] ){
-            print_r($session);
+            print_r($_SESSION);
 		    die;
         }
 
@@ -493,7 +502,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$reqHeadingCol              = '';
 		$final_all_complete_indexes = array();
 
-        if( empty( $session['amazonCategoryList'] ) ){ 
+        if( empty( $_SESSION['amazonCategoryList'] ) ){ 
 
             for ( $row = 2; $row <= $highestRow; ++$row ) {
 
@@ -607,10 +616,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
             }
 
             $amazonCategoryList = $final_all_complete_indexes;
-			$session['amazonCategoryList'] = $amazonCategoryList;
+			$_SESSION['amazonCategoryList'] = $amazonCategoryList;
 
 		} else{
-			$amazonCategoryList = $session['amazonCategoryList'];
+			$amazonCategoryList = $_SESSION['amazonCategoryList'];
 		}    
 
 		// ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
@@ -618,7 +627,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
-        if( empty( $session['products_template_fields_json'] ) ){ 
+        if( empty( $_SESSION['products_template_fields_json'] ) ){ 
 
             $products_template_fields_key = array_search( 'Template', $listname_of_all_tabs_files  );
             $products_template_fields     = $listname_of_all_tabs_files[$products_template_fields_key];
@@ -641,7 +650,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
             }
 
             $products_template_fields_json = json_encode( $products_template_fields_array );
-            $session['products_template_fields_json'] = $products_template_fields_json;
+            $_SESSION['products_template_fields_json'] = $products_template_fields_json;
 
             // $saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
             // $location_for_seller  = $seller_id;
@@ -674,7 +683,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
             // }
 
 		} else{
-			$products_template_fields_json = $session['products_template_fields_json'];
+			$products_template_fields_json = $_SESSION['products_template_fields_json'];
 		}
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
@@ -715,8 +724,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$select_html     .= $select_html2['html'];
 				// $optionalFields[] = $select_html2['optionsFields'];
 
-				$a = isset($session['optionalFields']) ? $session['optionalFields'] : [];
-				$session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
+				$a = isset($_SESSION['optionalFields']) ? $_SESSION['optionalFields'] : [];
+				$_SESSION['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
 
 			}
 
@@ -804,7 +813,13 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			
 		}
 
-		echo json_encode( array( 'success' => true, 'data' => $select_html, 'session' => $session )  );
+		if( 'string' == gettype($last) && "true" == $last ){
+			session_destroy();
+		} elseif( 'boolean' == gettype($last)  && $last ){
+			session_destroy();
+		} 
+
+		echo json_encode( array( 'success' => true, 'data' => $select_html )  );
 		die;
 
 	}
@@ -816,7 +831,7 @@ session_start();
 $request_body = $_POST;
 
 if( 3 == $request_body['rowNum'] ){
- print_r($session); die('ol');
+ print_r($_SESSION); die('ol');
 }
 
 // var_dump($request_body);
