@@ -380,7 +380,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				
 			}
 
-			echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames ) );
+			echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames, 'session' => $session ) );
 			die;
 		}
 
