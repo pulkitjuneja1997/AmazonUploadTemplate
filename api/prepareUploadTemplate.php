@@ -22,6 +22,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
     public $domain;
     public $seller_id;
 	public $session;
+	public $template_id;
 
     /**
 	* Initialize the class and set its properties.
@@ -44,13 +45,15 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	*/
 	public function prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $seller_id ) {
 
+		print_r($fieldsArray);
+		print_r($fieldsArray);
 		if ( ! empty( $fieldsArray ) ) {
 			$profileSectionHtml = '';
 			$optionalFields     = array();
 			$display_heading    = 0;
 			$html               = '';
 
-			$seller_id = ! empty( $_POST['seller_id'] ) ? $_POST['seller_id'] : '';
+			$seller_id = $this->seller_id;
 
 			// $ced_amazon_general_options_arr = get_option( 'ced_amazon_general_options', array() );
 
@@ -149,7 +152,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		
 		$default_value = isset( $saved_value['default'] ) ? $saved_value['default'] : '';
-		$template_id = isset( $_POST['template_id'] ) ?  $_POST['template_id'] : '';
+		$template_id   = $this->template_id;
 
 		// test
 		if ( empty( $default_value ) && 'yes' == $globalValue && empty( $template_id ) ) {
@@ -214,7 +217,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$rowHtml        .= '<td>';
 		$selected_value2 = isset( $saved_value['metakey'] ) ? $saved_value['metakey'] : '';
 
-		$template_id = isset( $_POST['template_id'] ) ? $_POST['template_id']  : '';
+		$template_id = $this->template_id;
 		// test
 		if ( empty( $selected_value2 ) && 'yes' == $globalValue && empty( $template_id ) ) {
 			$selected_value2 = $globalValueMetakey;
@@ -850,6 +853,8 @@ $instance->results                    = isset( $request_body['results'] ) ? $req
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
 $instance->session                    = isset( $request_body['session'] ) ? $request_body['session'] : array();
+$instance->template_id                = isset( $request_body['template_id'] ) ? $request_body['template_id'] : array();
+
 
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
