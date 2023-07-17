@@ -48,6 +48,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		if( $this->rowNum > 110 ){
 			print_r($fieldsKey);
+			print_r($sub_category_id);
 			print_r($fieldsArray);
 		}
 
@@ -580,28 +581,26 @@ class Amazon_Integration_For_Woocommerce_Admin {
                                 //$range = explode($reapt[0], $fieldNameArray);
 
                                 for ( $i = 1; $i <= $lastIndex; $i++ ) {
-
                                     $final_all_complete_indexes[$sectionHeading][$originalFieldName . $i ] =
                                         array(
                                         'label'      => $label,
                                         'definition' => $definitions_and_uses,
                                         'accepted_value' => $accepted_values,
                                         'example' => $examples,
+										'row' => $row,
                                         'productTypeSpecific' => array( $sub_category_id => array( 'condition' => lcfirst( $required ) ) )
                                     );
-
-
                                 }
 
                             } else {
                                 if ( '' != $fieldName ) {
-                                    
                                     // if( $sectionHeading == 'Required' ){ }
                                     $final_all_complete_indexes[$sectionHeading][$fieldName] = array(
                                         'label'      => $label,
                                         'definition' => $definitions_and_uses,
                                         'accepted_value' => $accepted_values,
                                         'example' => $examples,
+										'row' => $row,
                                         'productTypeSpecific' => array( $sub_category_id => array( 'condition' => lcfirst( $required ) ) )
                                     );
 
