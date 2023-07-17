@@ -315,6 +315,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		$session = isset( $request_body['session'] ) ? $request_body['session'] : array(); 
 
+		if( !empty( $session ) ){
+            $session = json_decode($session, true);
+		}
+
 		ini_set("memory_limit", "-1");
         $fileUrl   = isset( $request_body['fileUrl'] ) ? trim( $request_body['fileUrl']  ) : '';
 		$fileName  = isset( $request_body['fileName'] ) ? trim( $request_body['fileName']  ) : '';
@@ -351,6 +355,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$session['localFileName'] = $localFileName;
 
 		} else{
+			$session = 
 			$localFileName = $session['localFileName'];
 		}
 
