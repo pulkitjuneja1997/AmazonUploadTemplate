@@ -50,7 +50,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$display_heading    = 0;
 			$html               = '';
 
-			$seller_id = ! empty( $_POST['seller_id'] ) ? sanitize_text_field( $_POST['seller_id'] ) : '';
+			$seller_id = ! empty( $_POST['seller_id'] ) ? $_POST['seller_id'] : '';
 
 			// $ced_amazon_general_options_arr = get_option( 'ced_amazon_general_options', array() );
 
@@ -149,7 +149,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		
 		$default_value = isset( $saved_value['default'] ) ? $saved_value['default'] : '';
-		$template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : '';
+		$template_id = isset( $_POST['template_id'] ) ?  $_POST['template_id'] : '';
 
 		// test
 		if ( empty( $default_value ) && 'yes' == $globalValue && empty( $template_id ) ) {
@@ -214,7 +214,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$rowHtml        .= '<td>';
 		$selected_value2 = isset( $saved_value['metakey'] ) ? $saved_value['metakey'] : '';
 
-		$template_id = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : '';
+		$template_id = isset( $_POST['template_id'] ) ? $_POST['template_id']  : '';
 		// test
 		if ( empty( $selected_value2 ) && 'yes' == $globalValue && empty( $template_id ) ) {
 			$selected_value2 = $globalValueMetakey;
