@@ -317,6 +317,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		if( !empty( $session ) ){
             $session = json_decode($session, true);
+		} else{
+			$session = [];
 		}
 
 		ini_set("memory_limit", "-1");
@@ -350,7 +352,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
 			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
 
-			$session = [];
+			// $session = [];
 		    file_put_contents($localFileName, $fileContents );
 			$session['localFileName'] = $localFileName;
 
