@@ -740,6 +740,11 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 				// $optionalFields[] = $select_html2['optionsFields'];
 
+				if ( $this->rowNum >3 ){
+					print_r($this->session['optionalFields']);
+					// die;
+				}
+
 				$a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
 				$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
 
