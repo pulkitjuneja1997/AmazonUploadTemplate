@@ -705,12 +705,14 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$modRowName   = $rowNameArray[0];
 			if( !empty($amazonCategoryList[$modRowName]) ){	
 
-				if( $row > 3 ){
-					die('innnnnnnn');
-				}
-
 				$select_html2 = $this->prepareProfileFieldsSection( $modRowName, $amazonCategoryList[$modRowName], $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $this->template_id );
 				// $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
+
+				if( $row > 3 ){
+
+					print_r($select_html2);
+					die('innnnnnnn');
+				}
 
 				if ( $select_html2['display_heading'] ) {
 					$select_html .= '<tr class="categoryAttributes" ><td colspan="3"></td></tr>
