@@ -1,0 +1,3291 @@
+{
+    "success": true,
+    "data": "<tr>\n\t\t\t\t\t\t\t<td><\/td>\n\t\t\t\t\t\t\t<td>\n\t\t\t\t\t\t\t    <input value=\"pants\"  type=\"hidden\" name=\"ced_amazon_profile_data[secondary_category]\" >\n\t\t\t\t\t\t\t    <input id=\"ced_amazon_profile_name\" value=\"amazonTemplate\" type=\"hidden\" name=\"ced_amazon_profile_data[template_type]\" >\n\t\t\t\t\t\t\t\t<input class=\"ced_amazon_profile_url\" id=\"ced_amazon_profile_name\" value=\"https:\/\/wp-pulkit.theprime.dev\/wp-content\/uploads\/2023\/07\/Jeans.xlsm\" type=\"hidden\" name=\"ced_amazon_profile_data[file_url]\" >\n\t\t\t\t\t\t\t<\/td>\n\t\t\t\t\t\t<\/tr>",
+    "session": {
+        "localFileName": "\/tmp\/tempxls0pgHv4",
+        "valid_values_array": {
+            "Product Sub-type": {
+                "all_cat": {
+                    "pants": "pants"
+                }
+            },
+            "Product ID Type": {
+                "pants": {
+                    "GTIN": "GTIN",
+                    "EAN": "EAN",
+                    "GCID": "GCID",
+                    "UPC": "UPC",
+                    "ASIN": "ASIN"
+                }
+            },
+            "Recommended Browse Nodes": {
+                "pants": {
+                    "1968076031": "1968076031"
+                }
+            },
+            "Closure Type": {
+                "pants": {
+                    "Hook and Eye": "Hook and Eye",
+                    "Magnetic": "Magnetic",
+                    "Button": "Button",
+                    "Hook and Bar": "Hook and Bar",
+                    "Pull On": "Pull On",
+                    "Buckle": "Buckle",
+                    "Zipper": "Zipper",
+                    "Drawstring": "Drawstring",
+                    "Snap": "Snap",
+                    "Hook and Loop": "Hook and Loop"
+                }
+            },
+            "Product Care Instructions": {
+                "pants": {
+                    "Dry Clean Only": "Dry Clean Only",
+                    "Machine Wash": "Machine Wash",
+                    "Hand Wash Only": "Hand Wash Only"
+                }
+            },
+            "Style Name": {
+                "pants": {
+                    "Cargo": "Cargo",
+                    "Jogger": "Jogger",
+                    "Art Deco": "Art Deco",
+                    "Carrot": "Carrot",
+                    "Chino": "Chino",
+                    "Punk": "Punk",
+                    "Harem": "Harem",
+                    "Bohemian": "Bohemian",
+                    "Rustic": "Rustic",
+                    "Victorian": "Victorian",
+                    "Classic": "Classic",
+                    "Retro": "Retro",
+                    "Modern": "Modern",
+                    "Drop Crotch": "Drop Crotch",
+                    "Renaissance": "Renaissance",
+                    "Palazzo": "Palazzo",
+                    "Medieval": "Medieval",
+                    "Capri": "Capri",
+                    "Sweatpants": "Sweatpants",
+                    "Boyfriend": "Boyfriend",
+                    "Culotte": "Culotte",
+                    "Sailor": "Sailor"
+                }
+            },
+            "Colour Map": {
+                "pants": {
+                    "Bronze": "Bronze",
+                    "Brown": "Brown",
+                    "Gold": "Gold",
+                    "Blue": "Blue",
+                    "Multicolor": "Multicolor",
+                    "Black": "Black",
+                    "Orange": "Orange",
+                    "Clear": "Clear",
+                    "Red": "Red",
+                    "Silver": "Silver",
+                    "Pink": "Pink",
+                    "White": "White",
+                    "Metallic": "Metallic",
+                    "Beige": "Beige",
+                    "Purple": "Purple",
+                    "Yellow": "Yellow",
+                    "Turquoise": "Turquoise",
+                    "Green": "Green",
+                    "Grey": "Grey",
+                    "Off White": "Off White"
+                }
+            },
+            "Material Type": {
+                "pants": {
+                    "Nylon": "Nylon",
+                    "Polycotton": "Polycotton",
+                    "Leather": "Leather",
+                    "Linen Blend": "Linen Blend",
+                    "Cotton": "Cotton",
+                    "Silk Blend": "Silk Blend",
+                    "Cotton Blend": "Cotton Blend",
+                    "Recycled Polyester": "Recycled Polyester",
+                    "Nylon Blend": "Nylon Blend",
+                    "Silk": "Silk",
+                    "Neoprene": "Neoprene",
+                    "Rayon": "Rayon",
+                    "Polyester Blend": "Polyester Blend",
+                    "Raw Silk": "Raw Silk",
+                    "Faux Leather": "Faux Leather",
+                    "Polyester": "Polyester",
+                    "Spandex": "Spandex",
+                    "Suede": "Suede",
+                    "Wool Blend": "Wool Blend",
+                    "Recycled Polyester Blend": "Recycled Polyester Blend",
+                    "Linen": "Linen",
+                    "Wool": "Wool",
+                    "Art Silk": "Art Silk",
+                    "Acrylic": "Acrylic"
+                }
+            },
+            "Rise Style": {
+                "pants": {
+                    "Low Rise": "Low Rise",
+                    "Mid Rise": "Mid Rise",
+                    "High Rise": "High Rise"
+                }
+            },
+            "Gender": {
+                "pants": {
+                    "Womens": "Womens",
+                    "Unisex Baby": "Unisex Baby",
+                    "Baby Boys": "Baby Boys",
+                    "Boys": "Boys",
+                    "Mens": "Mens",
+                    "Baby Girls": "Baby Girls",
+                    "Unisex": "Unisex",
+                    "Girls": "Girls",
+                    "Unisex Kids": "Unisex Kids"
+                }
+            },
+            "Product Lifecycle Supply Type": {
+                "pants": {
+                    "Perennial": "Perennial",
+                    "Year Round Replenishable": "Year Round Replenishable",
+                    "Seasonal Basic": "Seasonal Basic",
+                    "Fashion": "Fashion"
+                }
+            },
+            "Country\/Region Of Origin": {
+                "pants": {
+                    "India": "India",
+                    "China": "China",
+                    "United States": "United States",
+                    "Afghanistan": "Afghanistan",
+                    "Aland Islands": "Aland Islands",
+                    "Albania": "Albania",
+                    "Algeria": "Algeria",
+                    "American Samoa": "American Samoa",
+                    "Andorra": "Andorra",
+                    "Angola": "Angola",
+                    "Anguilla": "Anguilla",
+                    "Antarctica": "Antarctica",
+                    "Antigua And Barbuda": "Antigua And Barbuda",
+                    "Argentina": "Argentina",
+                    "Armenia": "Armenia",
+                    "Aruba": "Aruba",
+                    "Australia": "Australia",
+                    "Austria": "Austria",
+                    "Azerbaijan": "Azerbaijan",
+                    "Bahamas": "Bahamas",
+                    "Bahrain": "Bahrain",
+                    "Bangladesh": "Bangladesh",
+                    "Barbados": "Barbados",
+                    "Belarus": "Belarus",
+                    "Belgium": "Belgium",
+                    "Belize": "Belize",
+                    "Benin": "Benin",
+                    "Bermuda": "Bermuda",
+                    "Bhutan": "Bhutan",
+                    "Bolivia": "Bolivia",
+                    "Bosnia and Herzegovina": "Bosnia and Herzegovina",
+                    "Botswana": "Botswana",
+                    "Bouvet Island": "Bouvet Island",
+                    "Brazil": "Brazil",
+                    "British Indian Ocean Territory": "British Indian Ocean Territory",
+                    "British Virgin Islands": "British Virgin Islands",
+                    "Brunei": "Brunei",
+                    "Bulgaria": "Bulgaria",
+                    "Burkina Faso": "Burkina Faso",
+                    "Burma (Myanmar)": "Burma (Myanmar)",
+                    "Burundi": "Burundi",
+                    "Cambodia": "Cambodia",
+                    "Cameroon": "Cameroon",
+                    "Canada": "Canada",
+                    "Cape Verde": "Cape Verde",
+                    "Cayman Islands": "Cayman Islands",
+                    "Central African Republic": "Central African Republic",
+                    "Chad": "Chad",
+                    "Chile": "Chile",
+                    "Christmas Island": "Christmas Island",
+                    "Cocos (Keeling) Islands": "Cocos (Keeling) Islands",
+                    "Colombia": "Colombia",
+                    "Comoros": "Comoros",
+                    "Cook Islands": "Cook Islands",
+                    "Costa Rica": "Costa Rica",
+                    "Croatia": "Croatia",
+                    "Cuba": "Cuba",
+                    "Cyprus": "Cyprus",
+                    "Czech Republic": "Czech Republic",
+                    "Democratic Republic of the Congo": "Democratic Republic of the Congo",
+                    "Denmark": "Denmark",
+                    "Djibouti": "Djibouti",
+                    "Dominica": "Dominica",
+                    "Dominican Republic": "Dominican Republic",
+                    "Ecuador": "Ecuador",
+                    "Egypt": "Egypt",
+                    "El Salvador": "El Salvador",
+                    "Equatorial Guinea": "Equatorial Guinea",
+                    "Eritrea": "Eritrea",
+                    "Estonia": "Estonia",
+                    "Ethiopia": "Ethiopia",
+                    "Falkland Islands": "Falkland Islands",
+                    "Faroe Islands": "Faroe Islands",
+                    "Fiji": "Fiji",
+                    "Finland": "Finland",
+                    "France": "France",
+                    "French Guiana": "French Guiana",
+                    "French Polynesia": "French Polynesia",
+                    "French Southern Territories": "French Southern Territories",
+                    "Great Britain": "Great Britain",
+                    "Gabon": "Gabon",
+                    "Gambia": "Gambia",
+                    "Georgia": "Georgia",
+                    "Germany": "Germany",
+                    "Ghana": "Ghana",
+                    "Gibraltar": "Gibraltar",
+                    "Greece": "Greece",
+                    "Greenland": "Greenland",
+                    "Grenada": "Grenada",
+                    "Guadeloupe": "Guadeloupe",
+                    "Guam": "Guam",
+                    "Guatemala": "Guatemala",
+                    "Guernsey": "Guernsey",
+                    "Guinea": "Guinea",
+                    "Guinea-Bissau": "Guinea-Bissau",
+                    "Guyana": "Guyana",
+                    "Haiti": "Haiti",
+                    "Heard and McDonald Islands": "Heard and McDonald Islands",
+                    "Holy See (Vatican City)": "Holy See (Vatican City)",
+                    "Honduras": "Honduras",
+                    "Hong Kong": "Hong Kong",
+                    "Hungary": "Hungary",
+                    "Iceland": "Iceland",
+                    "Indonesia": "Indonesia",
+                    "Iran": "Iran",
+                    "Iraq": "Iraq",
+                    "Ireland": "Ireland",
+                    "Isle of Man": "Isle of Man",
+                    "Israel": "Israel",
+                    "Italy": "Italy",
+                    "Ivory Coast": "Ivory Coast",
+                    "Jamaica": "Jamaica",
+                    "Japan": "Japan",
+                    "Jersey": "Jersey",
+                    "Jordan": "Jordan",
+                    "Kazakhstan": "Kazakhstan",
+                    "Kenya": "Kenya",
+                    "Kiribati": "Kiribati",
+                    "Kuwait": "Kuwait",
+                    "Kyrgyzstan": "Kyrgyzstan",
+                    "Laos": "Laos",
+                    "Latvia": "Latvia",
+                    "Lebanon": "Lebanon",
+                    "Lesotho": "Lesotho",
+                    "Liberia": "Liberia",
+                    "Libya": "Libya",
+                    "Liechtenstein": "Liechtenstein",
+                    "Lithuania": "Lithuania",
+                    "Luxembourg": "Luxembourg",
+                    "Macau": "Macau",
+                    "North Macedonia": "North Macedonia",
+                    "Madagascar": "Madagascar",
+                    "Malawi": "Malawi",
+                    "Malaysia": "Malaysia",
+                    "Maldives": "Maldives",
+                    "Mali": "Mali",
+                    "Malta": "Malta",
+                    "Marshall Islands": "Marshall Islands",
+                    "Martinique": "Martinique",
+                    "Mauritania": "Mauritania",
+                    "Mauritius": "Mauritius",
+                    "Mayotte": "Mayotte",
+                    "Mexico": "Mexico",
+                    "Micronesia": "Micronesia",
+                    "Moldova": "Moldova",
+                    "Monaco": "Monaco",
+                    "Mongolia": "Mongolia",
+                    "Montserrat": "Montserrat",
+                    "Morocco": "Morocco",
+                    "Mozambique": "Mozambique",
+                    "Namibia": "Namibia",
+                    "Nauru": "Nauru",
+                    "Nepal": "Nepal",
+                    "Netherlands": "Netherlands",
+                    "New Caledonia": "New Caledonia",
+                    "New Zealand": "New Zealand",
+                    "Nicaragua": "Nicaragua",
+                    "Niger": "Niger",
+                    "Nigeria": "Nigeria",
+                    "Niue": "Niue",
+                    "Norfolk Island": "Norfolk Island",
+                    "North Korea": "North Korea",
+                    "Northern Mariana Islands": "Northern Mariana Islands",
+                    "Norway": "Norway",
+                    "Oman": "Oman",
+                    "Pakistan": "Pakistan",
+                    "Palau": "Palau",
+                    "Palestinian Territory": "Palestinian Territory",
+                    "Panama": "Panama",
+                    "Papua New Guinea": "Papua New Guinea",
+                    "Paraguay": "Paraguay",
+                    "Peru": "Peru",
+                    "Philippines": "Philippines",
+                    "Pitcairn Islands": "Pitcairn Islands",
+                    "Poland": "Poland",
+                    "Portugal": "Portugal",
+                    "Puerto Rico": "Puerto Rico",
+                    "Qatar": "Qatar",
+                    "Republic of the Congo": "Republic of the Congo",
+                    "Reunion": "Reunion",
+                    "Romania": "Romania",
+                    "Russia": "Russia",
+                    "Rwanda": "Rwanda",
+                    "S. Georgia and S. Sandwich Isls.": "S. Georgia and S. Sandwich Isls.",
+                    "Saint Helena": "Saint Helena",
+                    "Saint Kitts And Nevis": "Saint Kitts And Nevis",
+                    "Saint Lucia": "Saint Lucia",
+                    "Saint Pierre and Miquelon": "Saint Pierre and Miquelon",
+                    "Saint Vincent And The Grenadines": "Saint Vincent And The Grenadines",
+                    "Saint-Martin": "Saint-Martin",
+                    "Samoa": "Samoa",
+                    "San Marino": "San Marino",
+                    "Sao Tome And Principe": "Sao Tome And Principe",
+                    "Saudi Arabia": "Saudi Arabia",
+                    "Senegal": "Senegal",
+                    "Serbia": "Serbia",
+                    "Seychelles": "Seychelles",
+                    "Sierra Leone": "Sierra Leone",
+                    "Singapore": "Singapore",
+                    "Slovakia": "Slovakia",
+                    "Slovenia": "Slovenia",
+                    "Solomon Islands": "Solomon Islands",
+                    "Somalia": "Somalia",
+                    "South Africa": "South Africa",
+                    "South Korea": "South Korea",
+                    "Spain": "Spain",
+                    "Sri Lanka": "Sri Lanka",
+                    "Sudan": "Sudan",
+                    "Suriname": "Suriname",
+                    "Svalbard": "Svalbard",
+                    "Swaziland": "Swaziland",
+                    "Sweden": "Sweden",
+                    "Switzerland": "Switzerland",
+                    "Syria": "Syria",
+                    "Taiwan": "Taiwan",
+                    "Tajikistan": "Tajikistan",
+                    "Tanzania": "Tanzania",
+                    "Thailand": "Thailand",
+                    "Timor-Leste": "Timor-Leste",
+                    "Togo": "Togo",
+                    "Tokelau": "Tokelau",
+                    "Tonga": "Tonga",
+                    "Trinidad And Tobago": "Trinidad And Tobago",
+                    "Tunisia": "Tunisia",
+                    "Turkey": "Turkey",
+                    "Turkmenistan": "Turkmenistan",
+                    "Turks And Caicos Islands": "Turks And Caicos Islands",
+                    "Tuvalu": "Tuvalu",
+                    "Uganda": "Uganda",
+                    "Ukraine": "Ukraine",
+                    "United Arab Emirates": "United Arab Emirates",
+                    "Uruguay": "Uruguay",
+                    "US Minor Outlying Islands": "US Minor Outlying Islands",
+                    "US Virgin Islands": "US Virgin Islands",
+                    "Uzbekistan": "Uzbekistan",
+                    "Vanuatu": "Vanuatu",
+                    "Venezuela": "Venezuela",
+                    "Vietnam": "Vietnam",
+                    "Wallis and Futuna": "Wallis and Futuna",
+                    "Western Sahara": "Western Sahara",
+                    "Yemen": "Yemen",
+                    "Zambia": "Zambia",
+                    "Zimbabwe": "Zimbabwe",
+                    "Unknown": "Unknown",
+                    "United Kingdom": "United Kingdom"
+                }
+            },
+            "Fabric Type": {
+                "pants": {
+                    "Pure Linen": "Pure Linen",
+                    "Synthetic": "Synthetic",
+                    "Nylon": "Nylon",
+                    "Polycotton": "Polycotton",
+                    "Pure Wool": "Pure Wool",
+                    "Corduroy": "Corduroy",
+                    "Leather": "Leather",
+                    "Velvet": "Velvet",
+                    "Linen Blend": "Linen Blend",
+                    "Cotton": "Cotton",
+                    "Cotton Blend": "Cotton Blend",
+                    "Crepe": "Crepe",
+                    "Georgette": "Georgette",
+                    "Chiffon": "Chiffon",
+                    "Silk": "Silk",
+                    "Lace": "Lace",
+                    "Satin": "Satin",
+                    "Khadi": "Khadi",
+                    "Rayon": "Rayon",
+                    "Polyester Blend": "Polyester Blend",
+                    "Faux Leather": "Faux Leather",
+                    "Lycra": "Lycra",
+                    "Polyester": "Polyester",
+                    "Spandex": "Spandex",
+                    "Mesh": "Mesh",
+                    "Pure Silk": "Pure Silk",
+                    "Suede": "Suede",
+                    "Silk Slend": "Silk Slend",
+                    "Jacquard": "Jacquard",
+                    "Tulle": "Tulle",
+                    "Wool Blend": "Wool Blend",
+                    "Pure Cotton": "Pure Cotton",
+                    "Organza": "Organza",
+                    "Viscose": "Viscose",
+                    "Linen": "Linen",
+                    "Denim": "Denim",
+                    "Modal": "Modal",
+                    "Net": "Net",
+                    "Wool": "Wool",
+                    "Acrylic": "Acrylic"
+                }
+            },
+            "Material\/Fabric Regulations": {
+                "pants": {
+                    "Wool": "Wool",
+                    "Fur": "Fur",
+                    "Not Applicable": "Not Applicable",
+                    "Bamboo": "Bamboo"
+                }
+            },
+            "Bottoms Body Type": {
+                "pants": {
+                    "Regular": "Regular",
+                    "Plus": "Plus"
+                }
+            },
+            "Target Gender": {
+                "pants": {
+                    "Male": "Male",
+                    "Female": "Female",
+                    "Unisex": "Unisex"
+                }
+            },
+            "Age Range Description": {
+                "pants": {
+                    "Adult": "Adult",
+                    "Kid": "Kid",
+                    "Baby": "Baby"
+                }
+            },
+            "Bottoms Size System": {
+                "pants": {
+                    "IN": "IN"
+                }
+            },
+            "Bottoms Size Class": {
+                "pants": {
+                    "Alpha": "Alpha",
+                    "Age": "Age",
+                    "Numeric": "Numeric"
+                }
+            },
+            "Bottoms Size Value": {
+                "pants": {
+                    "24": "24",
+                    "25": "25",
+                    "26": "26",
+                    "27": "27",
+                    "28": "28",
+                    "29": "29",
+                    "30": "30",
+                    "31": "31",
+                    "32": "32",
+                    "33": "33",
+                    "34": "34",
+                    "35": "35",
+                    "36": "36",
+                    "37": "37",
+                    "38": "38",
+                    "39": "39",
+                    "40": "40",
+                    "41": "41",
+                    "42": "42",
+                    "43": "43",
+                    "44": "44",
+                    "45": "45",
+                    "46": "46",
+                    "47": "47",
+                    "48": "48",
+                    "49": "49",
+                    "50": "50",
+                    "51": "51",
+                    "52": "52",
+                    "53": "53",
+                    "54": "54",
+                    "5XS": "5XS",
+                    "4XS": "4XS",
+                    "3XS": "3XS",
+                    "2XS": "2XS",
+                    "XS": "XS",
+                    "S": "S",
+                    "M": "M",
+                    "L": "L",
+                    "XL": "XL",
+                    "2XL": "2XL",
+                    "3XL": "3XL",
+                    "4XL": "4XL",
+                    "5XL": "5XL",
+                    "6XL": "6XL",
+                    "7XL": "7XL",
+                    "8XL": "8XL",
+                    "9XL": "9XL",
+                    "10XL": "10XL",
+                    "0 Months": "0 Months",
+                    "3 Months": "3 Months",
+                    "6 Months": "6 Months",
+                    "9 Months": "9 Months",
+                    "12 Months": "12 Months",
+                    "18 Months": "18 Months",
+                    "24 Months": "24 Months",
+                    "2 Years": "2 Years",
+                    "3 Years": "3 Years",
+                    "4 Years": "4 Years",
+                    "5 Years": "5 Years",
+                    "6 Years": "6 Years",
+                    "7 Years": "7 Years",
+                    "8 Years": "8 Years",
+                    "9 Years": "9 Years",
+                    "10 Years": "10 Years",
+                    "11 Years": "11 Years",
+                    "12 Years": "12 Years",
+                    "13 Years": "13 Years",
+                    "14 Years": "14 Years",
+                    "15 Years": "15 Years",
+                    "16 Years": "16 Years",
+                    "17 Years": "17 Years",
+                    "18 Years": "18 Years"
+                }
+            },
+            "Bottoms Size To Range": {
+                "pants": {
+                    "24": "24",
+                    "25": "25",
+                    "26": "26",
+                    "27": "27",
+                    "28": "28",
+                    "29": "29",
+                    "30": "30",
+                    "31": "31",
+                    "32": "32",
+                    "33": "33",
+                    "34": "34",
+                    "35": "35",
+                    "36": "36",
+                    "37": "37",
+                    "38": "38",
+                    "39": "39",
+                    "40": "40",
+                    "41": "41",
+                    "42": "42",
+                    "43": "43",
+                    "44": "44",
+                    "45": "45",
+                    "46": "46",
+                    "47": "47",
+                    "48": "48",
+                    "49": "49",
+                    "50": "50",
+                    "51": "51",
+                    "52": "52",
+                    "53": "53",
+                    "54": "54",
+                    "5XS": "5XS",
+                    "4XS": "4XS",
+                    "3XS": "3XS",
+                    "2XS": "2XS",
+                    "XS": "XS",
+                    "S": "S",
+                    "M": "M",
+                    "L": "L",
+                    "XL": "XL",
+                    "2XL": "2XL",
+                    "3XL": "3XL",
+                    "4XL": "4XL",
+                    "5XL": "5XL",
+                    "6XL": "6XL",
+                    "7XL": "7XL",
+                    "8XL": "8XL",
+                    "9XL": "9XL",
+                    "10XL": "10XL",
+                    "0 Months": "0 Months",
+                    "3 Months": "3 Months",
+                    "6 Months": "6 Months",
+                    "9 Months": "9 Months",
+                    "12 Months": "12 Months",
+                    "18 Months": "18 Months",
+                    "24 Months": "24 Months",
+                    "2 Years": "2 Years",
+                    "3 Years": "3 Years",
+                    "4 Years": "4 Years",
+                    "5 Years": "5 Years",
+                    "6 Years": "6 Years",
+                    "7 Years": "7 Years",
+                    "8 Years": "8 Years",
+                    "9 Years": "9 Years",
+                    "10 Years": "10 Years",
+                    "11 Years": "11 Years",
+                    "12 Years": "12 Years",
+                    "13 Years": "13 Years",
+                    "14 Years": "14 Years",
+                    "15 Years": "15 Years",
+                    "16 Years": "16 Years",
+                    "17 Years": "17 Years",
+                    "18 Years": "18 Years"
+                }
+            },
+            "Parentage": {
+                "pants": {
+                    "Parent": "Parent",
+                    "Child": "Child"
+                }
+            },
+            "Relationship Type": {
+                "pants": {
+                    "Variation": "Variation"
+                }
+            },
+            "Variation Theme": {
+                "pants": {
+                    "Material-Size": "Material-Size",
+                    "Material-Color": "Material-Color",
+                    "SizeName-ColorName": "SizeName-ColorName",
+                    "Size": "Size",
+                    "numberofitems": "numberofitems",
+                    "Material": "Material",
+                    "colorname-numberofitems": "colorname-numberofitems",
+                    "Color": "Color",
+                    "sizename-numberofitems": "sizename-numberofitems"
+                }
+            },
+            "Update Delete": {
+                "pants": {
+                    "Update": "Update",
+                    "PartialUpdate": "PartialUpdate",
+                    "Delete": "Delete"
+                }
+            },
+            "Is Autographed": {
+                "pants": {
+                    "Yes": "Yes",
+                    "No": "No"
+                }
+            },
+            "Special Features": {
+                "pants": {
+                    "Lightweight": "Lightweight",
+                    "Stretchable": "Stretchable",
+                    "Wrinkle Resistant": "Wrinkle Resistant",
+                    "Breathable": "Breathable"
+                }
+            },
+            "Item Type Name": {
+                "pants": {
+                    "Compression Pants": "Compression Pants",
+                    "Slacks": "Slacks",
+                    "Medical Scrubs Set": "Medical Scrubs Set",
+                    "Dress Pants": "Dress Pants",
+                    "Leggings": "Leggings",
+                    "Bodystocking": "Bodystocking",
+                    "Hiking Pants": "Hiking Pants",
+                    "Medical Scrubs Pants": "Medical Scrubs Pants",
+                    "Overalls": "Overalls",
+                    "Corduroys": "Corduroys",
+                    "Work Utility Coveralls": "Work Utility Coveralls",
+                    "Yoga Pants": "Yoga Pants",
+                    "Business Casual Pants": "Business Casual Pants",
+                    "Tennis Pants": "Tennis Pants",
+                    "Pants Set": "Pants Set",
+                    "Baby and Toddler Footie": "Baby and Toddler Footie",
+                    "Baby and Toddler Layette Set": "Baby and Toddler Layette Set",
+                    "Jeans": "Jeans",
+                    "Pants": "Pants",
+                    "Casual Pants": "Casual Pants",
+                    "Golf Pants": "Golf Pants",
+                    "Jumpsuit": "Jumpsuit",
+                    "Track Pants": "Track Pants",
+                    "Chefs Pants": "Chefs Pants",
+                    "Work Utility Set": "Work Utility Set",
+                    "Sweatsuit": "Sweatsuit",
+                    "Khakis": "Khakis",
+                    "Sweatpants": "Sweatpants",
+                    "Tracksuit": "Tracksuit",
+                    "Work Utility Pants": "Work Utility Pants",
+                    "Suit Pants": "Suit Pants"
+                }
+            },
+            "Occasion description": {
+                "pants": {
+                    "Bachelorette Party": "Bachelorette Party",
+                    "Baptism": "Baptism",
+                    "Easter": "Easter",
+                    "Christmas": "Christmas",
+                    "Graduation": "Graduation",
+                    "Diwali": "Diwali",
+                    "Prom Homecoming": "Prom Homecoming",
+                    "Anniversary": "Anniversary",
+                    "Birthday": "Birthday",
+                    "St. Patricks Day": "St. Patricks Day",
+                    "Thanksgiving": "Thanksgiving",
+                    "Quinceanera": "Quinceanera",
+                    "Mothers Day": "Mothers Day",
+                    "New Baby": "New Baby",
+                    "New Year": "New Year",
+                    "Wedding": "Wedding",
+                    "Bachelor Party": "Bachelor Party",
+                    "Communion": "Communion",
+                    "Honeymoon": "Honeymoon",
+                    "Fathers Day": "Fathers Day",
+                    "Independence Day": "Independence Day",
+                    "Halloween": "Halloween",
+                    "Valentines Day": "Valentines Day"
+                }
+            },
+            "Duration Unit": {
+                "pants": {
+                    "Months": "Months"
+                }
+            },
+            "Sport Type": {
+                "pants": {
+                    "Rugby": "Rugby",
+                    "Badminton": "Badminton",
+                    "T-Ball": "T-Ball",
+                    "Table Tennis": "Table Tennis",
+                    "Wrestling": "Wrestling",
+                    "Cricket": "Cricket",
+                    "Sailing": "Sailing",
+                    "Swimming": "Swimming",
+                    "Racing": "Racing",
+                    "Boxing": "Boxing",
+                    "Golf": "Golf",
+                    "Triathlon": "Triathlon",
+                    "Bowling": "Bowling",
+                    "Volleyball": "Volleyball",
+                    "Cyclocross": "Cyclocross",
+                    "Mountaineering": "Mountaineering",
+                    "Backcountry Skiing": "Backcountry Skiing",
+                    "Ice Skating": "Ice Skating",
+                    "Surfing": "Surfing",
+                    "Roller Hockey": "Roller Hockey",
+                    "Baseball": "Baseball",
+                    "Canoeing": "Canoeing",
+                    "Running": "Running",
+                    "Softball": "Softball",
+                    "Kitesurfing": "Kitesurfing",
+                    "Paddle Boarding": "Paddle Boarding",
+                    "Climbing": "Climbing",
+                    "Basketball": "Basketball",
+                    "Fishing": "Fishing",
+                    "Squash": "Squash",
+                    "Racquetball": "Racquetball",
+                    "Paintball": "Paintball",
+                    "Snorkeling": "Snorkeling",
+                    "Waterskiing": "Waterskiing",
+                    "Mountain Biking": "Mountain Biking",
+                    "Snowboarding": "Snowboarding",
+                    "Diving": "Diving",
+                    "Water Polo": "Water Polo",
+                    "Windsurfing": "Windsurfing",
+                    "Auto Racing": "Auto Racing",
+                    "Gymnastics": "Gymnastics",
+                    "Multi-Sport": "Multi-Sport",
+                    "Tennis": "Tennis",
+                    "Cycling": "Cycling",
+                    "Hockey": "Hockey",
+                    "Snow Skiing": "Snow Skiing",
+                    "Soccer": "Soccer",
+                    "Roller Skating": "Roller Skating",
+                    "BMX": "BMX",
+                    "Snowmobiling": "Snowmobiling",
+                    "Football": "Football",
+                    "Rock Climbing": "Rock Climbing",
+                    "Equestrian": "Equestrian",
+                    "Alpine Skiing": "Alpine Skiing",
+                    "Lacrosse": "Lacrosse",
+                    "Skateboarding": "Skateboarding",
+                    "Rafting": "Rafting"
+                }
+            },
+            "Belt Style": {
+                "pants": {
+                    "With Belt": "With Belt",
+                    "Without Belt": "Without Belt"
+                }
+            },
+            "character": {
+                "pants": {
+                    "Snoopy": "Snoopy",
+                    "Superman": "Superman",
+                    "Krishh": "Krishh",
+                    "Mickey": "Mickey",
+                    "Princess": "Princess",
+                    "Dhoom": "Dhoom",
+                    "Barbie": "Barbie",
+                    "Power Rangers": "Power Rangers",
+                    "Winnie the Pooh": "Winnie the Pooh",
+                    "Ironman": "Ironman",
+                    "The Little Mermaid": "The Little Mermaid",
+                    "Hulk": "Hulk",
+                    "Cinderella": "Cinderella",
+                    "Ben 10": "Ben 10",
+                    "Chhota Bheem": "Chhota Bheem",
+                    "Nemo": "Nemo",
+                    "Tom & Jerry": "Tom & Jerry",
+                    "Hello Kitty": "Hello Kitty",
+                    "Rapunzel": "Rapunzel",
+                    "Batman": "Batman",
+                    "Nickelodeon": "Nickelodeon",
+                    "Marvel": "Marvel",
+                    "Star Wars": "Star Wars",
+                    "Disney": "Disney",
+                    "Angry Birds": "Angry Birds",
+                    "Tinkerbell": "Tinkerbell",
+                    "Minnie": "Minnie",
+                    "Transformers": "Transformers",
+                    "Bambi": "Bambi",
+                    "Dora": "Dora",
+                    "Spiderman": "Spiderman",
+                    "Other": "Other"
+                }
+            },
+            "Season": {
+                "pants": {
+                    "Winter": "Winter",
+                    "Summer": "Summer",
+                    "Fall": "Fall",
+                    "Spring": "Spring"
+                }
+            },
+            "Pattern": {
+                "pants": {
+                    "Herringbone": "Herringbone",
+                    "Animal Print": "Animal Print",
+                    "Letter Print": "Letter Print",
+                    "Polka Dots": "Polka Dots",
+                    "Stars": "Stars",
+                    "Cartoon": "Cartoon",
+                    "Geometric": "Geometric",
+                    "Moire": "Moire",
+                    "Houndstooth": "Houndstooth",
+                    "Floral": "Floral",
+                    "Solid": "Solid",
+                    "Checkered": "Checkered",
+                    "Fruits": "Fruits",
+                    "Paisley": "Paisley",
+                    "Camouflage": "Camouflage",
+                    "Hearts": "Hearts",
+                    "Striped": "Striped",
+                    "Plaid": "Plaid",
+                    "Chevron": "Chevron",
+                    "Ombre": "Ombre",
+                    "Argyle": "Argyle"
+                }
+            },
+            "Team Name": {
+                "pants": {
+                    "Tennis": "Tennis"
+                }
+            },
+            "Collection": {
+                "pants": {
+                    "autumn-winter 12": "autumn-winter 12",
+                    "spring-summer 12": "spring-summer 12",
+                    "autumn-winter 13": "autumn-winter 13",
+                    "spring-summer 13": "spring-summer 13",
+                    "autumn-winter 14": "autumn-winter 14",
+                    "spring-summer 14": "spring-summer 14",
+                    "autumn-winter 15": "autumn-winter 15",
+                    "spring-summer 15": "spring-summer 15",
+                    "autumn-winter 16": "autumn-winter 16",
+                    "spring-summer 16": "spring-summer 16",
+                    "autumn-winter 17": "autumn-winter 17",
+                    "spring-summer 17": "spring-summer 17",
+                    "autumn-winter 18": "autumn-winter 18",
+                    "spring-summer 18": "spring-summer 18",
+                    "autumn-winter 19": "autumn-winter 19",
+                    "spring-summer 19": "spring-summer 19",
+                    "autumn-winter 20": "autumn-winter 20",
+                    "spring-summer 20": "spring-summer 20",
+                    "autumn-winter 21": "autumn-winter 21",
+                    "spring-summer 21": "spring-summer 21",
+                    "autumn-winter 22": "autumn-winter 22",
+                    "spring-summer 22": "spring-summer 22"
+                }
+            },
+            "Lifestyle": {
+                "pants": {
+                    "Maternity": "Maternity",
+                    "Kids Playwear": "Kids Playwear",
+                    "Nursing": "Nursing",
+                    "Dress": "Dress",
+                    "Work Utility": "Work Utility",
+                    "Athletic": "Athletic",
+                    "Casual": "Casual",
+                    "Uniform": "Uniform",
+                    "Themed": "Themed",
+                    "Exotic": "Exotic"
+                }
+            },
+            "Front Style": {
+                "pants": {
+                    "Flat Front": "Flat Front",
+                    "Pleated Front": "Pleated Front"
+                }
+            },
+            "Fitting type": {
+                "pants": {
+                    "Fitted": "Fitted",
+                    "Regular": "Regular",
+                    "Relaxed": "Relaxed",
+                    "Slim": "Slim",
+                    "Loose": "Loose",
+                    "Skinny": "Skinny",
+                    "Straight": "Straight"
+                }
+            },
+            "Weave Type": {
+                "pants": {
+                    "Gauze": "Gauze",
+                    "Pearl": "Pearl",
+                    "Jacquard": "Jacquard",
+                    "Twill": "Twill",
+                    "Plain": "Plain",
+                    "Satin": "Satin",
+                    "Basket": "Basket",
+                    "Dobby": "Dobby",
+                    "Oxford": "Oxford"
+                }
+            },
+            "Pocket Description": {
+                "pants": {
+                    "Pork Chop Pocket": "Pork Chop Pocket",
+                    "Slit Pocket": "Slit Pocket",
+                    "Slant Pocket": "Slant Pocket",
+                    "Utility Pocket": "Utility Pocket",
+                    "Seam Pocket": "Seam Pocket",
+                    "Straight Pocket": "Straight Pocket",
+                    "Coin Pocket": "Coin Pocket",
+                    "Welt Pocket": "Welt Pocket"
+                }
+            },
+            "Theme": {
+                "pants": {
+                    "Geography": "Geography",
+                    "Video Game": "Video Game",
+                    "Aliens": "Aliens",
+                    "Occasion": "Occasion",
+                    "Tv Shows": "Tv Shows",
+                    "Religion": "Religion",
+                    "Cartoon": "Cartoon",
+                    "City": "City",
+                    "Flag": "Flag",
+                    "Holidays": "Holidays",
+                    "Superhero": "Superhero",
+                    "Animals": "Animals",
+                    "Anime": "Anime",
+                    "Meme": "Meme",
+                    "Cartoon-Characters": "Cartoon-Characters",
+                    "Fantasy": "Fantasy",
+                    "Country": "Country",
+                    "Comedy": "Comedy",
+                    "Politics": "Politics",
+                    "Steampunk": "Steampunk",
+                    "Movies": "Movies",
+                    "Comics": "Comics",
+                    "Sports": "Sports"
+                }
+            },
+            "League Name": {
+                "pants": {
+                    "MLB": "MLB",
+                    "European Basketball": "European Basketball",
+                    "Indian Soccer League": "Indian Soccer League",
+                    "Japanese Basketball": "Japanese Basketball",
+                    "Pro Wrestling League": "Pro Wrestling League",
+                    "WUSA": "WUSA",
+                    "Canadian Premier League": "Canadian Premier League",
+                    "NBA": "NBA",
+                    "E-Sports": "E-Sports",
+                    "Japanese Baseball": "Japanese Baseball",
+                    "Japanese Football": "Japanese Football",
+                    "MLS": "MLS",
+                    "NFL": "NFL",
+                    "Indian Premier League": "Indian Premier League",
+                    "Pro Volleyball League": "Pro Volleyball League",
+                    "Italian Football": "Italian Football",
+                    "International Cricket": "International Cricket",
+                    "Mexican Football Federation": "Mexican Football Federation",
+                    "Spanish Football": "Spanish Football",
+                    "English Football": "English Football",
+                    "Portuguese Football": "Portuguese Football",
+                    "PGA": "PGA",
+                    "NCAA": "NCAA",
+                    "German Football": "German Football",
+                    "NWSL": "NWSL",
+                    "I-League": "I-League",
+                    "French Football": "French Football",
+                    "NHL": "NHL",
+                    "UFC": "UFC",
+                    "Formula 1": "Formula 1",
+                    "Minor League Baseball": "Minor League Baseball",
+                    "Dutch Football": "Dutch Football",
+                    "NASCAR": "NASCAR",
+                    "Tennis": "Tennis",
+                    "Pro Kabaddi League": "Pro Kabaddi League",
+                    "WWE": "WWE",
+                    "Hockey India League": "Hockey India League",
+                    "World Cup Football": "World Cup Football",
+                    "Canadian Football League": "Canadian Football League",
+                    "X-Games": "X-Games",
+                    "National Teams": "National Teams",
+                    "Premier Badminton League": "Premier Badminton League",
+                    "National Lacrosse League": "National Lacrosse League",
+                    "Scottish Football": "Scottish Football",
+                    "World Baseball Classic": "World Baseball Classic",
+                    "More Football Leagues": "More Football Leagues",
+                    "LPGA": "LPGA",
+                    "WNBA": "WNBA"
+                }
+            },
+            "Special Sizes": {
+                "pants": {
+                    "Big": "Big",
+                    "Petite": "Petite",
+                    "Big & Tall": "Big & Tall",
+                    "Plus Size": "Plus Size",
+                    "Misses": "Misses",
+                    "Standard": "Standard",
+                    "Tall": "Tall"
+                }
+            },
+            "Material Features": {
+                "pants": {
+                    "Stretchable": "Stretchable",
+                    "Non-Stretchable": "Non-Stretchable"
+                }
+            },
+            "Leg Style": {
+                "pants": {
+                    "Ankle": "Ankle",
+                    "Cuffed": "Cuffed",
+                    "Flared": "Flared",
+                    "Tapered": "Tapered",
+                    "Cropped": "Cropped",
+                    "Bootcut": "Bootcut",
+                    "Stirrup": "Stirrup",
+                    "Wide": "Wide",
+                    "Trouser": "Trouser",
+                    "Skinny": "Skinny",
+                    "Straight": "Straight"
+                }
+            },
+            "Denim wash degree": {
+                "pants": {
+                    "Light": "Light",
+                    "Medium": "Medium",
+                    "Dark": "Dark"
+                }
+            },
+            "Minimum Advertised Price Display": {
+                "pants": {
+                    "Policy 7": "Policy 7",
+                    "Policy 5": "Policy 5",
+                    "Policy 3": "Policy 3",
+                    "Policy 4": "Policy 4",
+                    "Policy 1": "Policy 1",
+                    "Policy 2": "Policy 2",
+                    "Policy 9": "Policy 9",
+                    "Policy 10": "Policy 10",
+                    "Policy 6": "Policy 6",
+                    "Policy 8": "Policy 8",
+                    "Policy 11": "Policy 11"
+                }
+            },
+            "Website Shipping Weight Unit Of Measure": {
+                "pants": {
+                    "LB": "LB",
+                    "OZ": "OZ",
+                    "KG": "KG",
+                    "GR": "GR",
+                    "MG": "MG"
+                }
+            },
+            "Item Volume Unit Of Measure": {
+                "pants": {
+                    "fluid_ounces": "fluid_ounces",
+                    "ounce": "ounce",
+                    "pint": "pint",
+                    "cubic-ft": "cubic-ft",
+                    "cubic-yd": "cubic-yd",
+                    "pints": "pints",
+                    "quart": "quart",
+                    "milliliter": "milliliter",
+                    "gallons": "gallons",
+                    "cubic-in": "cubic-in",
+                    "cubic ft": "cubic ft",
+                    "Cups": "Cups",
+                    "grams": "grams",
+                    "cc": "cc",
+                    "litres": "litres",
+                    "centiliters": "centiliters",
+                    "liters": "liters",
+                    "quarts": "quarts",
+                    "liter": "liter",
+                    "imperial_gallons": "imperial_gallons",
+                    "Microlitres": "Microlitres",
+                    "cubic-m": "cubic-m",
+                    "l": "l",
+                    "deciliters": "deciliters",
+                    "cubic-cm": "cubic-cm",
+                    "Picolitres": "Picolitres",
+                    "gallon": "gallon",
+                    "Nanolitres": "Nanolitres",
+                    "fluid-oz": "fluid-oz",
+                    "cid": "cid",
+                    "cup": "cup"
+                }
+            },
+            "Item Width Unit Of Measure": {
+                "pants": {
+                    "IN": "IN",
+                    "FT": "FT",
+                    "CM": "CM",
+                    "MM": "MM",
+                    "M": "M",
+                    "Yards": "Yards"
+                }
+            },
+            "Jeans length unit of measure": {
+                "pants": {
+                    "Inches": "Inches",
+                    "Feet": "Feet",
+                    "Centimetres": "Centimetres",
+                    "Millimetres": "Millimetres",
+                    "Metres": "Metres",
+                    "Yards": "Yards"
+                }
+            },
+            "Rise Height Unit": {
+                "pants": {
+                    "IN": "IN",
+                    "FT": "FT",
+                    "CM": "CM",
+                    "MM": "MM",
+                    "M": "M",
+                    "Yards": "Yards"
+                }
+            },
+            "Size Map": {
+                "pants": {
+                    "10XL": "10XL",
+                    "9XL": "9XL",
+                    "8XL": "8XL",
+                    "7XL": "7XL",
+                    "6XL": "6XL",
+                    "5XL": "5XL",
+                    "4XL": "4XL",
+                    "3XL": "3XL",
+                    "2XL": "2XL",
+                    "XL": "XL",
+                    "L": "L",
+                    "M": "M",
+                    "S": "S",
+                    "XS": "XS",
+                    "2XS": "2XS",
+                    "3XS": "3XS",
+                    "4XS": "4XS",
+                    "5XS": "5XS",
+                    "54": "54",
+                    "53": "53",
+                    "52": "52",
+                    "51": "51",
+                    "50": "50",
+                    "49": "49",
+                    "48": "48",
+                    "47": "47",
+                    "46": "46",
+                    "45": "45",
+                    "44": "44",
+                    "43": "43",
+                    "42": "42",
+                    "41": "41",
+                    "40": "40",
+                    "39": "39",
+                    "38": "38",
+                    "37": "37",
+                    "36": "36",
+                    "35": "35",
+                    "34": "34",
+                    "33": "33",
+                    "32": "32",
+                    "31": "31",
+                    "30": "30",
+                    "29": "29",
+                    "28": "28",
+                    "27": "27",
+                    "26": "26",
+                    "25": "25",
+                    "24": "24",
+                    "0 Months - 3 Months": "0 Months - 3 Months",
+                    "3 Months - 6 Months": "3 Months - 6 Months",
+                    "6 Months - 9 Months": "6 Months - 9 Months",
+                    "9 Months - 12 Months": "9 Months - 12 Months",
+                    "12 Months - 18 Months": "12 Months - 18 Months",
+                    "18 Months - 24 Months": "18 Months - 24 Months",
+                    "2 Years - 3 Years": "2 Years - 3 Years",
+                    "3 Years - 4 Years": "3 Years - 4 Years",
+                    "4 Years - 5 Years": "4 Years - 5 Years",
+                    "5 Years - 6 Years": "5 Years - 6 Years",
+                    "6 Years - 7 Years": "6 Years - 7 Years",
+                    "7 Years - 8 Years": "7 Years - 8 Years",
+                    "8 Years - 9 Years": "8 Years - 9 Years",
+                    "9 Years - 10 Years": "9 Years - 10 Years",
+                    "10 Years - 11 Years": "10 Years - 11 Years",
+                    "11 Years - 12 Years": "11 Years - 12 Years",
+                    "12 Years - 13 Years": "12 Years - 13 Years",
+                    "13 Years - 14 Years": "13 Years - 14 Years",
+                    "14 Years - 15 Years": "14 Years - 15 Years",
+                    "15 Years - 16 Years": "15 Years - 16 Years",
+                    "16 Years - 17 Years": "16 Years - 17 Years",
+                    "17 Years - 18 Years": "17 Years - 18 Years"
+                }
+            },
+            "Item Length Description": {
+                "pants": {
+                    "Extra Long Length": "Extra Long Length",
+                    "Long Length": "Long Length",
+                    "Extra Short Length": "Extra Short Length",
+                    "Standard Length": "Standard Length",
+                    "Short Length": "Short Length"
+                }
+            },
+            "Item Height Unit Of Measure": {
+                "pants": {
+                    "IN": "IN",
+                    "FT": "FT",
+                    "CM": "CM",
+                    "MM": "MM",
+                    "M": "M",
+                    "Yards": "Yards"
+                }
+            },
+            "Waist Size Unit Of Measure": {
+                "pants": {
+                    "Inches": "Inches",
+                    "Feet": "Feet",
+                    "Centimetres": "Centimetres",
+                    "Millimetres": "Millimetres",
+                    "Metres": "Metres",
+                    "Yards": "Yards"
+                }
+            },
+            "Item Length Unit Of Measure": {
+                "pants": {
+                    "IN": "IN",
+                    "FT": "FT",
+                    "CM": "CM",
+                    "MM": "MM",
+                    "M": "M",
+                    "Yards": "Yards"
+                }
+            },
+            "Unit Count Type": {
+                "pants": {
+                    "Count": "Count",
+                    "Fl Oz": "Fl Oz",
+                    "Ounce": "Ounce",
+                    "Pound": "Pound",
+                    "Gram": "Gram",
+                    "Foot": "Foot",
+                    "Sq Ft": "Sq Ft"
+                }
+            },
+            "Is this product a battery or does it use batteries?": {
+                "pants": {
+                    "Yes": "Yes",
+                    "No": "No"
+                }
+            },
+            "Batteries are Included": {
+                "pants": {
+                    "Yes": "Yes",
+                    "No": "No"
+                }
+            },
+            "Battery type\/size": {
+                "pants": {
+                    "battery_type_aa": "battery_type_aa",
+                    "battery_type_aaa": "battery_type_aaa",
+                    "battery_type_lithium_ion": "battery_type_lithium_ion",
+                    "battery_type_a": "battery_type_a",
+                    "battery_type_cr2": "battery_type_cr2",
+                    "battery_type_c": "battery_type_c",
+                    "battery_type_d": "battery_type_d",
+                    "battery_type_cr5": "battery_type_cr5",
+                    "AAAA Battery": "AAAA Battery",
+                    "battery_type_p76": "battery_type_p76",
+                    "battery_type_product_specific": "battery_type_product_specific",
+                    "lithium_polymer": "lithium_polymer",
+                    "unknown": "unknown",
+                    "battery_type_lithium_metal": "battery_type_lithium_metal",
+                    "nonstandard_battery": "nonstandard_battery",
+                    "battery_type_cr123a": "battery_type_cr123a",
+                    "lr44": "lr44",
+                    "12v Battery": "12v Battery",
+                    "battery_type_9v": "battery_type_9v",
+                    "CR2032": "CR2032",
+                    "LR41": "LR41",
+                    "CR2430": "CR2430"
+                }
+            },
+            "Lithium Battery Packaging": {
+                "pants": {
+                    "batteries_packed_with_equipment": "batteries_packed_with_equipment",
+                    "batteries_contained_in_equipment": "batteries_contained_in_equipment",
+                    "batteries_only": "batteries_only"
+                }
+            },
+            "Lithium Battery Energy Content Unit Of Measure": {
+                "pants": {
+                    "Watt Hours": "Watt Hours",
+                    "Milliampere Second (mAs)": "Milliampere Second (mAs)",
+                    "Kilowatt Hours": "Kilowatt Hours",
+                    "Cubic Feet": "Cubic Feet",
+                    "Milliamp Hours (mAh)": "Milliamp Hours (mAh)",
+                    "Milliampere Hour (mAh)": "Milliampere Hour (mAh)",
+                    "British Thermal Units (BTUs)": "British Thermal Units (BTUs)",
+                    "Cubic Meters": "Cubic Meters",
+                    "Joules": "Joules"
+                }
+            },
+            "Lithium Battery Weight Unit Of Measure": {
+                "pants": {
+                    "LB": "LB",
+                    "OZ": "OZ",
+                    "KG": "KG",
+                    "GR": "GR",
+                    "MG": "MG"
+                }
+            },
+            "Condition": {
+                "pants": {
+                    "Collectible - Very Good": "Collectible - Very Good",
+                    "Used - Good": "Used - Good",
+                    "Club": "Club",
+                    "Collectible - Acceptable": "Collectible - Acceptable",
+                    "Collectible - Like New": "Collectible - Like New",
+                    "Used - Like New": "Used - Like New",
+                    "Collectible - Good": "Collectible - Good",
+                    "New": "New",
+                    "Used - Very Good": "Used - Very Good",
+                    "Used - Acceptable": "Used - Acceptable"
+                }
+            },
+            "Product Tax Code": {
+                "pants": {
+                    "A_GEN_EXEMPT": "A_GEN_EXEMPT",
+                    "A_GEN_JEWELLERY": "A_GEN_JEWELLERY",
+                    "A_GEN_PEAK_CESS12": "A_GEN_PEAK_CESS12",
+                    "A_GEN_REDUCED": "A_GEN_REDUCED",
+                    "A_GEN_PEAK": "A_GEN_PEAK",
+                    "A_Gen_Standard": "A_Gen_Standard",
+                    "A_GEN_SUPERREDUCED": "A_GEN_SUPERREDUCED",
+                    "A_GEN_PEAK_CESS60": "A_GEN_PEAK_CESS60"
+                }
+            },
+            "Can Be Gift Messaged": {
+                "pants": {
+                    "Yes": "Yes",
+                    "No": "No"
+                }
+            },
+            "Is Gift Wrap Available?": {
+                "pants": {
+                    "Yes": "Yes",
+                    "No": "No"
+                }
+            },
+            "Currency": {
+                "pants": {
+                    "JPY": "JPY",
+                    "MXN": "MXN",
+                    "EUR": "EUR",
+                    "GBP": "GBP",
+                    "USD": "USD",
+                    "CAD": "CAD",
+                    "INR": "INR",
+                    "CNY": "CNY"
+                }
+            },
+            "Shipping-Template": {
+                "all_cat": {
+                    "Migrated Template": "Migrated Template",
+                    "Migrated Template-Copy-1": "Migrated Template-Copy-1",
+                    "Migrated Template-Copy": "Migrated Template-Copy"
+                }
+            },
+            "Quantity Price Type": {
+                "pants": {
+                    "Fixed": "Fixed",
+                    "Percent": "Percent"
+                }
+            },
+            "Pricing Action": {
+                "pants": {
+                    "delete business_price": "delete business_price"
+                }
+            }
+        },
+        "sub_category_id": "pants",
+        "amazonCategoryList": {
+            "Required": {
+                "feed_product_type": {
+                    "label": "Product Sub-type",
+                    "definition": "A category that best describes the class of product. Values must be chosen from the list in the Valid Values worksheet.",
+                    "accepted_value": "Select a valid value from drop down",
+                    "example": "Shirt",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "item_sku": {
+                    "label": "Seller SKU",
+                    "definition": "A unique identifier for the product, assigned by the merchant.  The SKU must be unique for each product listed.  After you have established a SKU for a product, please do not change it without first deleting the original SKU from our systems through a delete feed.",
+                    "accepted_value": "Unique Identifier. If you don't enter a SKU we'll create one for you.",
+                    "example": "101MyCollectible1",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "brand_name": {
+                    "label": "Brand Name",
+                    "definition": "The brand or manufacturer of the product.",
+                    "accepted_value": "Name of the brand under which products are sold. Usually mentioned on product or package. In case name is not mentioned, kindly use \"Generic\" as brand name",
+                    "example": "Reebok",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "part_number": {
+                    "label": "Manufacturer Part Number",
+                    "definition": "If applicable, please submit the manufacturer's part number for the product.",
+                    "accepted_value": "For most products, this will be identical to the model number or SKU; However, some manufacturers distinguish part number from model number.",
+                    "example": "AB-122",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "external_product_id": {
+                    "label": "Product ID",
+                    "definition": "A standard, alphanumeric string that uniquely identifies the product. This could be a GCID (16 alphanumeric characters), UPC or EAN. This is a required field if product_id_type is provided.",
+                    "accepted_value": "Provide the external ID (numerical barcode mentioned on the product\/packaging) type and corresponding value that is being used to identify the product. This can be an EAN, UPC, ISBN or ASIN.",
+                    "example": "5279173125000",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "external_product_id_type": {
+                    "label": "Product ID Type",
+                    "definition": "The type of standard, unique identifier entered in the Product_ID field. This is a required field if Product_ID is provided.",
+                    "accepted_value": "Select one of the following options: GCID, UPC, EAN ASIN or ISBN",
+                    "example": "UPC",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "item_name": {
+                    "label": "Item Name (aka Title)",
+                    "definition": "A short title for the product. This will be displayed in bold on the product page and in the title bar of the browser window.",
+                    "accepted_value": "An alphanumeric string up to 200 characters.",
+                    "example": "Black, Small cup holder",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "product_description": {
+                    "label": "Product Description",
+                    "definition": "Text - maximum 2000 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc",
+                    "accepted_value": "Text - maximum 2000 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc",
+                    "example": "This beautifully handcrafted dress by newcomer designer Sugar will make you the star of this summer's garden parties. It features a butterfly embroidery on the front, a zip on the back and is made from 100% organic cotton.",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "recommended_browse_nodes": {
+                    "label": "Recommended Browse Nodes",
+                    "definition": "This determines what browse node the item will be assigned to. Always use this field to make your product discoverable to customers.  Please consult the Browse Tree Guide LINK for the best value to use for your product.\n\nyou can find the browse tree guide (BTG) here in https:\/\/sellercentral.amazon.in\/gp\/help\/help-page.html\/ref=ag_1661_cont_scsearch?ie=UTF8&itemID=1661",
+                    "accepted_value": "Indicate the browse node or section of the Amazon website where the product will be assigned. This allows customers to find the product on the website easily. Browse Tree Guide can be downloaded from https:\/\/sellercentral.amazon.in\/gp\/help\/help-popup.html\/?itemID=1641",
+                    "example": "2945",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "closure_type": {
+                    "label": "Closure Type",
+                    "definition": "The closure type of pants, jeans and shorts. Choose from valid values.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Zip",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "model_name": {
+                    "label": "Model Name",
+                    "definition": "The model name for the product.",
+                    "accepted_value": "An alphanumeric string up to a maximum of 50 characters in length.",
+                    "example": "Alicia",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "care_instructions": {
+                    "label": "Product Care Instructions",
+                    "definition": "The care instructions as found on the item of clothing.",
+                    "accepted_value": "An alphanumeric string up to a maximum of 100 characters in length.",
+                    "example": "Dry clean only",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bullet_point1": {
+                    "label": "Bullet Point",
+                    "definition": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "accepted_value": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "example": "Pants feature front pleats, cuffed legs, and 2 back slit pockets with button closures",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bullet_point2": {
+                    "label": "Bullet Point",
+                    "definition": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "accepted_value": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "example": "Pants feature front pleats, cuffed legs, and 2 back slit pockets with button closures",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bullet_point3": {
+                    "label": "Bullet Point",
+                    "definition": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "accepted_value": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "example": "Pants feature front pleats, cuffed legs, and 2 back slit pockets with button closures",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bullet_point4": {
+                    "label": "Bullet Point",
+                    "definition": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "accepted_value": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "example": "Pants feature front pleats, cuffed legs, and 2 back slit pockets with button closures",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bullet_point5": {
+                    "label": "Bullet Point",
+                    "definition": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "accepted_value": "Text - maximum 100 characters. HTML tags and special characters not on a standard keyboard (eg. \u00ae, \u00a9, \u2122 or other Type 1 High ASCII characters) are not supported. Do not use email IDs, phone numbers, external URLs or promotional messages such as 'sale', 'price', 'offer' etc. Do not include any formatting - Amazon will add the bullet points",
+                    "example": "Pants feature front pleats, cuffed legs, and 2 back slit pockets with button closures",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "style_name": {
+                    "label": "Style Name",
+                    "definition": "Describes a style such as \"Boot Cut\" for Jeans, \"Halterneck\" for Tops, \"Duffle\" for Outerwear . Valid values are given and differ depending on the clothing type. Choose from applicable valid values list.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "HalterNeck",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "color_map": {
+                    "label": "Colour Map",
+                    "definition": "Always use this field for the color of your item, it will enable the color filter used by customers. Values must be chosen from the list in the Valid Values worksheet.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "green",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "material_type": {
+                    "label": "Material Type",
+                    "definition": "material type of the product",
+                    "accepted_value": "Specify the primary materials used for manufacturing the item",
+                    "example": "Alpaca",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "rise_style": {
+                    "label": "Rise Style",
+                    "definition": "Indicate the style of clothing designed to sit low on, or below, the hips. Select from list of valid values.",
+                    "accepted_value": "Indicate the style of clothing designed to sit low on, or below, the hips. Select from list of valid values.",
+                    "example": "High",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "color_name": {
+                    "label": "Color",
+                    "definition": "The original colour name of the product.",
+                    "accepted_value": "Mention the primary or prominent color of the product. Mention \"multicolor\" if there are more than one color",
+                    "example": "Light sage",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "department_name": {
+                    "label": "Gender",
+                    "definition": "The department of clothing (men's, women's, etc.) in which the product is found.",
+                    "accepted_value": "Department refers to the gender which the product would be most suitable for(e.g: Male, Female, Unisex)",
+                    "example": "Women",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "size_name": {
+                    "label": "Size",
+                    "definition": "The original size name of the product. Please use the local size for the Marketplace you are selling on.",
+                    "accepted_value": "Mention the numeric or text version of the item's size. (e.g: Small, Medium, Large, 40, 42, 44, etc.)",
+                    "example": "X-Large",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "lifecycle_supply_type": {
+                    "label": "Product Lifecycle Supply Type",
+                    "definition": "",
+                    "accepted_value": "Specify the intended supply method for the item",
+                    "example": "Fashion",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "country_of_origin": {
+                    "label": "Country\/Region Of Origin",
+                    "definition": "The country where the product was issued.",
+                    "accepted_value": "Specify the country\/region where the product was issued.",
+                    "example": "Japan",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "fabric_type": {
+                    "label": "Fabric Type",
+                    "definition": "",
+                    "accepted_value": "List all fabrics separated by ','. Indicate with % composition. Always add \"Viscose\" or \"Rayon\" instead of \"Bamboo\", and \"Azlon\" for Soy",
+                    "example": "75% Cotton, 15% Nylon, 10% Wool",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "external_product_information": {
+                    "label": "HSN Code",
+                    "definition": "Provide the applicable 6\/8 digit HSN tax code for your product.",
+                    "accepted_value": "Provide the applicable 6\/8 digit HSN tax code for your product.",
+                    "example": "610510, 61051048",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "supplier_declared_material_regulation1": {
+                    "label": "Material\/Fabric Regulations",
+                    "definition": "",
+                    "accepted_value": "Does your product contain any of the following materials\/fabrics subject to regulation: Bamboo, Wool, and\/or Fur? Please select all that apply. If none apply, select not applicable.",
+                    "example": "Bamboo, Wool, Fur, Not Applicable",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "supplier_declared_material_regulation2": {
+                    "label": "Material\/Fabric Regulations",
+                    "definition": "",
+                    "accepted_value": "Does your product contain any of the following materials\/fabrics subject to regulation: Bamboo, Wool, and\/or Fur? Please select all that apply. If none apply, select not applicable.",
+                    "example": "Bamboo, Wool, Fur, Not Applicable",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "supplier_declared_material_regulation3": {
+                    "label": "Material\/Fabric Regulations",
+                    "definition": "",
+                    "accepted_value": "Does your product contain any of the following materials\/fabrics subject to regulation: Bamboo, Wool, and\/or Fur? Please select all that apply. If none apply, select not applicable.",
+                    "example": "Bamboo, Wool, Fur, Not Applicable",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "standard_price": {
+                    "label": "Your price",
+                    "definition": "A price greater than 0.  Do not include thousands separators or currency symbols.",
+                    "accepted_value": "Standard Price indicates the price at which product is sold to customers. Please do not use commas or currency signs",
+                    "example": "249.99",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "quantity": {
+                    "label": "Quantity",
+                    "definition": "Merchant-fulfilled products: Enter the quantity of the item you are making available for sale.  This is your current INVENTORY commitment.  Quantity is required for all \"child\" or stand-alone items. If left blank when first submitting the product information, the item will be displayed as \"Out of stock.\"  Do not enter quantity for parent items.\nAmazon-fulfilled products: Do not enter quantity, as it is not applicable for products fulfilled by Amazon.  Instead, submit fulfillment_center_id in a separate column (see data definition for details).",
+                    "accepted_value": "Stock available for online sales",
+                    "example": "152",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "number_of_items": {
+                    "label": "Number of Items",
+                    "definition": "The number of items that are included in the product",
+                    "accepted_value": "A whole number",
+                    "example": "1",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "list_price_with_tax": {
+                    "label": "List Price",
+                    "definition": "Manufacturer's suggested retail price or list price for the product. This is not the same as the offering price, which is specified in the item-price field.",
+                    "accepted_value": "The M.R.P. of the product, in local currency.",
+                    "example": "259.99",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "maximum_retail_price": {
+                    "label": "Maximum Retail Price",
+                    "definition": "This is the maximum retail price that is physically printed on pre-packaged products by manufacturer according to legal metrology act. This is the maximum price that seller can charge a customer.  This attribute is only applicable to IN marketplace.",
+                    "accepted_value": "Maximum Retail Price (MRP) indicates the price mentioned on the product or package. This is the highest price at which the product can be sold to the customer. Please do not use commas or currency signs",
+                    "example": "195",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "main_image_url": {
+                    "label": "Main Image URL",
+                    "definition": "The URL where a main image of the product is located.  It's important that this is supplied for all products.",
+                    "accepted_value": "Images should have 72-pixels-per-inch resolution and be 500 pixels minimum in length (on the longest side). The preferred file format is JPEG (.jpg), and the URL must be fully-formed and valid (i.e., include http:\/\/). When naming your image, you may use the following convention (though not required): Product SKU + View Indicator (.main) + File Extension (.jpg). An example would be: \"15774.main.jpg\".  There cannot be any spaces or high ASCII characters in the image URL.  Save the image to your Web server and supply the URL to the image in this field.  Accepted formats are .jpeg, .jpg, and .gif",
+                    "example": "http:\/\/www.companyname.com\/images\/1250.main.jpg",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bottoms_body_type": {
+                    "label": "Bottoms Body Type",
+                    "definition": "Provide the body type for the bottoms.",
+                    "accepted_value": "Provide the body type for apparel item, select \"Regular\" in case of no special body type.",
+                    "example": "Slim",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "target_gender": {
+                    "label": "Target Gender",
+                    "definition": "Select one of the follownig options: Female, Male, Unisex",
+                    "accepted_value": "Select one of the follownig options: Female, Male, Unisex",
+                    "example": "Female, Male, Unisex",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "age_range_description": {
+                    "label": "Age Range Description",
+                    "definition": "Select one of the following options: Adult, Kids, Baby",
+                    "accepted_value": "Select one of the following options: Adult, Kids, Baby",
+                    "example": "Adult, Kids, Baby",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bottoms_size_system": {
+                    "label": "Bottoms Size System",
+                    "definition": "Provide the size system for the apparel bottoms.",
+                    "accepted_value": "Provide the size system for the apparel bottoms.",
+                    "example": "Size System CA, MX, US",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bottoms_size_class": {
+                    "label": "Bottoms Size Class",
+                    "definition": "Provide the size class for the apparel bottoms.",
+                    "accepted_value": "Provide the size class for the apparel bottoms.",
+                    "example": "Alpha",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "required"
+                        }
+                    }
+                },
+                "bottoms_size": {
+                    "label": "Bottoms Size Value",
+                    "definition": "Provide the size value associated with the size system and size class.",
+                    "accepted_value": "Provide the size value associated with the size system and size class.",
+                    "example": "9, Medium, 9 Months",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "bottoms_size_to": {
+                    "label": "Bottoms Size To Range",
+                    "definition": "Provide the size to value associated with the size system and size class when the size is a range.",
+                    "accepted_value": "Provide the to size value (if range), must be greater than the size value.",
+                    "example": "9.5, Large, 12 Months",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Images": {
+                "other_image_url1": {
+                    "label": "Other Image URL1",
+                    "definition": "The URL for additional images of your product.\n\nThese images will be shown on the detail page when the customer clicks through to see other views associated with the product.  For example, you can use this field to show the label information or packaging of your product. Upload additional images with different views to the item, or with some emotional surrounding as additional image.",
+                    "accepted_value": "A valid URL, including leading \"http:\/\/\"\n\nThe URL is case sensitive, so make sure to use matching capitalisation and no redirections (e.g. .jpeg instead of .jpg). While a web browser might be smart enough to locate your image despite of these little inaccuracies, our image collection process isn't.",
+                    "example": "http:\/\/www.companyname.com\/images\/1250.other1.jpg",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "swatch_image_url": {
+                    "label": "Swatch Image URL",
+                    "definition": "The URL where an image of a colour swatch from the product is located.",
+                    "accepted_value": "Images should have 72-pixels-per-inch resolution and be 30 pixels maximum length (on the longest side). The preferred file format is JPEG (.jpg). When naming your image, please use the following convention: Product SKU + View Indicator (i.e., .swatch) + File Extension (i.e., .jpg). An example would be: \"15774.swatch.jpg\". Save the image to your Web server and supply the URL to the image in this field.",
+                    "example": "http:\/\/www.companyname.com\/images\/1250.swatch.jpg",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Variation": {
+                "parent_child": {
+                    "label": "Parentage",
+                    "definition": "Defines the product within a relationship with another, similar product.  \n\nThe \"parent\" defines the basic data about the product. Parent products are not purchasable; the \"parent\" product simply specifies the attributes of the product that are common among all of its children and only acts as a place holder.  The \"child\" products define the possible variations (i.e., size, colour) of the parent product and represent the items that are actually for sale.\n\nThis field is required if any of the following columns are populated: variation_theme, color, paper_size, maximum_expandable_size, line_size.  If the product does not participate in a variation relationship, use the value \"child.\"\n\nFor further information about how to construct a product variation, please refer to this template's \"Example\" tab.",
+                    "accepted_value": "Please select one of the following values: \n\nparent\nchild",
+                    "example": "parent",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "parent_sku": {
+                    "label": "Parent SKU",
+                    "definition": "If the product is a child product, list the SKU of the parent product which is related.  DO NOT FILL IN THIS FIELD FOR PARENT PRODUCTS.",
+                    "accepted_value": "An alphanumeric string; 1 character minimum in length and 40 characters maximum in length.",
+                    "example": "10162513",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "relationship_type": {
+                    "label": "Relationship Type",
+                    "definition": "Describes the relationship between products that are related. Accessories can be seen on the www.amazon.co.uk site as \"Also Recommended\" selections on certain detail product pages.  Use this field to create an accessory relationship.",
+                    "accepted_value": "Select one of the following options: \nAccessory                                                                      Variation",
+                    "example": "Accessory",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "variation_theme": {
+                    "label": "Variation Theme",
+                    "definition": "Describes the parameter(s) by which the parent product may vary.  The value input for this field should be the same for both the parent and child SKUs. Example: If the product varies by size, input the value Size. If the product varies by colour, input the value Color.   Terms used for variation themes are created by you the merchant. (e.g. 'count' can be any number that you choose).",
+                    "accepted_value": "Select an applicable variation theme.",
+                    "example": "Size\/Color",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Basic": {
+                "update_delete": {
+                    "label": "Update Delete",
+                    "definition": "Specifies the type of operation (Update, PartialUpdate or Delete) to be done on the data provided. If left blank, the default behaviour is \"Update.\"  Use \"Update\" whenever you are changing any field in the existing product's information, including reducing the inventory to 0.  Only use \"Delete\" when you wish to remove a product completely and permanently from the catalogue. \n\nAfter you have established a SKU for a product, please do not try changing it without first deleting the associated product from our systems through a delete feed.",
+                    "accepted_value": "Select one of the following options: Update, PartialUpdate, or Delete.",
+                    "example": "Update",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "manufacturer": {
+                    "label": "Manufacturer",
+                    "definition": "Specify the product's manufacturer.",
+                    "accepted_value": "Specify the manufacturer of the product as mentioned on the product or package",
+                    "example": "XYZ Pvt Ltd",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "model": {
+                    "label": "Model Number",
+                    "definition": "If applicable, please submit the manufacturer's model number for the product.",
+                    "accepted_value": "Provide the manufacturer 's model number for the item",
+                    "example": "RXZER23",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Discovery": {
+                "generic_keywords": {
+                    "label": "Search Terms",
+                    "definition": "Search terms that describe your product: no repetition, no competitor brand names or ASINs.",
+                    "accepted_value": "Search terms that describe your product: no repetition, no competitor brand names or ASINs.",
+                    "example": "Electric",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "is_autographed": {
+                    "label": "Is Autographed",
+                    "definition": "Indicate whether or not your item is autographed",
+                    "accepted_value": "Select 'true' if your product is autographed.  If your product is not autographed, you may leave this field blank.",
+                    "example": "TRUE",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "packer_contact_information": {
+                    "label": "Packer",
+                    "definition": "",
+                    "accepted_value": "If Packer is different from manufacturer, provide address and contact number of the packer. If manufacturer is the packer, provide address and contact number of the manufacturer.",
+                    "example": "ABC Packers, Industrial Estate, Mumbai, India. Customer Care 000 999 999999",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "special_features1": {
+                    "label": "Special Features",
+                    "definition": "describes the top's special feature. Choose from valid values list.",
+                    "accepted_value": "Provide any special features an item has that distinguish it from other, comparable products",
+                    "example": "Dishwasher Safe",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "special_features2": {
+                    "label": "Special Features",
+                    "definition": "describes the top's special feature. Choose from valid values list.",
+                    "accepted_value": "Provide any special features an item has that distinguish it from other, comparable products",
+                    "example": "Dishwasher Safe",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "special_features3": {
+                    "label": "Special Features",
+                    "definition": "describes the top's special feature. Choose from valid values list.",
+                    "accepted_value": "Provide any special features an item has that distinguish it from other, comparable products",
+                    "example": "Dishwasher Safe",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "special_features4": {
+                    "label": "Special Features",
+                    "definition": "describes the top's special feature. Choose from valid values list.",
+                    "accepted_value": "Provide any special features an item has that distinguish it from other, comparable products",
+                    "example": "Dishwasher Safe",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "special_features5": {
+                    "label": "Special Features",
+                    "definition": "describes the top's special feature. Choose from valid values list.",
+                    "accepted_value": "Provide any special features an item has that distinguish it from other, comparable products",
+                    "example": "Dishwasher Safe",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_type_name": {
+                    "label": "Item Type Name",
+                    "definition": "Within a product type there are often multipleitem types defined.  Select a item type from the drop down on the template tab or the a value from the valid values tab",
+                    "accepted_value": "Provide the generic name for you Product (example For 'Vaseline' Item Type name is 'Petroleum Jelly').",
+                    "example": "Petroleum Jelly",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "occasion_type1": {
+                    "label": "Occasion description",
+                    "definition": "A word that defines the occasion for which the clothing can be worn. Choose from the valid values list.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Business",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "occasion_type2": {
+                    "label": "Occasion description",
+                    "definition": "A word that defines the occasion for which the clothing can be worn. Choose from the valid values list.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Business",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "occasion_type3": {
+                    "label": "Occasion description",
+                    "definition": "A word that defines the occasion for which the clothing can be worn. Choose from the valid values list.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Business",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "occasion_type4": {
+                    "label": "Occasion description",
+                    "definition": "A word that defines the occasion for which the clothing can be worn. Choose from the valid values list.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Business",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "occasion_type5": {
+                    "label": "Occasion description",
+                    "definition": "A word that defines the occasion for which the clothing can be worn. Choose from the valid values list.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Business",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "duration_unit_of_measure": {
+                    "label": "Duration Unit",
+                    "definition": "",
+                    "accepted_value": "Provide the corresponding unit",
+                    "example": "Months",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "sport_type1": {
+                    "label": "Sport Type",
+                    "definition": "",
+                    "accepted_value": "Provide any specific sports with which the item is designed to be used",
+                    "example": "Snowboarding",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "sport_type2": {
+                    "label": "Sport Type",
+                    "definition": "",
+                    "accepted_value": "Provide any specific sports with which the item is designed to be used",
+                    "example": "Snowboarding",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "belt_style": {
+                    "label": "Belt Style",
+                    "definition": "Describes the style of a belt",
+                    "accepted_value": "Describes the style of a belt",
+                    "example": "Western",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "subject_character": {
+                    "label": "character",
+                    "definition": "Describes cartoon, movie, etc. character of costume.",
+                    "accepted_value": "An alphanumeric text string; 1 character minimum and 50 characters maximum. If multiple colors are available, a unique record should be submitted for each product.",
+                    "example": "Batman",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "seasons": {
+                    "label": "Season",
+                    "definition": "Select the value that best describes the season associated with the product.",
+                    "accepted_value": "Select from the list of valid values",
+                    "example": "Spring-Summer",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "pattern_type": {
+                    "label": "Pattern",
+                    "definition": "Select the value that best describes the pattern of the product. If the product is a \"Child\" product of a \"Parent\" product with a Variation Theme of or including PATTERN_NAME, you must provide a value for Pattern.",
+                    "accepted_value": "Select from the list of valid values.",
+                    "example": "Striped",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "athlete": {
+                    "label": "Athlete",
+                    "definition": "",
+                    "accepted_value": "Name of athlete participating in the event",
+                    "example": "Michael Jordan, Larry Bird",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "team_name": {
+                    "label": "Team Name",
+                    "definition": "",
+                    "accepted_value": "Please enter the team name of this product",
+                    "example": "Seattle Seahawks, Wisconsin Badgers",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "collection_name": {
+                    "label": "Collection",
+                    "definition": "Select the value that best describes the collection associated with the product.",
+                    "accepted_value": "Select from the list of valid values.",
+                    "example": "Spring-Summer 12",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "importer_contact_information": {
+                    "label": "Importer",
+                    "definition": "",
+                    "accepted_value": "Provide the product's importer name, address and contact number.",
+                    "example": "ABC Importers, Industrial Estate, Mumbai, India. Customer Care 000 999 999999",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "duration": {
+                    "label": "Duration",
+                    "definition": "",
+                    "accepted_value": "Provide the amount of time that the product can be used for or is expected to complete",
+                    "example": "3, 6",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "lifestyle": {
+                    "label": "Lifestyle",
+                    "definition": "A word that defines the occasion for which the clothing can be worn. Choose from the valid values list.",
+                    "accepted_value": "Specify the lifestyle that best represents the item and its use",
+                    "example": "Athletic",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "number_of_pockets": {
+                    "label": "Number Of Pockets",
+                    "definition": "",
+                    "accepted_value": "",
+                    "example": "",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "manufacturer_contact_information": {
+                    "label": "Manufacturer Contact",
+                    "definition": "Address and Customer Care Details of the manufacturer, or where the manufacturer is not the packer, the address and customer care details of the manufacturer and packer",
+                    "accepted_value": "Provide the address and contact number of the manufacturer. You can also provide e-mail, customer care number & website URL of the manufacturer If available.",
+                    "example": "ABC Manufacturer, Industrial Estate, Mumbai, India. Customer Care 000 999 999999",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "fur_description": {
+                    "label": "Fur Description",
+                    "definition": "",
+                    "accepted_value": "Specify a description of the item's fur.  If item contains real fur, include fur origin country. If the fur is dyed\/colored, used, damaged, or contains paws, bellies, tails or waste please indicate as such",
+                    "example": "Pieced Dyed Calf (Fur Origin: Vietnam)",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "front_style": {
+                    "label": "Front Style",
+                    "definition": "Front Pleat Type. Please refer to valid values.",
+                    "accepted_value": "Front Pleat Type. Please refer to valid values.",
+                    "example": "Pleated",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "fit_type": {
+                    "label": "Fitting type",
+                    "definition": "Indicates the cut of shirts, blouses, T-shirts.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Slim Fit",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "weave_type": {
+                    "label": "Weave Type",
+                    "definition": "Specify the type of needlework used in your product.",
+                    "accepted_value": "Select from the list of valid values",
+                    "example": "",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "pocket_description": {
+                    "label": "Pocket Description",
+                    "definition": "",
+                    "accepted_value": "",
+                    "example": "",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "theme": {
+                    "label": "Theme",
+                    "definition": "",
+                    "accepted_value": "Specify the theme of the product. Very similar to subject, but with more general use cases",
+                    "example": "Aliens, Animals",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "league_name": {
+                    "label": "League Name",
+                    "definition": "",
+                    "accepted_value": "Provide the league name associated with this product",
+                    "example": "NBA",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "special_size_type": {
+                    "label": "Special Sizes",
+                    "definition": "Indicates the specialty sizing for specific products.",
+                    "accepted_value": "Any size modifier appropriate to the product. (Refer to the list of valid values)",
+                    "example": "Tall",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "included_components1": {
+                    "label": "Included Item(s)",
+                    "definition": "Specify the item(s) included with the product, e.g. accessories, free gifts.",
+                    "accepted_value": "A text string up to 50 characters.",
+                    "example": "Belt",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "included_components2": {
+                    "label": "Included Item(s)",
+                    "definition": "Specify the item(s) included with the product, e.g. accessories, free gifts.",
+                    "accepted_value": "A text string up to 50 characters.",
+                    "example": "Belt",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "included_components3": {
+                    "label": "Included Item(s)",
+                    "definition": "Specify the item(s) included with the product, e.g. accessories, free gifts.",
+                    "accepted_value": "A text string up to 50 characters.",
+                    "example": "Belt",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "included_components4": {
+                    "label": "Included Item(s)",
+                    "definition": "Specify the item(s) included with the product, e.g. accessories, free gifts.",
+                    "accepted_value": "A text string up to 50 characters.",
+                    "example": "Belt",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "included_components5": {
+                    "label": "Included Item(s)",
+                    "definition": "Specify the item(s) included with the product, e.g. accessories, free gifts.",
+                    "accepted_value": "A text string up to 50 characters.",
+                    "example": "Belt",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_booking_date": {
+                    "label": "Item Booking Date",
+                    "definition": "",
+                    "accepted_value": "Provide the date a vendor must receive a PO in order to deliver goods to Amazon by a specified date using YYYY-MM-DD format",
+                    "example": "2020-12-01",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Product Enrichment": {
+                "material_features": {
+                    "label": "Material Features",
+                    "definition": "",
+                    "accepted_value": "Enter unique features for the item relative to the material of construction",
+                    "example": "Compostable, biodegradable, Is food safe, Fragrance free, Plant based, etc.",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "_3d_technology": {
+                    "label": "_3d_technology",
+                    "definition": "",
+                    "accepted_value": "",
+                    "example": "",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "leg_style": {
+                    "label": "Leg Style",
+                    "definition": "The cut or shape of the pant leg.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Straight",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "fabric_wash": {
+                    "label": "Denim wash degree",
+                    "definition": "For denim, indicates whether the wash is light, medium or dark. Choose from valid values.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "Stone Washed",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "map_policy": {
+                    "label": "Minimum Advertised Price Display",
+                    "definition": "",
+                    "accepted_value": "Select one.",
+                    "example": "Policy 9",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Dimensions": {
+                "website_shipping_weight": {
+                    "label": "Shipping Weight",
+                    "definition": "The weight of the product when packaged to ship. This is displayed on the product page and used to calculate shipping costs for weight-based shipping, if available.",
+                    "accepted_value": "A number with up to 10 digits to the left of the decimal point and 2 digits to the right of the decimal point. Please do not use commas.",
+                    "example": "2.33, 20.75, or 10000.00",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "website_shipping_weight_unit_of_measure": {
+                    "label": "Website Shipping Weight Unit Of Measure",
+                    "definition": "Specify the unit of measurement for your Weight field",
+                    "accepted_value": "Select one of the following options: GR, or KG . Do not include the actual weight, which will be collected in the shipping-weight field.",
+                    "example": "GR",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_volume": {
+                    "label": "Item Volume",
+                    "definition": "Indicates the volume capacity of a product.",
+                    "accepted_value": "A number with up to 10 digits to the left of the decimal point and 2 digits to the right of the decimal point. Please do not use commas.",
+                    "example": "34.78",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_volume_unit_of_measure": {
+                    "label": "Item Volume Unit Of Measure",
+                    "definition": "Indicates the volume capacity of a product.",
+                    "accepted_value": "Indicates the volume capacity of a product.",
+                    "example": "milliliters",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "inseam_length": {
+                    "label": "Jeans length (inches)",
+                    "definition": "The inseam length in inches of Jeans. Choose from valid size values.",
+                    "accepted_value": "Select a value from the Sizes worksheet.",
+                    "example": "32",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_width_unit_of_measure": {
+                    "label": "Item Width Unit Of Measure",
+                    "definition": "Select the unit of measure for Item Width. If Item Width is used, you must also enter the Item Width Unit Of Measure.",
+                    "accepted_value": "Select from the list of valid values.",
+                    "example": "CM",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "inseam_length_unit_of_measure": {
+                    "label": "Jeans length unit of measure",
+                    "definition": "Needs to be filled if you have filled inseam-length.",
+                    "accepted_value": "Select one of the following:\nCM\nIN",
+                    "example": "IN",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_width": {
+                    "label": "Item Width",
+                    "definition": "The width of the product",
+                    "accepted_value": "The width of the product",
+                    "example": "12",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_height": {
+                    "label": "Item Height",
+                    "definition": "The height of the product",
+                    "accepted_value": "The height of the product",
+                    "example": "12",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "rise_height": {
+                    "label": "Rise Height",
+                    "definition": "",
+                    "accepted_value": "Provide the rise height for the item as a number",
+                    "example": "5, 4",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "rise_height_unit_of_measure": {
+                    "label": "Rise Height Unit",
+                    "definition": "",
+                    "accepted_value": "Select the corresponding unit",
+                    "example": "Centimeters, inches",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "size_map": {
+                    "label": "Size Map",
+                    "definition": "Always use this field for the size of your item, it will enable the size filter used by customers. Values must be chosen from the list in the Valid Values worksheet.",
+                    "accepted_value": "Select a value from the Valid Values worksheet.",
+                    "example": "40",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "unit_count": {
+                    "label": "Unit Count",
+                    "definition": "Indicate the number count of a specific product. Skeins of yarn, tubes of paint, and so on. Rarely used in the Toy or Baby category.",
+                    "accepted_value": "provide the number of units in the product.",
+                    "example": "12",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_length_description": {
+                    "label": "Item Length Description",
+                    "definition": "The length of the product. Please refer to valid values.",
+                    "accepted_value": "The length of the product. Please refer to valid values.",
+                    "example": "Ankle-length",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_height_unit_of_measure": {
+                    "label": "Item Height Unit Of Measure",
+                    "definition": "Select the unit of measure for Item Height. If Item Height is used, you must also enter the Item Height Unit Of Measure.",
+                    "accepted_value": "Select from the list of valid values.",
+                    "example": "M",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "waist_size": {
+                    "label": "Jeans width (inches)",
+                    "definition": "The waist siz of Jeans in inches. Choose from valid size values.",
+                    "accepted_value": "Select a value from the Sizes worksheet.",
+                    "example": "30",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "waist_size_unit_of_measure": {
+                    "label": "Waist Size Unit Of Measure",
+                    "definition": "Needs to be filled if you have filled waist-size.",
+                    "accepted_value": "Select one of the following:\nCM\nIN",
+                    "example": "IN",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_length_unit_of_measure": {
+                    "label": "Item Length Unit Of Measure",
+                    "definition": "",
+                    "accepted_value": "",
+                    "example": "",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "item_length": {
+                    "label": "Item Length",
+                    "definition": "The length of the product",
+                    "accepted_value": "The length of the product",
+                    "example": "12",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "unit_count_type": {
+                    "label": "Unit Count Type",
+                    "definition": "Select the unit of measure for PPU Count. If PPU Count is used, you must also enter the PPU Count Unit Of Measure.",
+                    "accepted_value": "Specify the unit of measure for Unit Count. If Unit Count is used, you must also enter the Unit Count Unit Of Measure.",
+                    "example": "Set, Unit, Count",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Compliance": {
+                "batteries_required": {
+                    "label": "Is this product a battery or does it use batteries?",
+                    "definition": "An internal rechargeable, non-replaceable battery (e.g. laptop battery) is also considered a battery.",
+                    "accepted_value": "Select: true or false.",
+                    "example": "FALSE",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "are_batteries_included": {
+                    "label": "Batteries are Included",
+                    "definition": "Select \"yes\" if batteries are contained in the product (e.g. batteries inside a pair of Bluetooth headphones) and\/or included with the product (e.g. batteries packed separately with a camera), otherwise select \"no\"",
+                    "accepted_value": "Select: true or false.",
+                    "example": "TRUE",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "battery_type1": {
+                    "label": "Battery type\/size",
+                    "definition": "Specify the type of battery in the product.",
+                    "accepted_value": "Please refer to the Valid Values worksheet.  Only use this when PowerSource is 'battery'",
+                    "example": "battery_type_lithium_ion",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "battery_type2": {
+                    "label": "Battery type\/size",
+                    "definition": "Specify the type of battery in the product.",
+                    "accepted_value": "Please refer to the Valid Values worksheet.  Only use this when PowerSource is 'battery'",
+                    "example": "battery_type_lithium_ion",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "battery_type3": {
+                    "label": "Battery type\/size",
+                    "definition": "Specify the type of battery in the product.",
+                    "accepted_value": "Please refer to the Valid Values worksheet.  Only use this when PowerSource is 'battery'",
+                    "example": "battery_type_lithium_ion",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "number_of_batteries1": {
+                    "label": "Number of batteries",
+                    "definition": "Number of batteries, including spares (total batteries, not cells per battery)",
+                    "accepted_value": "Any integer greater than or equal to one",
+                    "example": "3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "number_of_batteries2": {
+                    "label": "Number of batteries",
+                    "definition": "Number of batteries, including spares (total batteries, not cells per battery)",
+                    "accepted_value": "Any integer greater than or equal to one",
+                    "example": "3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "number_of_batteries3": {
+                    "label": "Number of batteries",
+                    "definition": "Number of batteries, including spares (total batteries, not cells per battery)",
+                    "accepted_value": "Any integer greater than or equal to one",
+                    "example": "3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "number_of_lithium_metal_cells": {
+                    "label": "Number of Lithium Metal Cells",
+                    "definition": "Total number of Lithium cells (of type Metal) in the product,\u00a0 where the cell isn't contained in an encased battery.",
+                    "accepted_value": "Total number of Lithium cells (of type Metal) in the product,\u00a0 where the cell isn't contained in an encased battery.",
+                    "example": "1, 2, 3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "number_of_lithium_ion_cells": {
+                    "label": "Number of Lithium-ion Cells",
+                    "definition": "Total number of Lithium cells (of type Ion) in the product,\u00a0 where the cell isn't contained in an encased battery.",
+                    "accepted_value": "Total number of Lithium cells (of type Ion) in the product,\u00a0 where the cell isn't contained in an encased battery.",
+                    "example": "1, 2, 3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "lithium_battery_packaging": {
+                    "label": "Lithium Battery Packaging",
+                    "definition": "\u201cBatteries only\u201d: the battery or batteries are sold alone or with items they are not meant to power. \u201cWith equipment\u201d: the battery is included in the package but not pre-installed. \u201cIn equipment\u201d: the battery is pre-installed in the item.",
+                    "accepted_value": "Choices are batteries_only (If battery is a standalone) batteries_contained_in_equipment (if battery is assembled in the item) or batteries_packed_with_equipment (If battery is included in the item packaging but not assembled in the item)",
+                    "example": "batteries_contained_in_equipment",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "lithium_battery_energy_content": {
+                    "label": "Watt hours per battery",
+                    "definition": "Commonly printed on the battery or outer packaging",
+                    "accepted_value": "Watt hrs of\u00a0each battery (or cell) in unit",
+                    "example": "1, 2, 3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "lithium_battery_energy_content_unit_of_measure": {
+                    "label": "Lithium Battery Energy Content Unit Of Measure",
+                    "definition": "Indicate unit of measure if Lithium Battery Energy Content is populated",
+                    "accepted_value": "Indicate unit of measure if Lithium Battery Energy Content is populated",
+                    "example": "watts-hora",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "lithium_battery_weight": {
+                    "label": "Lithium content",
+                    "definition": "Commonly found in manufacturer's technical information",
+                    "accepted_value": "A number with up to 10 digits to the left of the decimal point and 2 digits to the right of the decimal point. Please do not use commas.",
+                    "example": "0.9",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "lithium_battery_weight_unit_of_measure": {
+                    "label": "Lithium Battery Weight Unit Of Measure",
+                    "definition": "Select the unit of measure for Lithium Battery Weight  . If Lithium Battery Weight  is used, you must also enter theLithium Battery Weight  Unit Of Measure.",
+                    "accepted_value": "Select the unit of measure for Lithium Battery Weight  . If Lithium Battery Weight  is used, you must also enter theLithium Battery Weight  Unit Of Measure.",
+                    "example": "grams",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "legal_disclaimer_description": {
+                    "label": "Legal Disclaimer Description",
+                    "definition": "Describes any legal language needed with the product.",
+                    "accepted_value": "An alphanumeric string up to a maximum of 500 characters in length.",
+                    "example": "For residents of NJ, VT, MA, and MI, must be at least 18 & over to purchase.",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "safety_warning": {
+                    "label": "Safety Warning",
+                    "definition": "Specify safety issues associated with the product.",
+                    "accepted_value": "A text string up to 1,000 characters.",
+                    "example": "Choking Hazard",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "Offer": {
+                "condition_type": {
+                    "label": "Condition",
+                    "definition": "Select the value that best describes the product's condition.",
+                    "accepted_value": "Select from the list of valid values.",
+                    "example": "New",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "condition_note": {
+                    "label": "Condition Note",
+                    "definition": "Descriptive text explaining the item\u2019s condition. This Condition Note field is limited to 1000 characters for all Used, Collectible, and Refurbished items. Condition notes are not accepted for products with a condition type of new.",
+                    "accepted_value": "A text string with a maximum of 1,000 characters. The Condition Note field doesn\u2019t allow special characters.",
+                    "example": "New",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "fulfillment_latency": {
+                    "label": "Handling Time",
+                    "definition": "This is time in which you will be able to ship the product after you get an order. The default value is 1 to 2 days. Use this field if your handling time is greater than 2 business days.",
+                    "accepted_value": "This is time in which you will be able to ship the product after you get an order. The default value is 1 to 2 days. Use this field if your handling time is greater than 2 business days.",
+                    "example": "3",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "product_site_launch_date": {
+                    "label": "Launch Date",
+                    "definition": "Specify the date the product will be searchable. A product with a future launch date will not be discoverable on the website until the specified launch date.",
+                    "accepted_value": "This is the date when customers will start viewing this product on Amazon.",
+                    "example": "MM\/DD\/YYYY",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "merchant_release_date": {
+                    "label": "Release Date",
+                    "definition": "The first date on which you can deliver a pre-orderable product (one that has never been available prior to this date) to a customer",
+                    "accepted_value": "This field is used to setup pre-order and is the date from when the pre-ordered product will be available to be shipped to customers.",
+                    "example": "MM\/DD\/YYYY",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "restock_date": {
+                    "label": "Restock Date",
+                    "definition": "This is the date that a merchant will be able to ship any back-ordered items to a customer.",
+                    "accepted_value": "This field is used to setup back-order and is the date when the back-ordered products will be available for shipping to customers.",
+                    "example": "MM\/DD\/YYYY",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "product_tax_code": {
+                    "label": "Product Tax Code",
+                    "definition": "amazon.in's standard code to identify the tax properties of a product.",
+                    "accepted_value": "Enter the product tax code supplied to you by amazon.in.",
+                    "example": "A_GEN_NOTAX",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "sale_price": {
+                    "label": "Sale Price",
+                    "definition": "The sale price at which the merchant offers the product for sale, expressed in local currency.  The site will strikethrough the product's original price and indicate that the item is on sale at the sale price.",
+                    "accepted_value": "The price at which you offer the product for sale.",
+                    "example": "219.99",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "sale_from_date": {
+                    "label": "Sale Start Date",
+                    "definition": "The date that the sale price will begin to override the product's item_price.",
+                    "accepted_value": "A date in this format: yyyy-mm-dd.",
+                    "example": "5\/14\/2014",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "sale_end_date": {
+                    "label": "Sale End Date",
+                    "definition": "The last date that the sale price will override the item's normal price; the product's standard_price will be displayed afterwards.",
+                    "accepted_value": "A date in this format: yyyy-mm-dd.",
+                    "example": "12\/2\/2004",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "max_order_quantity": {
+                    "label": "Max Order Quantity",
+                    "definition": "Use to indicate the largest quantity that an individual may purchase in one order of the given product.",
+                    "accepted_value": "A positive whole number.",
+                    "example": "75",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "offering_can_be_gift_messaged": {
+                    "label": "Can Be Gift Messaged",
+                    "definition": "If you can print a gift message with the item indicate that here.  If left blank, defaults to 'false'.",
+                    "accepted_value": "If you can print a gift message with the item indicate that here.  If left blank, defaults to 'false'.",
+                    "example": "TRUE",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "offering_can_be_giftwrapped": {
+                    "label": "Is Gift Wrap Available?",
+                    "definition": "If you can gift wrap an item indicate that here.  If left blank, defaults to 'FALSE'.",
+                    "accepted_value": "Select: TRUE or FALSE.",
+                    "example": "FALSE",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "map_price": {
+                    "label": "Minimum Advertised Price",
+                    "definition": "For MAP (Minimum Advertised Price) based pricing.  If you have never heard this term before, this function probably does not apply to you.",
+                    "accepted_value": "A number with up to 18 digits allowed to the left of the decimal point and 2 digits to the right of the decimal point. Please do not use commas or currency symbols.",
+                    "example": "259.99",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "currency": {
+                    "label": "Currency",
+                    "definition": "The currency code for price data.  This is required if map, msrp, item_price, or sale_price is provided.  The same currency will apply to all price-related fields.",
+                    "accepted_value": "Three letter currency code.",
+                    "example": "GBP",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "offering_end_date": {
+                    "label": "Offer End Date",
+                    "definition": "Specify the date when this item can be discontinued on the site.",
+                    "accepted_value": "This is the date from when customer cannot place an order on your product, irrespective of the stock in hand. But the product still be active, if other Selling Partners are selling this product.",
+                    "example": "MM\/DD\/YYYY",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "merchant_shipping_group_name": {
+                    "label": "Shipping-Template",
+                    "definition": "Sellers can create a series of distribution templates based on business needs and usage. These templates can contain different distribution areas, expected delivery time, and shipping. When you add product information, sellers need to choose the template to be assosciated with the product to control the product availability as well as ship speed and fee to different regions. Customers will be provided the relevant delivery and shipping options based on this information.",
+                    "accepted_value": "The ship configuration group for an offer. The ship configuration group is created and managed by the seller through the ship setting UI.",
+                    "example": " \"Free Shipping Template\", \"Default Template\"",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "offering_start_date": {
+                    "label": "Offer Start Date",
+                    "definition": "This is the first date on which a merchant can deliver a pre-orderable product (one that has never been available prior to this date) to a customer.",
+                    "accepted_value": "Once the product is launched on Amazon, customers can start placing orders on your product from this date.",
+                    "example": "MM\/DD\/YYYY",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            },
+            "b2b": {
+                "business_price": {
+                    "label": "Business Price",
+                    "definition": "The price at which the credentialed Amazon Business seller offers the product to verified business customers, expressed in INR. The price should be greater than 0. If price exists, business-price should be less than or equal to price, as business-price represents a discount for business customers. Do not include thousands separators or currency symbols. This field is required if quantity prices are provided",
+                    "accepted_value": "A business-price greater than 0.  Do not include thousands separators or currency symbols. If price exists, business-price must be less than or equal to price.",
+                    "example": "239.99",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "quantity_price_type": {
+                    "label": "Quantity Price Type",
+                    "definition": "Either fixed or percent. When fixed is selected, quantity prices are expressed in INR. When percent is selected, quantity prices are calculated as a percent off of the business price.",
+                    "accepted_value": "Either of the following:n- fixedn- percent",
+                    "example": "Fixed",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "quantity_price1": {
+                    "label": "Quantity Price 1",
+                    "definition": "Quantity prices, expressed either as INR (199.99 = INR199.99) or as a percent off the business-price (7= 7% off business-price), depending on the chosen quantity-price type. Must provide a lower-bound for each quantity-price. Each quantity-price must be lower than the previous one.",
+                    "accepted_value": "The Fixed price or Percent Off discount at which the merchant offers the product for sale if the buyer is purchasing at least the associated quantity, expressed in INR.",
+                    "example": "10",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "quantity_lower_bound1": {
+                    "label": "Quantity Lower Bound 1",
+                    "definition": "Quantity thresholds, expressed in units. Business customers who purchase at or above a quantity-lower-bound will be given the corresponding quantity-price. For example, if lower-bound1 is set to 50, quantity-price1 will apply to a purchase of 50 or more units. Sellers can specify up to 5 lower-bounds and must provide a quantity-price for each lower bound. Each lower-bound must be higher than the previous one.",
+                    "accepted_value": "The minimum purchase quantity necessary to receive the associated Fixed price or Percent Off price",
+                    "example": "100",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "pricing_action": {
+                    "label": "Pricing Action",
+                    "definition": "Specifies the actions that need to be performed on the price attributes of this SKU. The only action currently supported by the system is deleting the business_price.\nSet this field to \"delete business_price\" when you want to remove a previously submitted business_price and any quantity discounts. If left blank, no action will be performed and the contents of this column will be ignored.",
+                    "accepted_value": "\"delete business_price\" (without the quotes)",
+                    "example": "delete business_price",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "unspsc_code": {
+                    "label": "United Nations Standard Products and Services Code",
+                    "definition": "An 8-digit alphanumeric code for classification of products according to the UNSPSC system",
+                    "accepted_value": "An 8-digit alphanumeric code for classification of products according to the UNSPSC system",
+                    "example": "",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                },
+                "national_stock_number": {
+                    "label": "National Stock Number",
+                    "definition": "A alpha-numeric 13 digit code. Code identifying standard material items of supply as defined by NATO",
+                    "accepted_value": "A alpha-numeric 13 digit code. Code identifying standard material items of supply as defined by NATO",
+                    "example": "6240-00-027-2059",
+                    "productTypeSpecific": {
+                        "pants": {
+                            "condition": "optional"
+                        }
+                    }
+                }
+            }
+        },
+        "products_template_fields_json": "{\"1\":{\"1\":\"TemplateType=fptcustom\",\"2\":\"Version=2023.0309\",\"3\":\"TemplateSignature=UEFOVFM=\",\"4\":\"settings=attributeRow=3&contentLanguageTag=en_IN&dataRow=4&feedType=113&headerLanguageTag=en_IN&isEdit=false&isExpose=false&isProcessingSummary=false&labelRow=2&metadataVersion=MatprodVkxBUHJvZC0xMTQ0&primaryMarketplaceId=amzn1.mp.o.A21TJRUUN4KGV&ptds=UEFOVFM%3D&templateIdentifier=1487d400-be01-422f-a006-789bf76a14c9&timestamp=2023-03-09T09%3A12%3A56.019Z\",\"5\":\"     The top 3 rows are for Amazon.com use only. Do not modify or delete the top 3 rows.\",\"6\":null,\"7\":null,\"8\":null,\"9\":null,\"10\":null,\"11\":null,\"12\":null,\"13\":null,\"14\":null,\"15\":null,\"16\":null,\"17\":null,\"18\":null,\"19\":null,\"20\":null,\"21\":null,\"22\":null,\"23\":null,\"24\":null,\"25\":null,\"26\":null,\"27\":null,\"28\":null,\"29\":null,\"30\":null,\"31\":null,\"32\":null,\"33\":null,\"34\":null,\"35\":null,\"36\":null,\"37\":null,\"38\":null,\"39\":null,\"40\":null,\"41\":null,\"42\":null,\"43\":null,\"44\":null,\"45\":\"Images\",\"46\":null,\"47\":null,\"48\":null,\"49\":null,\"50\":null,\"51\":null,\"52\":null,\"53\":null,\"54\":\"Variation\",\"55\":null,\"56\":null,\"57\":null,\"58\":\"Basic\",\"59\":null,\"60\":null,\"61\":\"Discovery\",\"62\":null,\"63\":null,\"64\":null,\"65\":null,\"66\":null,\"67\":null,\"68\":null,\"69\":null,\"70\":null,\"71\":null,\"72\":null,\"73\":null,\"74\":null,\"75\":null,\"76\":null,\"77\":null,\"78\":null,\"79\":null,\"80\":null,\"81\":null,\"82\":null,\"83\":null,\"84\":null,\"85\":null,\"86\":null,\"87\":null,\"88\":null,\"89\":null,\"90\":null,\"91\":null,\"92\":null,\"93\":null,\"94\":null,\"95\":null,\"96\":null,\"97\":null,\"98\":null,\"99\":null,\"100\":null,\"101\":null,\"102\":null,\"103\":null,\"104\":\"Product Enrichment\",\"105\":null,\"106\":null,\"107\":null,\"108\":null,\"109\":\"Dimensions\",\"110\":null,\"111\":null,\"112\":null,\"113\":null,\"114\":null,\"115\":null,\"116\":null,\"117\":null,\"118\":null,\"119\":null,\"120\":null,\"121\":null,\"122\":null,\"123\":null,\"124\":null,\"125\":null,\"126\":null,\"127\":null,\"128\":null,\"129\":\"Compliance\",\"130\":null,\"131\":null,\"132\":null,\"133\":null,\"134\":null,\"135\":null,\"136\":null,\"137\":null,\"138\":null,\"139\":null,\"140\":null,\"141\":null,\"142\":null,\"143\":null,\"144\":null,\"145\":null,\"146\":\"Offer\",\"147\":null,\"148\":null,\"149\":null,\"150\":null,\"151\":null,\"152\":null,\"153\":null,\"154\":null,\"155\":null,\"156\":null,\"157\":null,\"158\":null,\"159\":null,\"160\":null,\"161\":null,\"162\":null,\"163\":null,\"164\":\"b2b\",\"165\":null,\"166\":null,\"167\":null,\"168\":null,\"169\":null,\"170\":null,\"171\":null,\"172\":null,\"173\":null,\"174\":null,\"175\":null,\"176\":null,\"177\":null,\"178\":null,\"179\":null},\"2\":{\"1\":\"Product Sub-type\",\"2\":\"Seller SKU\",\"3\":\"Brand Name\",\"4\":\"Manufacturer Part Number\",\"5\":\"Product ID\",\"6\":\"Product ID Type\",\"7\":\"Item Name (aka Title)\",\"8\":\"Product Description\",\"9\":\"Recommended Browse Nodes\",\"10\":\"Closure Type\",\"11\":\"Model Name\",\"12\":\"Product Care Instructions\",\"13\":\"Bullet Point\",\"14\":\"Bullet Point\",\"15\":\"Bullet Point\",\"16\":\"Bullet Point\",\"17\":\"Bullet Point\",\"18\":\"Style Name\",\"19\":\"Colour Map\",\"20\":\"Material Type\",\"21\":\"Rise Style\",\"22\":\"Color\",\"23\":\"Gender\",\"24\":\"Size\",\"25\":\"Product Lifecycle Supply Type\",\"26\":\"Country\\\/Region Of Origin\",\"27\":\"Fabric Type\",\"28\":\"HSN Code\",\"29\":\"Material\\\/Fabric Regulations\",\"30\":\"Material\\\/Fabric Regulations\",\"31\":\"Material\\\/Fabric Regulations\",\"32\":\"Your price\",\"33\":\"Quantity\",\"34\":\"Number of Items\",\"35\":\"List Price\",\"36\":\"Maximum Retail Price\",\"37\":\"Main Image URL\",\"38\":\"Bottoms Body Type\",\"39\":\"Target Gender\",\"40\":\"Age Range Description\",\"41\":\"Bottoms Size System\",\"42\":\"Bottoms Size Class\",\"43\":\"Bottoms Size Value\",\"44\":\"Bottoms Size To Range\",\"45\":\"Other Image URL1\",\"46\":\"Other Image URL2\",\"47\":\"Other Image URL3\",\"48\":\"Other Image URL4\",\"49\":\"Other Image URL5\",\"50\":\"Other Image URL6\",\"51\":\"Other Image URL7\",\"52\":\"Other Image URL8\",\"53\":\"Swatch Image URL\",\"54\":\"Parentage\",\"55\":\"Parent SKU\",\"56\":\"Relationship Type\",\"57\":\"Variation Theme\",\"58\":\"Update Delete\",\"59\":\"Manufacturer\",\"60\":\"Model Number\",\"61\":\"Search Terms\",\"62\":\"Is Autographed\",\"63\":\"Packer\",\"64\":\"Special Features\",\"65\":\"Special Features\",\"66\":\"Special Features\",\"67\":\"Special Features\",\"68\":\"Special Features\",\"69\":\"Item Type Name\",\"70\":\"Occasion description\",\"71\":\"Occasion description\",\"72\":\"Occasion description\",\"73\":\"Occasion description\",\"74\":\"Occasion description\",\"75\":\"Duration Unit\",\"76\":\"Sport Type\",\"77\":\"Sport Type\",\"78\":\"Belt Style\",\"79\":\"character\",\"80\":\"Season\",\"81\":\"Pattern\",\"82\":\"Athlete\",\"83\":\"Team Name\",\"84\":\"Collection\",\"85\":\"Importer\",\"86\":\"Duration\",\"87\":\"Lifestyle\",\"88\":\"Number Of Pockets\",\"89\":\"Manufacturer Contact\",\"90\":\"Fur Description\",\"91\":\"Front Style\",\"92\":\"Fitting type\",\"93\":\"Weave Type\",\"94\":\"Pocket Description\",\"95\":\"Theme\",\"96\":\"League Name\",\"97\":\"Special Sizes\",\"98\":\"Included Item(s)\",\"99\":\"Included Item(s)\",\"100\":\"Included Item(s)\",\"101\":\"Included Item(s)\",\"102\":\"Included Item(s)\",\"103\":\"Item Booking Date\",\"104\":\"Material Features\",\"105\":\"_3d_technology\",\"106\":\"Leg Style\",\"107\":\"Denim wash degree\",\"108\":\"Minimum Advertised Price Display\",\"109\":\"Shipping Weight\",\"110\":\"Website Shipping Weight Unit Of Measure\",\"111\":\"Item Volume\",\"112\":\"Item Volume Unit Of Measure\",\"113\":\"Jeans length (inches)\",\"114\":\"Item Width Unit Of Measure\",\"115\":\"Jeans length unit of measure\",\"116\":\"Item Width\",\"117\":\"Item Height\",\"118\":\"Rise Height\",\"119\":\"Rise Height Unit\",\"120\":\"Size Map\",\"121\":\"Unit Count\",\"122\":\"Item Length Description\",\"123\":\"Item Height Unit Of Measure\",\"124\":\"Jeans width (inches)\",\"125\":\"Waist Size Unit Of Measure\",\"126\":\"Item Length Unit Of Measure\",\"127\":\"Item Length\",\"128\":\"Unit Count Type\",\"129\":\"Is this product a battery or does it use batteries?\",\"130\":\"Batteries are Included\",\"131\":\"Battery type\\\/size\",\"132\":\"Battery type\\\/size\",\"133\":\"Battery type\\\/size\",\"134\":\"Number of batteries\",\"135\":\"Number of batteries\",\"136\":\"Number of batteries\",\"137\":\"Number of Lithium Metal Cells\",\"138\":\"Number of Lithium-ion Cells\",\"139\":\"Lithium Battery Packaging\",\"140\":\"Watt hours per battery\",\"141\":\"Lithium Battery Energy Content Unit Of Measure\",\"142\":\"Lithium content\",\"143\":\"Lithium Battery Weight Unit Of Measure\",\"144\":\"Legal Disclaimer Description\",\"145\":\"Safety Warning\",\"146\":\"Condition\",\"147\":\"Condition Note\",\"148\":\"Handling Time\",\"149\":\"Launch Date\",\"150\":\"Release Date\",\"151\":\"Restock Date\",\"152\":\"Product Tax Code\",\"153\":\"Sale Price\",\"154\":\"Sale Start Date\",\"155\":\"Sale End Date\",\"156\":\"Max Order Quantity\",\"157\":\"Can Be Gift Messaged\",\"158\":\"Is Gift Wrap Available?\",\"159\":\"Minimum Advertised Price\",\"160\":\"Currency\",\"161\":\"Offer End Date\",\"162\":\"Shipping-Template\",\"163\":\"Offer Start Date\",\"164\":\"Business Price\",\"165\":\"Quantity Price Type\",\"166\":\"Quantity Price 1\",\"167\":\"Quantity Lower Bound 1\",\"168\":\"Quantity Price 2\",\"169\":\"Quantity Lower Bound 2\",\"170\":\"Quantity Price 3\",\"171\":\"Quantity Lower Bound 3\",\"172\":\"Quantity Price 4\",\"173\":\"Quantity Lower Bound 4\",\"174\":\"Quantity Price 5\",\"175\":\"Quantity Lower Bound 5\",\"176\":\"Pricing Action\",\"177\":\"United Nations Standard Products and Services Code\",\"178\":\"National Stock Number\",\"179\":null},\"3\":{\"1\":\"feed_product_type\",\"2\":\"item_sku\",\"3\":\"brand_name\",\"4\":\"part_number\",\"5\":\"external_product_id\",\"6\":\"external_product_id_type\",\"7\":\"item_name\",\"8\":\"product_description\",\"9\":\"recommended_browse_nodes\",\"10\":\"closure_type\",\"11\":\"model_name\",\"12\":\"care_instructions\",\"13\":\"bullet_point1\",\"14\":\"bullet_point2\",\"15\":\"bullet_point3\",\"16\":\"bullet_point4\",\"17\":\"bullet_point5\",\"18\":\"style_name\",\"19\":\"color_map\",\"20\":\"material_type\",\"21\":\"rise_style\",\"22\":\"color_name\",\"23\":\"department_name\",\"24\":\"size_name\",\"25\":\"lifecycle_supply_type\",\"26\":\"country_of_origin\",\"27\":\"fabric_type\",\"28\":\"external_product_information\",\"29\":\"supplier_declared_material_regulation1\",\"30\":\"supplier_declared_material_regulation2\",\"31\":\"supplier_declared_material_regulation3\",\"32\":\"standard_price\",\"33\":\"quantity\",\"34\":\"number_of_items\",\"35\":\"list_price_with_tax\",\"36\":\"maximum_retail_price\",\"37\":\"main_image_url\",\"38\":\"bottoms_body_type\",\"39\":\"target_gender\",\"40\":\"age_range_description\",\"41\":\"bottoms_size_system\",\"42\":\"bottoms_size_class\",\"43\":\"bottoms_size\",\"44\":\"bottoms_size_to\",\"45\":\"other_image_url1\",\"46\":\"other_image_url2\",\"47\":\"other_image_url3\",\"48\":\"other_image_url4\",\"49\":\"other_image_url5\",\"50\":\"other_image_url6\",\"51\":\"other_image_url7\",\"52\":\"other_image_url8\",\"53\":\"swatch_image_url\",\"54\":\"parent_child\",\"55\":\"parent_sku\",\"56\":\"relationship_type\",\"57\":\"variation_theme\",\"58\":\"update_delete\",\"59\":\"manufacturer\",\"60\":\"model\",\"61\":\"generic_keywords\",\"62\":\"is_autographed\",\"63\":\"packer_contact_information\",\"64\":\"special_features1\",\"65\":\"special_features2\",\"66\":\"special_features3\",\"67\":\"special_features4\",\"68\":\"special_features5\",\"69\":\"item_type_name\",\"70\":\"occasion_type1\",\"71\":\"occasion_type2\",\"72\":\"occasion_type3\",\"73\":\"occasion_type4\",\"74\":\"occasion_type5\",\"75\":\"duration_unit_of_measure\",\"76\":\"sport_type1\",\"77\":\"sport_type2\",\"78\":\"belt_style\",\"79\":\"subject_character\",\"80\":\"seasons\",\"81\":\"pattern_type\",\"82\":\"athlete\",\"83\":\"team_name\",\"84\":\"collection_name\",\"85\":\"importer_contact_information\",\"86\":\"duration\",\"87\":\"lifestyle\",\"88\":\"number_of_pockets\",\"89\":\"manufacturer_contact_information\",\"90\":\"fur_description\",\"91\":\"front_style\",\"92\":\"fit_type\",\"93\":\"weave_type\",\"94\":\"pocket_description\",\"95\":\"theme\",\"96\":\"league_name\",\"97\":\"special_size_type\",\"98\":\"included_components1\",\"99\":\"included_components2\",\"100\":\"included_components3\",\"101\":\"included_components4\",\"102\":\"included_components5\",\"103\":\"item_booking_date\",\"104\":\"material_features\",\"105\":\"_3d_technology\",\"106\":\"leg_style\",\"107\":\"fabric_wash\",\"108\":\"map_policy\",\"109\":\"website_shipping_weight\",\"110\":\"website_shipping_weight_unit_of_measure\",\"111\":\"item_volume\",\"112\":\"item_volume_unit_of_measure\",\"113\":\"inseam_length\",\"114\":\"item_width_unit_of_measure\",\"115\":\"inseam_length_unit_of_measure\",\"116\":\"item_width\",\"117\":\"item_height\",\"118\":\"rise_height\",\"119\":\"rise_height_unit_of_measure\",\"120\":\"size_map\",\"121\":\"unit_count\",\"122\":\"item_length_description\",\"123\":\"item_height_unit_of_measure\",\"124\":\"waist_size\",\"125\":\"waist_size_unit_of_measure\",\"126\":\"item_length_unit_of_measure\",\"127\":\"item_length\",\"128\":\"unit_count_type\",\"129\":\"batteries_required\",\"130\":\"are_batteries_included\",\"131\":\"battery_type1\",\"132\":\"battery_type2\",\"133\":\"battery_type3\",\"134\":\"number_of_batteries1\",\"135\":\"number_of_batteries2\",\"136\":\"number_of_batteries3\",\"137\":\"number_of_lithium_metal_cells\",\"138\":\"number_of_lithium_ion_cells\",\"139\":\"lithium_battery_packaging\",\"140\":\"lithium_battery_energy_content\",\"141\":\"lithium_battery_energy_content_unit_of_measure\",\"142\":\"lithium_battery_weight\",\"143\":\"lithium_battery_weight_unit_of_measure\",\"144\":\"legal_disclaimer_description\",\"145\":\"safety_warning\",\"146\":\"condition_type\",\"147\":\"condition_note\",\"148\":\"fulfillment_latency\",\"149\":\"product_site_launch_date\",\"150\":\"merchant_release_date\",\"151\":\"restock_date\",\"152\":\"product_tax_code\",\"153\":\"sale_price\",\"154\":\"sale_from_date\",\"155\":\"sale_end_date\",\"156\":\"max_order_quantity\",\"157\":\"offering_can_be_gift_messaged\",\"158\":\"offering_can_be_giftwrapped\",\"159\":\"map_price\",\"160\":\"currency\",\"161\":\"offering_end_date\",\"162\":\"merchant_shipping_group_name\",\"163\":\"offering_start_date\",\"164\":\"business_price\",\"165\":\"quantity_price_type\",\"166\":\"quantity_price1\",\"167\":\"quantity_lower_bound1\",\"168\":\"quantity_price2\",\"169\":\"quantity_lower_bound2\",\"170\":\"quantity_price3\",\"171\":\"quantity_lower_bound3\",\"172\":\"quantity_price4\",\"173\":\"quantity_lower_bound4\",\"174\":\"quantity_price5\",\"175\":\"quantity_lower_bound5\",\"176\":\"pricing_action\",\"177\":\"unspsc_code\",\"178\":\"national_stock_number\",\"179\":null}}",
+        "optionalFields": {
+            "Images": {
+                "other_image_url1": [
+                    {
+                        "label": "Other Image URL1",
+                        "definition": "The URL for additional images of your product.\n\nThese images will be shown on the detail page when the customer clicks through to see other views associated with the product.  For example, you can use this field to show the label information or packaging of your product. Upload additional images with different views to the item, or with some emotional surrounding as additional image.",
+                        "accepted_value": "A valid URL, including leading \"http:\/\/\"\n\nThe URL is case sensitive, so make sure to use matching capitalisation and no redirections (e.g. .jpeg instead of .jpg). While a web browser might be smart enough to locate your image despite of these little inaccuracies, our image collection process isn't.",
+                        "example": "http:\/\/www.companyname.com\/images\/1250.other1.jpg",
+                        "productTypeSpecific": {
+                            "pants": {
+                                "condition": "optional"
+                            }
+                        }
+                    }
+                ],
+                "swatch_image_url": [
+                    {
+                        "label": "Swatch Image URL",
+                        "definition": "The URL where an image of a colour swatch from the product is located.",
+                        "accepted_value": "Images should have 72-pixels-per-inch resolution and be 30 pixels maximum length (on the longest side). The preferred file format is JPEG (.jpg). When naming your image, please use the following convention: Product SKU + View Indicator (i.e., .swatch) + File Extension (i.e., .jpg). An example would be: \"15774.swatch.jpg\". Save the image to your Web server and supply the URL to the image in this field.",
+                        "example": "http:\/\/www.companyname.com\/images\/1250.swatch.jpg",
+                        "productTypeSpecific": {
+                            "pants": {
+                                "condition": "optional"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
