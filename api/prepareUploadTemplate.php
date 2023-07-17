@@ -834,10 +834,10 @@ $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general
 $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
 $instance->attributes                 = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance->query                      = isset( $request_body['query'] ) ? $request_body['query'] : array();
-$instance->results                     = isset( $request_body['results'] ) ? $request_body['results'] : array();
+$instance->results                    = isset( $request_body['results'] ) ? $request_body['results'] : array();
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
-$instance->seller_id                  = isset( $request_body['session'] ) ? $request_body['session'] : array();
+$instance->session                    = isset( $request_body['session'] ) ? $request_body['session'] : array();
 
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
