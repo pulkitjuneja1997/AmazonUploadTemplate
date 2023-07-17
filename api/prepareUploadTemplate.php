@@ -816,6 +816,7 @@ session_start();
 $request_body = $_POST;
 
 if( 3 == $request_body['rowNum'] ){
+	print_r($request_body['session']);
  print_r($request_body['session']); die('ol');
 }
 
