@@ -463,10 +463,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $sub_category_id = $subCategory;    
 
 
-        if( 48 == $request_body['rowNum'] ){
-            print_r($this->session);
-		    die;
-        }
+        // if( 48 == $request_body['rowNum'] ){
+        //     print_r($this->session);
+		//     die;
+        // }
 
 
 		// ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
@@ -725,6 +725,12 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
 				$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
 
+			} else {
+				if( $row > 3){
+					print_r($$amazonCategoryList);
+					print_r($modRowName);
+					die;
+				}
 			}
 
 			if( ( 'string' == gettype($last) && "true" == $last ) ){
