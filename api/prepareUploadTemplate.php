@@ -346,6 +346,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
 			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
 
+			$sessiopn = [];
 		    file_put_contents($localFileName, $fileContents );
 			$session['localFileName'] = $localFileName;
 
@@ -817,7 +818,7 @@ $request_body = $_POST;
 
 if( 3 == $request_body['rowNum'] ){
 	print_r($request_body);
- print_r($request_body['session']); die('ol');
+    print_r($request_body['session']); die('ol');
 }
 
 // var_dump($request_body);
@@ -827,7 +828,7 @@ $instance->ced_amazon_general_options = isset( $request_body['ced_amazon_general
 $instance->addedMetaKeys              = isset( $request_body['addedMetaKeys'] ) ? $request_body['addedMetaKeys'] : array();
 $instance->attributes                 = isset( $request_body['attributes'] ) ? $request_body['attributes'] : array();
 $instance->query                      = isset( $request_body['query'] ) ? $request_body['query'] : array();
-$instance->results                    = isset( $request_body['results'] ) ? $request_body['results'] : array();
+$instance->results                     = isset( $request_body['results'] ) ? $request_body['results'] : array();
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
 
