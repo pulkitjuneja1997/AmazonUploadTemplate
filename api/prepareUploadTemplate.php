@@ -749,14 +749,14 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 				if ( 'no' == $display_saved_values ) {
 
-					if ( ! empty( $optionalFields ) ) {
+					if ( ! empty( $this->session['optionalFields'] ) ) {
 
 						$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
 						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
 
 						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
 
-						foreach ( $optionalFields as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $optionalField ) {
 							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
@@ -785,7 +785,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 				} else {
 
-					if ( ! empty( $optionalFields ) ) {
+					if ( ! empty( $this->session['optionalFields'] ) ) {
 						$optional_fields = array_values( $optionalFields );
 
 						$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
@@ -795,7 +795,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
 
 						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-						foreach ( $optionalFields as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $optionalField ) {
 							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
@@ -825,16 +825,17 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				}
 
 			} else if( 'boolean' == gettype($last) && $last ){
+				
 				if ( 'no' == $display_saved_values ) {
 
-					if ( ! empty( $optionalFields ) ) {
+					if ( ! empty( $this->session['optionalFields'] ) ) {
 
 						$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
 						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
 
 						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
 
-						foreach ( $optionalFields as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $optionalField ) {
 							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
@@ -863,7 +864,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 				} else {
 
-					if ( ! empty( $optionalFields ) ) {
+					if ( ! empty( $this->session['optionalFields'] ) ) {
 						$optional_fields = array_values( $optionalFields );
 
 						$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
@@ -873,7 +874,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
 
 						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-						foreach ( $optionalFields as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $optionalField ) {
 							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
@@ -901,6 +902,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 					}
 				}
+				
 			}	
 
 			
