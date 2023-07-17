@@ -46,7 +46,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	*/
 	public function prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $seller_id ) {
 
-		if( $this->rowNum > 3 ){
+		if( $this->rowNum > 110 ){
 			print_r($fieldsKey);
 			print_r($fieldsArray);
 		}
@@ -715,7 +715,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$select_html2 = $this->prepareProfileFieldsSection( $modRowName, $amazonCategoryList[$modRowName], $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $this->template_id );
 				// $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
 
-				if( $request_body['rowNum'] > 3 ){
+				if( $request_body['rowNum'] > 110 ){
 
 					print_r($select_html2);
 					die('innnnnnnn');
@@ -739,7 +739,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
 
 			} else {
-				if( $row > 3){
+				if( $row > 110){
 					print_r($$amazonCategoryList);
 					print_r($modRowName);
 					die;
