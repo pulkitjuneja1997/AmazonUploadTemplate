@@ -618,7 +618,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
                 }
 
-
             }
 
             $amazonCategoryList = $final_all_complete_indexes;
@@ -645,10 +644,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
             $products_template_fields_array = array();
 
             for ( $row = 1; $row <= 3; ++$row ) {
-
                 $products_template_fields_array[$row] = array();
                 for ( $col = 1; $col <= $highestColumnIndex; ++$col ) {
-
                     $value                                      = $spreadsheet->getSheetByName($products_template_fields)->getCellByColumnAndRow($col, $row)->getValue();
                     $products_template_fields_array[$row][$col] = $value;
 
@@ -736,8 +733,18 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$select_html     .= $select_html2['html'];
 				// $optionalFields[] = $select_html2['optionsFields'];
 
+				// $a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
+				// $this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
+
+
+
+				// $optionalFields[] = $select_html2['optionsFields'];
+
 				$a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
 				$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
+
+				print_r($this->session['optionalFields']);
+
 
 			} else {
 				// if( $row > 110){
