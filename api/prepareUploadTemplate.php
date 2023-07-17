@@ -708,7 +708,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$select_html2 = $this->prepareProfileFieldsSection( $modRowName, $amazonCategoryList[$modRowName], $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $this->template_id );
 				// $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
 
-				if( $row > 3 ){
+				if( $rowNum > 3 ){
 
 					print_r($select_html2);
 					die('innnnnnnn');
