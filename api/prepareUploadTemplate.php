@@ -779,7 +779,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 						$html .= '</select></td>';
 						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
-						$html .= $fieldsKey;
+						//$html .= $fieldsKey;
 						$html .= '">Add Row</button></td></tr>';
 					}
 
