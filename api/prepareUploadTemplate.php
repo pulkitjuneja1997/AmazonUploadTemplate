@@ -47,7 +47,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	public function prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $seller_id ) {
 
 		if( $this->rowNum > 3 ){
-			print_r($fieldsArray);
+			print_r($fieldsKey);
 			print_r($fieldsArray);
 		}
 
