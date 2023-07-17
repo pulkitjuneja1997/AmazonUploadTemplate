@@ -745,7 +745,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				// }
 			}
 
-			if( ( 'string' == gettype($last) && "true" == $last ) ){
+			if( 'string' == gettype($last) && "true" == $last ){
 
 				if ( 'no' == $display_saved_values ) {
 
@@ -824,6 +824,83 @@ class Amazon_Integration_For_Woocommerce_Admin {
 					}
 				}
 
+			} else if( 'boolean' == gettype($last) && $last ){
+				if ( 'no' == $display_saved_values ) {
+
+					if ( ! empty( $optionalFields ) ) {
+
+						$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+
+						foreach ( $optionalFields as $optionalField ) {
+							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+								$html .= '<optgroup label="' . $fieldsKey1 . '">';
+								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+									$html .= '<option value="';
+									$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
+									$html .= '" >';
+									$html .= $fieldsValue[0]['label'];
+									$html .= ' (';
+									$html .= $fieldsKey2;
+									$html .= ') </option>';
+
+								}
+
+								$html .= '</optgroup>';
+							}
+						}
+
+						$html .= '</select></td>';
+						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
+						$html .= $fieldsKey;
+						$html .= '">Add Row</button></td></tr>';
+					}
+
+					$select_html .= $html;
+
+				} else {
+
+					if ( ! empty( $optionalFields ) ) {
+						$optional_fields = array_values( $optionalFields );
+
+						$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+						$optionalFieldsHtml = '';
+						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
+
+						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+						foreach ( $optionalFields as $optionalField ) {
+							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+								$html .= '<optgroup label="' . $fieldsKey1 . '">';
+								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+									if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
+										$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
+
+									} else {
+
+										$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
+										$optionalFieldsHtml .= $prodileRowHTml;
+										// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
+										// $optionalFieldsHtml .= $prodileRowHTml;
+									}
+								}
+								$html .= '</optgroup>';
+							}
+						}
+
+						$html .= '</select></td>';
+						$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
+
+						$select_html .= $optionalFieldsHtml;
+						$select_html .= $html;
+
+					}
+				}
 			}	
 
 			
