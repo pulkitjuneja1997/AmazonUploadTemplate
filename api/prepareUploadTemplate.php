@@ -23,6 +23,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
     public $seller_id;
 	public $session;
 	public $template_id;
+	public $rowNum;
 
     /**
 	* Initialize the class and set its properties.
@@ -45,8 +46,11 @@ class Amazon_Integration_For_Woocommerce_Admin {
 	*/
 	public function prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $seller_id ) {
 
-		print_r($fieldsArray);
-		print_r($fieldsArray);
+		if( $this->rowNum > 3 ){
+			print_r($fieldsArray);
+			print_r($fieldsArray);
+		}
+
 		if ( ! empty( $fieldsArray ) ) {
 			$profileSectionHtml = '';
 			$optionalFields     = array();
@@ -853,7 +857,9 @@ $instance->results                    = isset( $request_body['results'] ) ? $req
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
 $instance->session                    = isset( $request_body['session'] ) ? $request_body['session'] : array();
-$instance->template_id                = isset( $request_body['template_id'] ) ? $request_body['template_id'] : array();
+$instance->template_id                = isset( $request_body['template_id'] ) ? $request_body['template_id'] : 0;
+$instance->rowNum                     = isset( $request_body['rowNum'] ) ? $request_body['rowNum'] : 0;
+
 
 
 
