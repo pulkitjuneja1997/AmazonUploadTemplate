@@ -479,14 +479,16 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		// ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
 
-		$select_html .= '<tr>
-							<td></td>
-							<td>
-							    <input value="' . $sub_category_id . '"  type="hidden" name="ced_amazon_profile_data[secondary_category]" >
-							    <input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" >
-								<input class="ced_amazon_profile_url" id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" >
-							</td>
-						</tr>';
+		if( 0 == $request_body['rowNum'] ){
+			$select_html .= '<tr>
+								<td></td>
+								<td>
+									<input value="' . $sub_category_id . '"  type="hidden" name="ced_amazon_profile_data[secondary_category]" >
+									<input id="ced_amazon_profile_name" value="amazonTemplate" type="hidden" name="ced_amazon_profile_data[template_type]" >
+									<input class="ced_amazon_profile_url" id="ced_amazon_profile_name" value="' . $fileUrl . '" type="hidden" name="ced_amazon_profile_data[file_url]" >
+								</td>
+							</tr>';
+		}					
 
 		// ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
 
@@ -756,7 +758,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
 
-						foreach ( $this->session['optionalFields'] as $optionalField ) {
+						// foreach ( $this->session['optionalFields'] as $optionalField ) {
 							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
@@ -773,7 +775,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 								$html .= '</optgroup>';
 							}
-						}
+						// }
 
 						$html .= '</select></td>';
 						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
@@ -795,8 +797,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
 
 						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-						foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+						// foreach ( $this->session['optionalFields'] as $optionalField ) {
+							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
 
@@ -813,7 +815,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 								}
 								$html .= '</optgroup>';
 							}
-						}
+						// }
 
 						$html .= '</select></td>';
 						$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
@@ -835,8 +837,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
 
-						foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+						// foreach ( $this->session['optionalFields'] as $optionalField ) {
+							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
 
@@ -852,7 +854,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 								$html .= '</optgroup>';
 							}
-						}
+						// }
 
 						$html .= '</select></td>';
 						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
@@ -874,8 +876,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
 
 						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-						foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+						//foreach ( $this->session['optionalFields'] as $optionalField ) {
+							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
 
@@ -892,7 +894,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 								}
 								$html .= '</optgroup>';
 							}
-						}
+						//}
 
 						$html .= '</select></td>';
 						$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
@@ -902,7 +904,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 					}
 				}
-				
+
 			}	
 
 			
