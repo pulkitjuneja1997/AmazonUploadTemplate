@@ -759,7 +759,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
 
 						// foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $optionalField as $fieldsKey1 => $fieldsValue1 ) {
+							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
 								$html .= '<optgroup label="' . $fieldsKey1 . '">';
 								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
 
