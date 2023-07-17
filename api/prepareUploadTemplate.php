@@ -21,6 +21,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
     public $results;
     public $domain;
     public $seller_id;
+	public $session;
 
     /**
 	* Initialize the class and set its properties.
@@ -313,12 +314,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     public function ced_amazon_prepare_upload_template( $request_body ) {
 
-		$session = isset( $request_body['session'] ) ? $request_body['session'] : array(); 
-
-		if( !empty( $session ) ){
-            $session = json_decode($session, true);
+		if( !empty( $this->session ) ){
+            $this->session = json_decode($this->session, true);
 		} else{
-			$session = [];
+			$this->session = [];
 		}
 
 		ini_set("memory_limit", "-1");
@@ -352,13 +351,13 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
 			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
 
-			// $session = [];
+			// $this->session = [];
 		    file_put_contents($localFileName, $fileContents );
-			$session['localFileName'] = $localFileName;
+			$this->session['localFileName'] = $localFileName;
 
 		} else{
-			$session = 
-			$localFileName = $session['localFileName'];
+			// $this->session = 
+			$localFileName = $this->session['localFileName'];
 		}
 
 		$this->reader->setLoadAllSheets();
@@ -388,7 +387,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				
 			}
 
-			echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames, 'session' => $session ) );
+			echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames, 'session' => $this->session ) );
 			die;
 		}
 
@@ -407,7 +406,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$valid_values_array = array();
 		$subCategory        = '';
 
-        if( empty( $session['valid_values_array'] ) ){ 
+        if( empty( $this->session['valid_values_array'] ) ){ 
 
             for ($row = 1; $row <= $highestRow; ++$row) {
                 for ($col = 1; $col <= $highestColumnIndex; ++$col) {
@@ -453,19 +452,19 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
             }
 
-			$session['valid_values_array'] = $valid_values_array;
-			$session['sub_category_id']    = $subCategory;
+			$this->session['valid_values_array'] = $valid_values_array;
+			$this->session['sub_category_id']    = $subCategory;
           
         } else{
-            $valid_values_array = $session['valid_values_array'] ;
-            $subCategory        = $session['sub_category_id'];
+            $valid_values_array = $this->session['valid_values_array'] ;
+            $subCategory        = $this->session['sub_category_id'];
         }
     
         $sub_category_id = $subCategory;    
 
 
         if( 48 == $request_body['rowNum'] ){
-            print_r($session);
+            print_r($this->session);
 		    die;
         }
 
@@ -501,7 +500,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$reqHeadingCol              = '';
 		$final_all_complete_indexes = array();
 
-        if( empty( $session['amazonCategoryList'] ) ){ 
+        if( empty( $this->session['amazonCategoryList'] ) ){ 
 
             for ( $row = 2; $row <= $highestRow; ++$row ) {
 
@@ -615,10 +614,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
             }
 
             $amazonCategoryList = $final_all_complete_indexes;
-			$session['amazonCategoryList'] = $amazonCategoryList;
+			$this->session['amazonCategoryList'] = $amazonCategoryList;
 
 		} else{
-			$amazonCategoryList = $session['amazonCategoryList'];
+			$amazonCategoryList = $this->session['amazonCategoryList'];
 		}    
 
 		// ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
@@ -626,7 +625,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
 
-        if( empty( $session['products_template_fields_json'] ) ){ 
+        if( empty( $this->session['products_template_fields_json'] ) ){ 
 
             $products_template_fields_key = array_search( 'Template', $listname_of_all_tabs_files  );
             $products_template_fields     = $listname_of_all_tabs_files[$products_template_fields_key];
@@ -649,7 +648,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
             }
 
             $products_template_fields_json = json_encode( $products_template_fields_array );
-            $session['products_template_fields_json'] = $products_template_fields_json;
+            $this->session['products_template_fields_json'] = $products_template_fields_json;
 
             // $saved_amazon_details = get_option( 'ced_amzon_configuration_validated', false );
             // $location_for_seller  = $seller_id;
@@ -682,7 +681,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
             // }
 
 		} else{
-			$products_template_fields_json = $session['products_template_fields_json'];
+			$products_template_fields_json = $this->session['products_template_fields_json'];
 		}
 
 		// ----------------------------------------------------- PRODUCTS_TEMPLATE_FIELDS.JSON ----------------------------------------------------------
@@ -723,8 +722,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				$select_html     .= $select_html2['html'];
 				// $optionalFields[] = $select_html2['optionsFields'];
 
-				$a = isset($session['optionalFields']) ? $session['optionalFields'] : [];
-				$session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
+				$a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
+				$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
 
 			}
 
@@ -812,7 +811,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			
 		}
 
-		echo json_encode( array( 'success' => true, 'data' => $select_html, 'session' => $session )  );
+		echo json_encode( array( 'success' => true, 'data' => $select_html, 'session' => $this->session )  );
 		die;
 
 	}
@@ -838,6 +837,7 @@ $instance->query                      = isset( $request_body['query'] ) ? $reque
 $instance->results                     = isset( $request_body['results'] ) ? $request_body['results'] : array();
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
+$instance->seller_id                  = isset( $request_body['session'] ) ? $request_body['session'] : array();
 
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
