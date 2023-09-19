@@ -364,9 +364,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		} else{
 			// session_start();
 			// $this->session = 
-			var_dump($this->session);
+			// var_dump($this->session);
 
-			var_dump($this->rowNum);
+			// var_dump($this->rowNum);
 			$localFileName = $this->session['localFileName'];
 		}
 
