@@ -322,6 +322,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
     public function ced_amazon_prepare_upload_template( $request_body ) {
 
+		var_dump($_SESSION);
 		if( empty( $this->session ) ){
 			$this->session = [];
 		}
