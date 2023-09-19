@@ -945,10 +945,10 @@ $request_body = json_decode($json_data, true);
 
 // $request_body = $_POST;
 
-if( 3 == $request_body['rowNum'] ){
-	print_r($request_body);
-    print_r($request_body['session']); die('ol');
-}
+// if( 3 == $request_body['rowNum'] ){
+// 	print_r($request_body);
+//     print_r($request_body['session']); die('ol');
+// }
 
 // var_dump($request_body);
 
