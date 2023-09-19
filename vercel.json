@@ -8,7 +8,7 @@
     
       { "src": "/prepareTemplate", "methods": ["POST"], "dest": "/api/prepareTemplate.php" },
       { "src": "/prepareUploadTemplate", "methods": ["POST"], "dest": "/api/prepareUploadTemplate.php" },
-      { "src": "/prepareUploadTemplate3", "methods": ["POST"], "dest": "/api/prepareUploadTemplate3.php" }
+      { "src": "/prepareUploadTemp", "methods": ["POST"], "dest": "/api/prepareUploadTemp.php" }
        
     ]
 }
