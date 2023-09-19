@@ -765,12 +765,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				// }
 			}
 
-			if(!empty($this->session)){
-				foreach( $this->session as $key => $value ){
-					$_SESSION[$key] = $value;
-				}
-			}
-
 			if( 'string' == gettype($last) && "true" == $last ){
 
 				if ( 'no' == $display_saved_values ) {
@@ -849,8 +843,6 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 					}
 				}
-
-				session_destroy();
 
 			} else if( 'boolean' == gettype($last) && $last ){
 				
@@ -931,11 +923,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 					}
 				}
 
-				session_destroy();
-
 			}	
-
-
 
 			
 		}
@@ -948,7 +936,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 }
 
-session_start();
+// session_start();
 
 $json_data = file_get_contents('php://input');
 $request_body = json_decode($json_data, true);
@@ -970,10 +958,7 @@ $instance->query                      = isset( $request_body['query'] ) ? $reque
 $instance->results                    = isset( $request_body['results'] ) ? $request_body['results'] : array();
 $instance->domain                     = isset( $request_body['domain'] ) ? $request_body['domain'] : array();
 $instance->seller_id                  = isset( $request_body['seller_id'] ) ? $request_body['seller_id'] : array();
-
-// $instance->session                    = isset( $request_body['session'] ) ? $request_body['session'] : array();
-$instance->session = $_SESSION;
-
+$instance->session                    = isset( $request_body['session'] ) ? $request_body['session'] : array();
 $instance->template_id                = isset( $request_body['template_id'] ) ? $request_body['template_id'] : 0;
 $instance->rowNum                     = isset( $request_body['rowNum'] ) ? $request_body['rowNum'] : 0;
 
