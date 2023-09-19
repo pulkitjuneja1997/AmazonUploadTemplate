@@ -940,7 +940,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 // session_start();
 
-$request_body = $_POST;
+$json_data = file_get_contents('php://input');
+$request_body = json_decode($json_data, true);
+
+// $request_body = $_POST;
 
 if( 3 == $request_body['rowNum'] ){
 	print_r($request_body);
