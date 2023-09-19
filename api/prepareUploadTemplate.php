@@ -939,6 +939,9 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		}
 
 		echo json_encode( array( 'success' => true, 'data' => $select_html, 'session' => $this->session )  );
+
+		print_r( $_SESSION );
+
 		die;
 
 	}
