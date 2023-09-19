@@ -958,7 +958,7 @@ $instance->rowNum                     = isset( $request_body['rowNum'] ) ? $requ
 
 echo '<pre>';
 print_r($request_body);
-die;
+// die;
 
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
