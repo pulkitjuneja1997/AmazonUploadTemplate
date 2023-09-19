@@ -354,7 +354,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		if( 0 == $request_body['rowNum'] ){
 
 			// session_destroy();
-			session_start();
+			// session_start();
 
 			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
 			$localFileName = tempnam(sys_get_temp_dir(), 'tempxls');
