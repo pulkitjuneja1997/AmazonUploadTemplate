@@ -956,7 +956,9 @@ $instance->session                    = isset( $request_body['session'] ) ? $req
 $instance->template_id                = isset( $request_body['template_id'] ) ? $request_body['template_id'] : 0;
 $instance->rowNum                     = isset( $request_body['rowNum'] ) ? $request_body['rowNum'] : 0;
 
-
+echo '<pre>';
+print_r($request_body);
+die;
 
 
 $instance->ced_amazon_prepare_upload_template( $request_body );
