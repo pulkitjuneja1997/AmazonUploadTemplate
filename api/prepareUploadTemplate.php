@@ -353,7 +353,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		
 		if( 0 == $request_body['rowNum'] ){
 
-			session_destroy();
+			// session_destroy();
 			session_start();
 
 			$fileContents = file_get_contents($fileUrl, false, stream_context_create($arrContextOptions));
@@ -364,6 +364,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 			$this->session['localFileName'] = $localFileName;
 
 		} else{
+			session_start();
 			// $this->session = 
 			$localFileName = $this->session['localFileName'];
 		}
@@ -934,7 +935,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 }
 
-session_start();
+// session_start();
+
 $request_body = $_POST;
 
 // if( 3 == $request_body['rowNum'] ){
