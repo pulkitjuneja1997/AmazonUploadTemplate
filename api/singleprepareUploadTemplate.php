@@ -951,7 +951,8 @@ $request_body = json_decode($json_data, true);
 //     var_dump($_SESSION); die('ol');
 // }
 
-// var_dump($request_body);
+var_dump($request_body);
+die;
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 
