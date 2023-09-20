@@ -461,8 +461,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 
        
-            print_r($valid_values_array);
-		    die('opp');
+            // print_r($valid_values_array);
+		    // die('opp');
         
 
 
@@ -688,250 +688,246 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		// $amazonCategoryList = $final_all_complete_indexes;
 		$valid_values       = $valid_values_array;
 
+
+		print_r($amazonCategoryList);
+		die;
+
 		if ( ! empty( $amazonCategoryList ) ) {
 
 			global $wpdb;
 			$optionalFields = array();
 			$html           = '';
 
-			// foreach ( $amazonCategoryList as $fieldsKey => $fieldsArray ) {
-			$rowNameArray = explode(' - ', $rowName );	
-			$modRowName   = $rowNameArray[0];
-			if( !empty($amazonCategoryList[$modRowName]) ){	
+			foreach ( $amazonCategoryList as $fieldsKey => $fieldsArray ) {
 
-				$select_html2 = $this->prepareProfileFieldsSection( $modRowName, $amazonCategoryList[$modRowName], $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $this->template_id );
-				// $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
+				$rowNameArray = explode(' - ', $rowName );	
+				$modRowName   = $rowNameArray[0];
 
-				// if( $request_body['rowNum'] > 110 ){
+				if( !empty($amazonCategoryList[$modRowName]) ){	
 
-				// 	print_r($select_html2);
-				// 	die('innnnnnnn');
-				// }
+					$select_html2 = $this->prepareProfileFieldsSection( $modRowName, $amazonCategoryList[$modRowName], $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $this->template_id );
+					// $select_html2 = $this->prepareProfileFieldsSection( $fieldsKey, $fieldsArray, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, $template_id );
 
-				if ( $select_html2['display_heading'] ) {
-					$select_html .= '<tr class="categoryAttributes" ><td colspan="3"></td></tr>
-					<tr class="categoryAttributes "><th colspan="3" class="profileSectionHeading">
-					<label style="font-size: 1.25rem;color: #6574cd;" >';
+					// if( $request_body['rowNum'] > 110 ){
 
-					// $select_html .= $fieldsKey;
-					$select_html .= $modRowName;
-					$select_html .= ' Fields </label></th></tr><tr class="categoryAttributes" ><td colspan="3"></td></tr>';
+					// 	print_r($select_html2);
+					// 	die('innnnnnnn');
+					// }
 
-				}
+					if ( $select_html2['display_heading'] ) {
+						$select_html .= '<tr class="categoryAttributes" ><td colspan="3"></td></tr>
+						<tr class="categoryAttributes "><th colspan="3" class="profileSectionHeading">
+						<label style="font-size: 1.25rem;color: #6574cd;" >';
 
-				$select_html     .= $select_html2['html'];
-				// $optionalFields[] = $select_html2['optionsFields'];
-
-				// $a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
-				// $this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
-
-
-
-				// $optionalFields[] = $select_html2['optionsFields'];
-
-				// if ( $this->rowNum >3 ){
-				// 	print_r($this->session['optionalFields']);
-				// 	// die;
-				// }
-
-				$a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
-				$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
-
-				// if ( $this->rowNum >3 ){
-				// 	print_r($this->session['optionalFields']);
-				// 	die;
-				// }
-			
-
-
-			} else {
-				// if( $row > 110){
-				// 	print_r($$amazonCategoryList);
-				// 	print_r($modRowName);
-				// 	die;
-				// }
-			}
-
-			if(!empty($this->session)){
-				foreach( $this->session as $key => $value ){
-					$_SESSION[$key] = $value;
-				}
-			}
-
-			// var_dump( $_SESSION );
-			// die;
-
-			if( 'string' == gettype($last) && "true" == $last ){
-
-				if ( 'no' == $display_saved_values ) {
-
-					if ( ! empty( $this->session['optionalFields'] ) ) {
-
-						$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
-						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
-
-						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-
-						// foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
-								$html .= '<optgroup label="' . $fieldsKey1 . '">';
-								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
-
-									$html .= '<option value="';
-									$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
-									$html .= '" >';
-									$html .= $fieldsValue[0]['label'];
-									$html .= ' (';
-									$html .= $fieldsKey2;
-									$html .= ') </option>';
-
-								}
-
-								$html .= '</optgroup>';
-							}
-						// }
-
-						$html .= '</select></td>';
-						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
-						//$html .= $fieldsKey;
-						$html .= '">Add Row</button></td></tr>';
-					}
-
-					$select_html .= $html;
-
-				} else {
-
-					if ( ! empty( $this->session['optionalFields'] ) ) {
-						$optional_fields = array_values( $optionalFields );
-
-						$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
-						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
-
-						$optionalFieldsHtml = '';
-						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
-
-						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-						// foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
-								$html .= '<optgroup label="' . $fieldsKey1 . '">';
-								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
-
-									if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
-										$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
-
-									} else {
-
-										$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
-										$optionalFieldsHtml .= $prodileRowHTml;
-										// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
-										// $optionalFieldsHtml .= $prodileRowHTml;
-									}
-								}
-								$html .= '</optgroup>';
-							}
-						// }
-
-						$html .= '</select></td>';
-						$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
-
-						$select_html .= $optionalFieldsHtml;
-						$select_html .= $html;
+						// $select_html .= $fieldsKey;
+						$select_html .= $modRowName;
+						$select_html .= ' Fields </label></th></tr><tr class="categoryAttributes" ><td colspan="3"></td></tr>';
 
 					}
-				}
 
-				//session_destroy();
+					$select_html     .= $select_html2['html'];
+					// $optionalFields[] = $select_html2['optionsFields'];
 
-			} else if( 'boolean' == gettype($last) && $last ){
+					// $a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
+					// $this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
+
+
+
+					// $optionalFields[] = $select_html2['optionsFields'];
+
+					// if ( $this->rowNum >3 ){
+					// 	print_r($this->session['optionalFields']);
+					// 	// die;
+					// }
+
+					$a = isset($this->session['optionalFields']) ? $this->session['optionalFields'] : [];
+					$this->session['optionalFields'] =  array_merge( $a, $select_html2['optionsFields'] ) ;
+
+					// if ( $this->rowNum >3 ){
+					// 	print_r($this->session['optionalFields']);
+					// 	die;
+					// }
 				
-				if ( 'no' == $display_saved_values ) {
 
-					if ( ! empty( $this->session['optionalFields'] ) ) {
-
-						$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
-						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
-
-						$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-
-						// foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
-								$html .= '<optgroup label="' . $fieldsKey1 . '">';
-								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
-
-									$html .= '<option value="';
-									$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
-									$html .= '" >';
-									$html .= $fieldsValue[0]['label'];
-									$html .= ' (';
-									$html .= $fieldsKey2;
-									$html .= ') </option>';
-
-								}
-
-								$html .= '</optgroup>';
-							}
-						// }
-
-						$html .= '</select></td>';
-						$html .= '<td><button class="ced_amazon_add_rows_button" id="';
-						$html .= $fieldsKey;
-						$html .= '">Add Row</button></td></tr>';
-					}
-
-					$select_html .= $html;
 
 				} else {
-
-					if ( ! empty( $this->session['optionalFields'] ) ) {
-						$optional_fields = array_values( $optionalFields );
-
-						$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
-						<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
-
-						$optionalFieldsHtml = '';
-						$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
-
-						$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
-						//foreach ( $this->session['optionalFields'] as $optionalField ) {
-							foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
-								$html .= '<optgroup label="' . $fieldsKey1 . '">';
-								foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
-
-									if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
-										$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
-
-									} else {
-
-										$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
-										$optionalFieldsHtml .= $prodileRowHTml;
-										// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
-										// $optionalFieldsHtml .= $prodileRowHTml;
-									}
-								}
-								$html .= '</optgroup>';
-							}
-						//}
-
-						$html .= '</select></td>';
-						$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
-
-						$select_html .= $optionalFieldsHtml;
-						$select_html .= $html;
-
-					}
+					// if( $row > 110){
+					// 	print_r($$amazonCategoryList);
+					// 	print_r($modRowName);
+					// 	die;
+					// }
 				}
 
-				//session_destroy();
-
-			}	
+			}
 
 
 		}
 
+		if( 'string' == gettype($last) && "true" == $last ){
+
+			if ( 'no' == $display_saved_values ) {
+
+				if ( ! empty( $this->session['optionalFields'] ) ) {
+
+					$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+					<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+					$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+
+					// foreach ( $this->session['optionalFields'] as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
+							$html .= '<optgroup label="' . $fieldsKey1 . '">';
+							foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+								$html .= '<option value="';
+								$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
+								$html .= '" >';
+								$html .= $fieldsValue[0]['label'];
+								$html .= ' (';
+								$html .= $fieldsKey2;
+								$html .= ') </option>';
+
+							}
+
+							$html .= '</optgroup>';
+						}
+					// }
+
+					$html .= '</select></td>';
+					$html .= '<td><button class="ced_amazon_add_rows_button" id="';
+					//$html .= $fieldsKey;
+					$html .= '">Add Row</button></td></tr>';
+				}
+
+				$select_html .= $html;
+
+			} else {
+
+				if ( ! empty( $this->session['optionalFields'] ) ) {
+					$optional_fields = array_values( $optionalFields );
+
+					$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+					<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+					$optionalFieldsHtml = '';
+					$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
+
+					$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+					// foreach ( $this->session['optionalFields'] as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
+							$html .= '<optgroup label="' . $fieldsKey1 . '">';
+							foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+								if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
+									$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
+
+								} else {
+
+									$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
+									$optionalFieldsHtml .= $prodileRowHTml;
+									// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
+									// $optionalFieldsHtml .= $prodileRowHTml;
+								}
+							}
+							$html .= '</optgroup>';
+						}
+					// }
+
+					$html .= '</select></td>';
+					$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
+
+					$select_html .= $optionalFieldsHtml;
+					$select_html .= $html;
+
+				}
+			}
+
+			//session_destroy();
+
+		} else if( 'boolean' == gettype($last) && $last ){
+			
+			if ( 'no' == $display_saved_values ) {
+
+				if ( ! empty( $this->session['optionalFields'] ) ) {
+
+					$html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+					<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+					$html .= '<tr class="categoryAttributes" ><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+
+					// foreach ( $this->session['optionalFields'] as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
+							$html .= '<optgroup label="' . $fieldsKey1 . '">';
+							foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+								$html .= '<option value="';
+								$html .= htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) );
+								$html .= '" >';
+								$html .= $fieldsValue[0]['label'];
+								$html .= ' (';
+								$html .= $fieldsKey2;
+								$html .= ') </option>';
+
+							}
+
+							$html .= '</optgroup>';
+						}
+					// }
+
+					$html .= '</select></td>';
+					$html .= '<td><button class="ced_amazon_add_rows_button" id="';
+					$html .= $fieldsKey;
+					$html .= '">Add Row</button></td></tr>';
+				}
+
+				$select_html .= $html;
+
+			} else {
+
+				if ( ! empty( $this->session['optionalFields'] ) ) {
+					$optional_fields = array_values( $optionalFields );
+
+					$select_html .= '<tr class="categoryAttributes"><th colspan="3" class="profileSectionHeading" >
+					<label style="font-size: 1.25rem;color: #6574cd;" > Optional Fields </label></th></tr>';
+
+					$optionalFieldsHtml = '';
+					$saved_value        = isset( $current_amazon_profile['category_attributes_data'] ) ? json_decode( $current_amazon_profile['category_attributes_data'], true ) : '' ;
+
+					$html .= '<tr class="categoryAttributes"><td></td><td><select id="optionalFields"><option  value="" >--Select--</option>';
+					//foreach ( $this->session['optionalFields'] as $optionalField ) {
+						foreach ( $this->session['optionalFields'] as $fieldsKey1 => $fieldsValue1 ) {
+							$html .= '<optgroup label="' . $fieldsKey1 . '">';
+							foreach ( $fieldsValue1 as $fieldsKey2 => $fieldsValue ) {
+
+								if ( ! array_key_exists( $fieldsKey2, $saved_value ) ) {
+									$html .= '<option  value="' . htmlspecialchars( json_encode( array( $fieldsKey1 => array( $fieldsKey2 => $fieldsValue[0] ) ) ) ) . '" >' . $fieldsValue[0]['label'] . ' (' . $fieldsKey2 . ') </option>';
+
+								} else {
+
+									$prodileRowHTml      = $this->prepareProfileRows( $results, $query, $addedMetaKeys, $current_amazon_profile, $display_saved_values, $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '', '', $template_id );
+									$optionalFieldsHtml .= $prodileRowHTml;
+									// $prodileRowHTml      = $this->prepareProfileRows( array(), 'no', $valid_values, $sub_category_id, '', '', $fieldsKey2, $fieldsValue[0], 'yes', '', '','' );
+									// $optionalFieldsHtml .= $prodileRowHTml;
+								}
+							}
+							$html .= '</optgroup>';
+						}
+					//}
+
+					$html .= '</select></td>';
+					$html .= '<td><button class="ced_amazon_add_rows_button" id="' . $fieldsKey . '">Add Row</button></td></tr>';
+
+					$select_html .= $optionalFieldsHtml;
+					$select_html .= $html;
+
+				}
+			}
+
+			//session_destroy();
+
+		}	
+
 		echo json_encode( array( 'success' => true, 'data' => $select_html, 'session' => $this->session )  );
-
-		// var_dump( $_SESSION );
-
 		die;
 
 	}
