@@ -460,10 +460,10 @@ class Amazon_Integration_For_Woocommerce_Admin {
         $sub_category_id = $subCategory;    
 
 
-        // if( 48 == $request_body['rowNum'] ){
-        //     print_r($this->session);
-		//     die;
-        // }
+       
+            print_r($valid_values_array);
+		    die('opp');
+        
 
 
 		// ----------------------------------------------------- VALID_VALUES.JSON ----------------------------------------------------------
