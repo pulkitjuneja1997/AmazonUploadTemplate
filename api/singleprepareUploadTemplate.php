@@ -763,6 +763,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		}
 
+		die('oppppppp');
+
 		if( 'string' == gettype($last) && "true" == $last ){
 
 			if ( 'no' == $display_saved_values ) {
