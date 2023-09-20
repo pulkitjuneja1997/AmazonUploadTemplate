@@ -240,7 +240,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		if ( ! empty( $query ) ) {
 			foreach ( $query as $key3 => $db_attribute_pair ) {
-				foreach ( maybe_unserialize( $db_attribute_pair['meta_value'] ) as $key4 => $attribute_pair ) {
+				foreach ( unserialize( $db_attribute_pair['meta_value'] ) as $key4 => $attribute_pair ) {
 					if ( 1 != $attribute_pair['is_taxonomy'] ) {
 						$custom_prd_attrb[] = $attribute_pair['name'];
 					}
