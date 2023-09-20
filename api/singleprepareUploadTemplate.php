@@ -481,7 +481,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		// ----------------------------------------------------- PRODUCTS_FIELDS.JSON ----------------------------------------------------------
 
-		die('ookk');
+		// die('ookk');
 
 		$sub_category_id = $subCategory;
 
@@ -765,7 +765,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		}
 
-		die('oppppppp');
+		//die('oppppppp');
 
 		if( 'string' == gettype($last) && "true" == $last ){
 
@@ -951,8 +951,8 @@ $request_body = json_decode($json_data, true);
 //     var_dump($_SESSION); die('ol');
 // }
 
-var_dump($request_body);
-die('olllllllllll');
+// var_dump($request_body);
+// die('olllllllllll');
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 
