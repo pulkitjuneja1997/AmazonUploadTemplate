@@ -288,7 +288,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				if ( 'ced_cstm_attrb_' . $custom_attrb  == $selected_value2 ) {
 					$selected = 'selected';
 				}
-				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . $custom_attrb . '">' . esc_html( $custom_attrb ) . '</option>';
+				$selectDropdownHTML .= '<option ' . $selected . ' value="ced_cstm_attrb_' . $custom_attrb . '">' .  $custom_attrb  . '</option>';
 
 			}
 		}
