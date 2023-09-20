@@ -258,7 +258,7 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 		if ( ! empty( $attributes ) ) {
 			foreach ( $attributes as $attributesObject ) {
-				$attrOptions[ 'umb_pattr_' . $attributesObject->attribute_name ] = $attributesObject->attribute_label;
+				$attrOptions[ 'umb_pattr_' . $attributesObject['attribute_name'] ] = $attributesObject['attribute_label'];
 			}
 		}
 
