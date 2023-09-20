@@ -7,8 +7,10 @@
     "routes": [
     
       { "src": "/prepareTemplate", "methods": ["POST"], "dest": "/api/prepareTemplate.php" },
-      { "src": "/prepareUploadTemplate1", "methods": ["POST"], "dest": "/api/prepareUploadTemplate.php" },
-      { "src": "/prepareUploadTemplate", "methods": ["POST"], "dest": "/api/productUploadTemp.php" }
+      
+      { "src": "/singleprepareUploadTemplate", "methods": ["POST"], "dest": "/api/singleprepareUploadTemplate.php" },
+
+      { "src": "/multiprepareUploadTemplate", "methods": ["POST"], "dest": "/api/multiprepareUploadTemplate.php" }
      
     ]
 }

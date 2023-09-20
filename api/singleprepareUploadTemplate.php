@@ -377,29 +377,26 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
         // ----------------------------------------------------- testtttttttt ----------------------------------------------------------
 
-		if( 0 == $request_body['rowNum'] ){
+		// if( 0 == $request_body['rowNum'] ){
 
-			
-			// $valid_values_key = array_search( 'Valid Values', $listname_of_all_tabs_files );
-			// $valid_values     = $listname_of_all_tabs_files[$valid_values_key];
 
-			$data_definitions_key = array_search( 'Data Definitions', $listname_of_all_tabs_files );
-			$data_definitions     = $listname_of_all_tabs_files[$data_definitions_key];
+		// 	$data_definitions_key = array_search( 'Data Definitions', $listname_of_all_tabs_files );
+		// 	$data_definitions     = $listname_of_all_tabs_files[$data_definitions_key];
 
-			$highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($data_definitions)->getHighestColumn());
-			$highestRow         = $spreadsheet->getSheetByName($data_definitions)->getHighestRow();
+		// 	$highestColumnIndex = \PhpOffice\PhpSpreadsheet\Cell\Coordinate::columnIndexFromString($spreadsheet->getSheetByName($data_definitions)->getHighestColumn());
+		// 	$highestRow         = $spreadsheet->getSheetByName($data_definitions)->getHighestRow();
 
-			$fieldsNames = array();
-			for($row = 3; $row <= $highestRow; ++$row) {
-				$rowName = $spreadsheet->getSheetByName($data_definitions)->getCellByColumnAndRow(1, $row)->getValue();
-				if( !empty($rowName) )
-				$fieldNames[$row] = $rowName;
+		// 	$fieldsNames = array();
+		// 	for($row = 3; $row <= $highestRow; ++$row) {
+		// 		$rowName = $spreadsheet->getSheetByName($data_definitions)->getCellByColumnAndRow(1, $row)->getValue();
+		// 		if( !empty($rowName) )
+		// 		$fieldNames[$row] = $rowName;
 				
-			}
+		// 	}
 
-			echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames, 'session' => $this->session ) );
-			die;
-		}
+		// 	echo json_encode( array( 'success' => true, 'rowsData' => $fieldNames, 'session' => $this->session ) );
+		// 	die;
+		// }
 
 		// ----------------------------------------------------- testtttttttt ----------------------------------------------------------
 
@@ -959,10 +956,10 @@ $request_body = json_decode($json_data, true);
 
 // $request_body = $_POST;
 
-if( 48 == $request_body['rowNum'] ){
-	print_r($request_body);
-    var_dump($_SESSION); die('ol');
-}
+// if( 48 == $request_body['rowNum'] ){
+// 	print_r($request_body);
+//     var_dump($_SESSION); die('ol');
+// }
 
 // var_dump($request_body);
 
