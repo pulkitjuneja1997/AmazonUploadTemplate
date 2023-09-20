@@ -689,8 +689,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 		$valid_values       = $valid_values_array;
 
 
-		print_r($amazonCategoryList);
-		die;
+		// print_r($amazonCategoryList);
+		// die;
 
 		if ( ! empty( $amazonCategoryList ) ) {
 
@@ -700,8 +700,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 
 			foreach ( $amazonCategoryList as $fieldsKey => $fieldsArray ) {
 
-				$rowNameArray = explode(' - ', $rowName );	
-				$modRowName   = $rowNameArray[0];
+				// $rowNameArray = explode(' - ', $rowName );	
+				$modRowName   = $fieldsKey;
 
 				if( !empty($amazonCategoryList[$modRowName]) ){	
 
