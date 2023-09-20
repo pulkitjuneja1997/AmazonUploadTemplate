@@ -952,7 +952,7 @@ $request_body = json_decode($json_data, true);
 // }
 
 var_dump($request_body);
-die;
+die('olllllllllll');
 
 $instance = new Amazon_Integration_For_Woocommerce_Admin();
 
