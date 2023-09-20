@@ -768,8 +768,8 @@ class Amazon_Integration_For_Woocommerce_Admin {
 				}
 			}
 
-			var_dump( $_SESSION );
-			die;
+			// var_dump( $_SESSION );
+			// die;
 
 			if( 'string' == gettype($last) && "true" == $last ){
 
